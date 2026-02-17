@@ -1,5 +1,15 @@
 import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Sparkles, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
 
+export const images = {
+  robot: "https://images.unsplash.com/photo-1507162728832-5b8fdb5f99fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA2OTV8MHwxfHNlYXJjaHw0fHxBSSUyMHJvYm90fGVufDB8fHx3aGl0ZXwxNzcxMzIyNTQyfDA&ixlib=rb-4.1.0&q=85&w=800",
+  workspace: "https://images.unsplash.com/photo-1646596504587-c3771cf62e81?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxjb21wdXRlciUyMHdvcmtzcGFjZXxlbnwwfHx8fDE3NzEzMjI1NDd8MA&ixlib=rb-4.1.0&q=85&w=800",
+  neuralBlue: "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc3MTMyMjU1Mnww&ixlib=rb-4.1.0&q=85&w=800",
+  neuralBrain: "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwzfHxuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc3MTMyMjU1Mnww&ixlib=rb-4.1.0&q=85&w=800",
+  mountainValley: "https://images.unsplash.com/photo-1647939701920-e6063dfda2d8?w=800&q=80",
+  mountainFog: "https://images.unsplash.com/photo-1731934650867-45354be20c81?w=800&q=80",
+  mountainTerrace: "https://images.unsplash.com/photo-1761376397940-e4d7422a102e?w=800&q=80"
+};
+
 export const companyInfo = {
   name: "Globistaan",
   fullName: "Globistaan Technologies and Exports Private Limited",
