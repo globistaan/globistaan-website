@@ -63,9 +63,9 @@ export default function TechStack() {
       {/* Hero */}
       <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
         <div className="bg-image">
-          <img src={images.serverRoom} alt="" style={{ filter: 'brightness(0.2) saturate(1.1)' }} />
+          <img src={images.serverRoom} alt="" style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.65) 100%)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 100%)' }} />
         <div className="floating-orb floating-orb-2" />
         <ParticlesBg />
         <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
