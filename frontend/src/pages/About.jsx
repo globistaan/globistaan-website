@@ -203,9 +203,9 @@ export default function About() {
       {/* CTA */}
       <section className="img-bg-section" style={{ padding: '6rem 0' }}>
         <div className="bg-image">
-          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.3) saturate(1.1)' }} />
+          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.65) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.35)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
         <ParticlesBg />
         <div className="content-z max-w-[600px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
