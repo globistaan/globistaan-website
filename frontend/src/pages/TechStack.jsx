@@ -19,10 +19,11 @@ const categoryAccents = { 'Cloud': 'accent-blue', 'IDE': 'accent-purple', 'AI': 
 const TechCard = ({ item, index }) => {
   const Icon = categoryIcons[item.category] || Wrench;
   const accent = categoryAccents[item.category] || 'accent-grey';
+  const [imgError, setImgError] = useState(false);
   
   return (
     <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.95 }}
+      initial={{ opacity: 0, y: 20, scale: 0.98 }}
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
@@ -31,22 +32,18 @@ const TechCard = ({ item, index }) => {
       style={{ padding: '1.75rem' }}
     >
       <div className="flex items-start gap-4">
-        {/* Logo */}
-        <div className="tech-logo-container flex-shrink-0">
-          {item.logo ? (
+        {/* Logo Container */}
+        <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,255,255,0.95)', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
+          {item.logo && !imgError ? (
             <img 
               src={item.logo} 
               alt={`${item.name} logo`} 
-              className="tech-logo"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'flex';
-              }}
+              className="w-9 h-9 object-contain"
+              onError={() => setImgError(true)}
             />
-          ) : null}
-          <div className="w-12 h-12 rounded-lg items-center justify-center" style={{ display: item.logo ? 'none' : 'flex', background: 'rgba(0,0,0,0.06)' }}>
+          ) : (
             <Icon className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
-          </div>
+          )}
         </div>
         
         <div className="flex-1">
@@ -65,31 +62,33 @@ const TechCard = ({ item, index }) => {
   );
 };
 
-// Logo Showcase Component
-const LogoShowcase = ({ items, title }) => (
-  <div className="mb-12">
-    <h3 className="text-center mb-8" style={{ fontSize: '1.1rem', fontWeight: 500, color: 'var(--text-primary)' }}>{title}</h3>
-    <div className="flex flex-wrap justify-center gap-6">
+// Logo Grid Component - Simple display
+const LogoGrid = ({ items, title }) => (
+  <div className="mb-14">
+    <h3 className="text-center mb-8" style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--text-primary)' }}>{title}</h3>
+    <div className="flex flex-wrap justify-center gap-8">
       {items.map((item, i) => (
         <motion.div
           key={item.name}
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: i * 0.08 }}
-          whileHover={{ scale: 1.1, transition: { duration: 0.2 } }}
-          className="flex flex-col items-center gap-2"
+          whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
+          className="flex flex-col items-center gap-3"
         >
-          <div className="tech-logo-container" style={{ width: '80px', height: '80px' }}>
-            {item.logo && (
+          <div className="w-20 h-20 rounded-2xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.95)', boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
+            {item.logo ? (
               <img 
                 src={item.logo} 
                 alt={`${item.name} logo`}
                 className="w-12 h-12 object-contain"
               />
+            ) : (
+              <Cpu className="w-8 h-8" style={{ color: 'var(--text-primary)' }} />
             )}
           </div>
-          <span style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.02em' }}>
+          <span style={{ fontSize: '0.8rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-primary)', fontWeight: 500 }}>
             {item.name}
           </span>
         </motion.div>
@@ -113,90 +112,86 @@ export default function TechStack() {
 
   return (
     <main>
-      {/* Hero - Code + Mountains Blend */}
+      {/* Hero - Split: Code on left, Mountains on right */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-        {/* Layered background: Code on left, Mountains on right */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0" style={{ clipPath: 'polygon(0 0, 60% 0, 40% 100%, 0 100%)' }}>
+          <div className="absolute inset-0" style={{ clipPath: 'polygon(0 0, 55% 0, 45% 100%, 0 100%)' }}>
             <img 
               src={images.codeScreen} 
               alt="Code and programming" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.4) saturate(1.2)' }}
+              style={{ filter: 'brightness(0.5)' }}
             />
           </div>
-          <div className="absolute inset-0" style={{ clipPath: 'polygon(60% 0, 100% 0, 100% 100%, 40% 100%)' }}>
+          <div className="absolute inset-0" style={{ clipPath: 'polygon(55% 0, 100% 0, 100% 100%, 45% 100%)' }}>
             <img 
               src={images.blueHills} 
               alt="Blue Himalayan mountains" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.85) saturate(1.15)' }}
+              style={{ filter: 'brightness(0.9)' }}
             />
           </div>
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.3) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5 border-white/40 text-white" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', background: 'rgba(0,0,0,0.3)' }}>
               Tech Stack
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-shadow-hero"
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
           >
             Tools Our Developers Use
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-shadow-subtle"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '650px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.95)', maxWidth: '650px', margin: '0 auto', textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
           >
             From cloud infrastructure to AI agents — the technology stack powering our intelligent products and services.
           </motion.p>
         </div>
       </section>
 
-      {/* Logo Showcase Section */}
+      {/* Logo Showcase Section - Clear background */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.motherboard} 
+            src={images.circuitBlue} 
             alt="Technology hardware" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.15) saturate(1.3)' }}
+            style={{ filter: 'brightness(0.15)' }}
           />
         </div>
-        <div className="absolute inset-0 z-1 gradient-mesh" style={{ opacity: 0.4 }} />
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.92)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.95)' }} />
         
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-14">
             <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
-              Our Technology Partners
+              Tools We Use
             </h2>
           </motion.div>
           
-          <LogoShowcase items={techStack.aiAgents} title="AI & Machine Learning" />
-          <LogoShowcase items={techStack.clouds} title="Cloud Infrastructure" />
-          <LogoShowcase items={techStack.frameworks.filter(f => f.category === 'Framework')} title="Development Frameworks" />
+          <LogoGrid items={techStack.aiAgents} title="AI & Machine Learning" />
+          <LogoGrid items={techStack.clouds} title="Cloud Infrastructure" />
+          <LogoGrid items={techStack.frameworks.filter(f => f.category === 'Framework')} title="Development Frameworks" />
         </div>
       </section>
 
-      {/* Filter + Grid - Mountain backdrop */}
+      {/* Filter + Grid - Mountain backdrop, clear overlay */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={images.mistyForest} 
             alt="Misty mountain forest" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.9) saturate(1.1)' }}
+            style={{ filter: 'brightness(0.95)' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.92)' }} />
         
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="flex flex-wrap items-center justify-center gap-2 mb-12">
@@ -219,17 +214,17 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Category Overview - Code Background */}
+      {/* Category Overview - Clear visibility */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.neonCode} 
-            alt="Neon code effect" 
+            src={images.greenValley} 
+            alt="Green valley" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.3) saturate(1.5)' }}
+            style={{ filter: 'brightness(0.9)' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.88)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.92)' }} />
         
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-14">
@@ -274,7 +269,7 @@ export default function TechStack() {
             src={images.dhauladharRange} 
             alt="Dhauladhar mountain range" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.8) saturate(1.2)' }}
+            style={{ filter: 'brightness(0.85)' }}
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />
@@ -282,10 +277,10 @@ export default function TechStack() {
         
         <div className="relative z-10 max-w-[650px] mx-auto text-center px-5 py-16">
           <motion.div {...fadeInUp}>
-            <h2 className="mb-5 text-shadow-hero" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15 }}>
+            <h2 className="mb-5" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15, textShadow: '0 2px 15px rgba(0,0,0,0.4)' }}>
               Want to Work With Our Stack?
             </h2>
-            <p className="mb-10 text-shadow-subtle" style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1.05rem', lineHeight: 1.65 }}>
+            <p className="mb-10" style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.05rem', lineHeight: 1.65, textShadow: '0 1px 8px rgba(0,0,0,0.3)' }}>
               Whether you're a developer or a client who wants to leverage these tools — let's talk.
             </p>
             <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', background: 'white', color: 'var(--text-primary)', fontSize: '0.9rem' }}>
