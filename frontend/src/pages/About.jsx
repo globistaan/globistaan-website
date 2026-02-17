@@ -159,9 +159,9 @@ export default function About() {
       {/* Registrations */}
       <section className="img-bg-section" style={{ padding: '6rem 0' }}>
         <div className="bg-image">
-          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.2)' }} />
+          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.92)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.82)' }} />
 
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
