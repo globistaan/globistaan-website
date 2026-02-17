@@ -109,9 +109,9 @@ export default function TechStack() {
       {/* Filter + Grid */}
       <section className="img-bg-section" style={{ padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.1)' }} />
+          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.45) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.94)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.82)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="flex flex-wrap items-center gap-2 mb-10">
             {categories.map((cat) => (
