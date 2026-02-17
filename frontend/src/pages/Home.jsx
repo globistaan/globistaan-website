@@ -56,7 +56,7 @@ const HeroSection = () => (
           letterSpacing: '-0.03em'
         }}
       >
-        <span className="headline-where" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}>Where </span>
+        <span className="headline-where" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)', color: '#8B4513' }}>Where </span>
         <span className="headline-mountains">Mountains</span>
         <br />
         <span className="headline-meet" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}> Meet </span>
