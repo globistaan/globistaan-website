@@ -68,6 +68,11 @@ const webpackConfig = {
       return webpackConfig;
     },
   },
+  build: {
+    output: {
+      path: path.resolve(__dirname, "dist"),
+    },
+  },
 };
 
 // Only add babel metadata plugin during dev server
