@@ -94,9 +94,9 @@ export default function Investors() {
       {/* Product Portfolio */}
       <section className="img-bg-section" style={{ padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.18)' }} />
+          <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.4) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.92)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.82)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Portfolio</Badge>
