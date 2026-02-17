@@ -3,25 +3,26 @@ import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Quote } from 'lucide-react';
 import { companyInfo, registrations, images } from '../data/mock';
-import { ParticlesBg, NeuralGrid } from '../components/layout/ParticlesBg';
+import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-50px' },
-  transition: { duration: 0.6, ease: 'easeOut' }
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
 };
 
 export default function About() {
   return (
     <main>
-      {/* Hero with mountain background */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img src={images.mountainTerrace} alt="Himachal Pradesh mountains" className="w-full h-full object-cover" style={{ filter: 'brightness(0.35)' }} />
+      {/* Hero */}
+      <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
+        <div className="bg-image">
+          <img src={images.greenValley} alt="" style={{ filter: 'brightness(0.3) saturate(1.2)' }} />
         </div>
-        <div className="relative z-10 max-w-[800px] mx-auto text-center px-5">
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%)' }} />
+        <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Our Story
@@ -42,11 +43,14 @@ export default function About() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
       {/* Story */}
-      <section className="py-24" style={{ background: 'var(--bg-page)' }}>
-        <div className="max-w-[1000px] mx-auto px-5 md:px-9">
+      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+        <div className="bg-image">
+          <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.08)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.94)' }} />
+
+        <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
             <motion.div {...fadeInUp} className="lg:col-span-3">
               <h2 className="mb-6" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
@@ -72,11 +76,9 @@ export default function About() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2 flex flex-col gap-5"
             >
-              {/* Mountain Image */}
-              <div className="rounded-xl overflow-hidden" style={{ height: '180px' }}>
+              <div className="img-zoom" style={{ height: '180px' }}>
                 <img src={images.mountainValley} alt="Himachal Pradesh valley" className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
               </div>
-
               <div className="voice-card accent-orange" style={{ padding: '2rem' }}>
                 <Quote className="w-6 h-6 mb-4" style={{ color: 'var(--accent-orange-400)' }} />
                 <p className="italic mb-5" style={{ fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--text-primary)' }}>
@@ -92,13 +94,41 @@ export default function About() {
         </div>
       </section>
 
-      <div className="section-divider" />
+      {/* AI Image Banner */}
+      <section className="img-bg-section" style={{ padding: '4rem 0' }}>
+        <div className="bg-image">
+          <img src={images.serverRoom} alt="" style={{ filter: 'brightness(0.25)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.5) 100%)' }} />
+        <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[images.robot, images.workspace, images.neuralBlue, images.aiBrain].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: i * 0.1 }}
+                className="img-zoom"
+                style={{ height: '140px', borderRadius: '0.75rem' }}
+              >
+                <img src={img} alt="" className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Mission & Vision */}
-      <section className="py-24" style={{ background: 'var(--bg-section)' }}>
-        <div className="max-w-[1000px] mx-auto px-5 md:px-9">
+      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+        <div className="bg-image">
+          <img src={images.neuralBlue} alt="" style={{ filter: 'brightness(0.08)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.93)' }} />
+
+        <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <motion.div {...fadeInUp} className="voice-card accent-purple" style={{ padding: '2.5rem' }}>
+            <motion.div {...fadeInUp} className="voice-card accent-purple glow-card" style={{ padding: '2.5rem' }}>
               <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Mission</Badge>
               <h3 className="mb-3" style={{ fontSize: '1.2rem', fontWeight: 500, color: 'var(--text-primary)' }}>
                 Democratize AI for Every Enterprise
@@ -107,13 +137,12 @@ export default function About() {
                 To make cutting-edge artificial intelligence accessible to businesses of all sizes, enabling them to automate, innovate, and scale with intelligent technology solutions built on trust and transparency.
               </p>
             </motion.div>
-
             <motion.div
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="voice-card accent-blue" style={{ padding: '2.5rem' }}
+              transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+              className="voice-card accent-blue glow-card" style={{ padding: '2.5rem' }}
             >
               <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.65rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Vision</Badge>
               <h3 className="mb-3" style={{ fontSize: '1.2rem', fontWeight: 500, color: 'var(--text-primary)' }}>
@@ -127,11 +156,14 @@ export default function About() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
       {/* Registrations */}
-      <section className="py-24" style={{ background: 'var(--bg-page)' }}>
-        <div className="max-w-[1000px] mx-auto px-5 md:px-9">
+      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+        <div className="bg-image">
+          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.2)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.92)' }} />
+
+        <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Trust & Compliance
@@ -139,11 +171,7 @@ export default function About() {
             <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
               Government Registered & Compliant
             </h2>
-            <p className="mt-3 mx-auto" style={{ maxWidth: '520px', color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-              We maintain the highest standards of regulatory compliance, providing confidence to clients and investors worldwide.
-            </p>
           </motion.div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {registrations.map((reg, i) => {
               const Icon = reg.icon;
@@ -151,11 +179,11 @@ export default function About() {
               return (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 16 }}
+                  initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className={`voice-card ${accents[i]}`}
+                  transition={{ duration: 0.5, delay: i * 0.07, ease: [0.22, 1, 0.36, 1] }}
+                  className={`voice-card glow-card ${accents[i]}`}
                   style={{ padding: '1.5rem' }}
                 >
                   <Icon className="w-5 h-5 mb-3" style={{ color: 'var(--text-primary)' }} />
@@ -172,20 +200,22 @@ export default function About() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
       {/* CTA */}
-      <section className="ai-bg relative py-20" style={{ background: 'var(--gradient-hero-subtle)' }}>
+      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+        <div className="bg-image">
+          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.3) saturate(1.1)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.35)' }} />
         <ParticlesBg />
-        <div className="relative z-10 max-w-[600px] mx-auto text-center px-5">
+        <div className="content-z max-w-[600px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
-            <h2 className="mb-4" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+            <h2 className="mb-4" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2 }}>
               Let's Build Together
             </h2>
-            <p className="mb-8" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6 }}>
               Explore our projects, meet our team, or start a conversation about how AI can transform your business.
             </p>
-            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem' }}>
+            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
               Get in Touch <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
