@@ -155,6 +155,72 @@ const ServicesSection = () => (
   </section>
 );
 
+const ImageShowcase = () => (
+  <section className="relative py-20 overflow-hidden">
+    <div className="absolute inset-0 z-0">
+      <img src={images.mountainTerrace} alt="Himachal Pradesh" className="w-full h-full object-cover" style={{ filter: 'brightness(0.35)' }} />
+    </div>
+    <div className="relative z-10 max-w-[1100px] mx-auto px-5 md:px-9">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="glass-strong"
+          style={{ padding: '2rem', borderRadius: '1rem' }}
+        >
+          <div className="rounded-xl overflow-hidden mb-4" style={{ height: '160px' }}>
+            <img src={images.robot} alt="AI Robot" className="w-full h-full object-cover" />
+          </div>
+          <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
+            AI-First Approach
+          </h3>
+          <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+            Every solution we build is powered by cutting-edge artificial intelligence.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="glass-strong"
+          style={{ padding: '2rem', borderRadius: '1rem' }}
+        >
+          <div className="rounded-xl overflow-hidden mb-4" style={{ height: '160px' }}>
+            <img src={images.workspace} alt="Developer workspace" className="w-full h-full object-cover" />
+          </div>
+          <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
+            Modern Engineering
+          </h3>
+          <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+            Built with the latest tools, frameworks, and AI-powered development environments.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="glass-strong"
+          style={{ padding: '2rem', borderRadius: '1rem' }}
+        >
+          <div className="rounded-xl overflow-hidden mb-4" style={{ height: '160px' }}>
+            <img src={images.neuralBrain} alt="Neural network" className="w-full h-full object-cover" />
+          </div>
+          <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
+            Intelligent Systems
+          </h3>
+          <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+            Neural networks and deep learning models tailored for your business needs.
+          </p>
+        </motion.div>
+      </div>
+    </div>
+  </section>
+);
+
 const ProjectsPreview = () => (
   <section className="relative py-24" style={{ background: 'var(--bg-section)' }}>
     <div className="max-w-[1280px] mx-auto px-5 md:px-9">
