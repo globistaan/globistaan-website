@@ -1,0 +1,275 @@
+import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Sparkles, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
+
+export const companyInfo = {
+  name: "Globistaan",
+  fullName: "Globistaan Technologies and Exports Private Limited",
+  tagline: "AI-Powered Solutions for the Global Enterprise",
+  subtitle: "We transform businesses with cutting-edge artificial intelligence and scalable SaaS platforms — built from the mountains of Himachal Pradesh, India, for the world.",
+  founded: "2023",
+  location: "Himachal Pradesh, India",
+  founderExperience: "13+ years",
+  email: "contact@globistaan.com",
+  phone: "+91 XXXXX XXXXX",
+  website: "www.globistaan.com"
+};
+
+export const heroStats = [
+  { label: "AI Models Deployed", value: "15+" },
+  { label: "Enterprise Clients", value: "50+" },
+  { label: "Countries Served", value: "12+" },
+  { label: "Uptime Guarantee", value: "99.9%" }
+];
+
+export const registrations = [
+  { title: "Private Limited Company", description: "Government registered, MCA approved company", icon: Building2 },
+  { title: "GST Compliant", description: "Registered with Goods and Services Tax from inception", icon: Shield },
+  { title: "Registered MSME", description: "Recognized Micro, Small and Medium Enterprise on Udyam portal", icon: Award },
+  { title: "DGFT Compliant", description: "Registered on Directorate General of Foreign Trade with IEC code", icon: Globe },
+  { title: "DPIIT Registered", description: "Registered with Department for Promotion of Industry and Internal Trade", icon: Target }
+];
+
+export const projects = [
+  {
+    id: "ai-chatbot",
+    title: "AI Chatbot Platform",
+    description: "Next-generation conversational AI platform that understands context, sentiment, and intent. Built for enterprise customer support, sales automation, and internal operations.",
+    features: ["Multi-language support", "Context-aware responses", "Custom training pipelines", "Analytics dashboard", "API integrations"],
+    status: "In Development",
+    accentClass: "accent-purple",
+    icon: Bot,
+    category: "AI as a Service",
+    partnership: "Built in partnership with industry experts",
+    placeholder: "[Product screenshot placeholder]"
+  },
+  {
+    id: "ai-pharma",
+    title: "AI Pharma Document Generation",
+    description: "Intelligent document generation system for pharmaceutical companies. Automates regulatory submissions, clinical trial reports, and compliance documentation with AI precision.",
+    features: ["Regulatory compliance", "Template management", "AI-powered drafting", "Version control", "Audit trails"],
+    status: "In Development",
+    accentClass: "accent-blue",
+    icon: FileText,
+    category: "AI as a Service",
+    partnership: "Built in partnership with pharma industry experts",
+    placeholder: "[Product screenshot placeholder]"
+  },
+  {
+    id: "ai-language",
+    title: "AI Language Learning App",
+    description: "Personalized language learning powered by AI. Adaptive curriculum, real-time pronunciation feedback, and immersive conversation practice with AI tutors.",
+    features: ["Adaptive learning paths", "Speech recognition", "AI conversation partner", "Progress tracking", "Gamification"],
+    status: "In Development",
+    accentClass: "accent-orange",
+    icon: Languages,
+    category: "AI as a Service",
+    partnership: "Built in partnership with education industry experts",
+    placeholder: "[Product screenshot placeholder]"
+  },
+  {
+    id: "saas-ecommerce",
+    title: "SaaS E-Commerce Platform",
+    description: "Full-featured e-commerce platform with AI-driven product recommendations, inventory management, and automated marketing. Scalable from small shops to enterprise retail.",
+    features: ["AI recommendations", "Inventory automation", "Payment gateway", "Analytics & insights", "Multi-vendor support"],
+    status: "In Development",
+    accentClass: "accent-pink",
+    icon: ShoppingCart,
+    category: "SaaS Platform",
+    partnership: "Built in partnership with e-commerce experts",
+    placeholder: "[Product screenshot placeholder]"
+  }
+];
+
+export const services = [
+  {
+    title: "AI Model Development",
+    description: "Custom AI/ML model training and deployment tailored to your business needs.",
+    icon: Brain
+  },
+  {
+    title: "SaaS Platform Engineering",
+    description: "Scalable, multi-tenant SaaS platforms built with modern cloud-native architecture.",
+    icon: Layers
+  },
+  {
+    title: "Intelligent Automation",
+    description: "Automate complex business workflows with AI-driven decision-making systems.",
+    icon: Workflow
+  },
+  {
+    title: "Data Engineering & Analytics",
+    description: "End-to-end data pipelines, warehousing, and AI-powered analytics dashboards.",
+    icon: Database
+  },
+  {
+    title: "Cloud Infrastructure",
+    description: "Cloud-native deployments on AWS, Railway, and hybrid architectures for optimal performance.",
+    icon: Cloud
+  },
+  {
+    title: "Enterprise Integration",
+    description: "Seamless integration of AI capabilities into existing enterprise systems and workflows.",
+    icon: Zap
+  }
+];
+
+export const techStack = {
+  clouds: [
+    { name: "AWS", description: "Primary cloud infrastructure provider", category: "Cloud" },
+    { name: "Railway", description: "Rapid deployment and scaling platform", category: "Cloud" },
+    { name: "Google Cloud", description: "AI/ML services and compute", category: "Cloud" },
+    { name: "Azure", description: "Enterprise cloud solutions", category: "Cloud" }
+  ],
+  ides: [
+    { name: "Cursor", description: "AI-powered code editor", category: "IDE" },
+    { name: "VS Code", description: "Primary development environment", category: "IDE" },
+    { name: "Claude Code", description: "AI-assisted coding", category: "IDE" },
+    { name: "JetBrains", description: "Enterprise IDE suite", category: "IDE" }
+  ],
+  aiAgents: [
+    { name: "Gemini", description: "Google's multimodal AI model", category: "AI" },
+    { name: "OpenAI", description: "GPT models for NLP and generation", category: "AI" },
+    { name: "Claude", description: "Anthropic's advanced reasoning AI", category: "AI" },
+    { name: "LangChain", description: "AI orchestration framework", category: "AI" }
+  ],
+  frameworks: [
+    { name: "React", description: "Frontend framework", category: "Framework" },
+    { name: "FastAPI", description: "High-performance Python backend", category: "Framework" },
+    { name: "Next.js", description: "Full-stack React framework", category: "Framework" },
+    { name: "TensorFlow", description: "ML model training", category: "Framework" },
+    { name: "PyTorch", description: "Deep learning framework", category: "Framework" },
+    { name: "MongoDB", description: "NoSQL database", category: "Database" },
+    { name: "PostgreSQL", description: "Relational database", category: "Database" },
+    { name: "Redis", description: "In-memory caching", category: "Database" }
+  ]
+};
+
+export const teamMembers = [
+  {
+    name: "[Founder Name]",
+    role: "Founder & CEO",
+    bio: "13+ years in IT industry developing web applications for global banks. Passionate about leveraging AI to solve real-world challenges.",
+    placeholder: "[Photo placeholder]"
+  },
+  {
+    name: "[Team Member]",
+    role: "CTO",
+    bio: "[Bio placeholder - Add team member details here]",
+    placeholder: "[Photo placeholder]"
+  },
+  {
+    name: "[Team Member]",
+    role: "Lead AI Engineer",
+    bio: "[Bio placeholder - Add team member details here]",
+    placeholder: "[Photo placeholder]"
+  },
+  {
+    name: "[Team Member]",
+    role: "Full Stack Developer",
+    bio: "[Bio placeholder - Add team member details here]",
+    placeholder: "[Photo placeholder]"
+  },
+  {
+    name: "[Team Member]",
+    role: "ML Engineer",
+    bio: "[Bio placeholder - Add team member details here]",
+    placeholder: "[Photo placeholder]"
+  },
+  {
+    name: "[Team Member]",
+    role: "Product Designer",
+    bio: "[Bio placeholder - Add team member details here]",
+    placeholder: "[Photo placeholder]"
+  }
+];
+
+export const clients = [
+  {
+    name: "[Client Company 1]",
+    industry: "Banking & Finance",
+    testimonial: "[Testimonial placeholder - Add client feedback here]",
+    placeholder: "[Logo placeholder]"
+  },
+  {
+    name: "[Client Company 2]",
+    industry: "Healthcare / Pharma",
+    testimonial: "[Testimonial placeholder - Add client feedback here]",
+    placeholder: "[Logo placeholder]"
+  },
+  {
+    name: "[Client Company 3]",
+    industry: "E-Commerce",
+    testimonial: "[Testimonial placeholder - Add client feedback here]",
+    placeholder: "[Logo placeholder]"
+  },
+  {
+    name: "[Client Company 4]",
+    industry: "Education",
+    testimonial: "[Testimonial placeholder - Add client feedback here]",
+    placeholder: "[Logo placeholder]"
+  }
+];
+
+export const investmentHighlights = [
+  {
+    title: "Growing AI Market",
+    description: "The global AI market is projected to reach $1.8 trillion by 2030. Globistaan is positioned at the intersection of AI services and SaaS platforms.",
+    metric: "$1.8T",
+    metricLabel: "AI Market by 2030",
+    icon: TrendingUp
+  },
+  {
+    title: "Cost Advantage",
+    description: "Based in Himachal Pradesh, India, we offer world-class AI engineering at highly competitive rates compared to Western markets.",
+    metric: "60%",
+    metricLabel: "Cost Savings",
+    icon: Target
+  },
+  {
+    title: "Diversified Portfolio",
+    description: "Four distinct product lines across healthcare, education, commerce, and enterprise AI — reducing single-market dependency.",
+    metric: "4",
+    metricLabel: "Product Lines",
+    icon: Layers
+  },
+  {
+    title: "Regulatory Compliance",
+    description: "Fully registered with MCA, GST, MSME, DGFT, and DPIIT — providing investor confidence and operational transparency.",
+    metric: "5+",
+    metricLabel: "Registrations",
+    icon: Shield
+  }
+];
+
+export const investmentTiers = [
+  {
+    tier: "Seed",
+    range: "[Amount placeholder]",
+    equity: "[Equity % placeholder]",
+    benefits: ["Board observer seat", "Quarterly reports", "Product early access"],
+    highlighted: false
+  },
+  {
+    tier: "Series A",
+    range: "[Amount placeholder]",
+    equity: "[Equity % placeholder]",
+    benefits: ["Board seat", "Monthly reports", "Strategic input", "Co-development rights"],
+    highlighted: true
+  },
+  {
+    tier: "Strategic Partner",
+    range: "[Amount placeholder]",
+    equity: "[Equity % placeholder]",
+    benefits: ["Board seat", "Weekly syncs", "Joint ventures", "White-label rights", "Revenue sharing"],
+    highlighted: false
+  }
+];
+
+export const navLinks = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Projects", path: "/projects" },
+  { label: "People", path: "/people" },
+  { label: "Tech Stack", path: "/tech-stack" },
+  { label: "Investors", path: "/investors" },
+  { label: "Contact", path: "/contact" }
+];
