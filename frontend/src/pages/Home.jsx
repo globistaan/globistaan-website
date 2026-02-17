@@ -116,9 +116,9 @@ const HeroSection = () => (
 const ServicesSection = () => (
   <section className="img-bg-section" style={{ padding: '6rem 0' }}>
     <div className="bg-image">
-      <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.12) saturate(0.8)' }} />
+      <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.15) saturate(0.8)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.88) 100%)' }} />
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.85) 100%)' }} />
     <div className="floating-orb floating-orb-3" />
 
     <div className="content-z max-w-[1280px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
