@@ -1,78 +1,73 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'motion/react';
-import { ArrowRight, ArrowUpRight, ChevronRight, Sparkles, CheckCircle2 } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
+import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { companyInfo, projects, services, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-50px' },
-  transition: { duration: 0.6, ease: 'easeOut' }
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
 };
 
-const stagger = {
-  initial: {},
-  whileInView: { transition: { staggerChildren: 0.1 } },
-  viewport: { once: true }
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.92 },
+  whileInView: { opacity: 1, scale: 1 },
+  viewport: { once: true },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
 };
 
 const HeroSection = () => (
-  <section className="ai-bg relative min-h-[92vh] flex items-center justify-center" style={{ background: 'var(--gradient-hero-warm)' }}>
+  <section className="img-bg-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+    <div className="bg-image">
+      <img src={images.snowyPeak} alt="" style={{ filter: 'brightness(0.3) saturate(1.2)' }} />
+    </div>
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.7) 100%)' }} />
+    {/* Floating Orbs */}
+    <div className="floating-orb floating-orb-1" />
+    <div className="floating-orb floating-orb-2" />
     <ParticlesBg />
-    <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 py-32">
+
+    <div className="content-z max-w-[900px] mx-auto text-center px-5 py-32" style={{ position: 'relative', zIndex: 10 }}>
       <motion.div
-        initial={{ opacity: 0, y: -10 }}
+        initial={{ opacity: 0, y: -12 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full"
         style={{
-          background: 'rgba(255,255,255,0.45)',
-          backdropFilter: 'blur(8px)',
-          border: '1px solid rgba(255,255,255,0.5)',
+          background: 'rgba(255,255,255,0.12)',
+          backdropFilter: 'blur(12px)',
+          border: '1px solid rgba(255,255,255,0.2)',
           fontFamily: "'SF Mono', monospace",
-          fontSize: '0.75rem',
+          fontSize: '0.72rem',
           textTransform: 'uppercase',
-          letterSpacing: '0.04em',
-          color: 'var(--text-secondary)'
+          letterSpacing: '0.06em',
+          color: 'rgba(255,255,255,0.85)'
         }}
       >
-        <Sparkles className="w-3.5 h-3.5" />
-        AI-Powered Innovation
+        <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#b8d1ba', boxShadow: '0 0 6px #b8d1ba' }} />
+        AI-Powered Innovation from the Himalayas
       </motion.div>
 
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
+        initial={{ opacity: 0, y: 24 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.15 }}
+        transition={{ duration: 0.8, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
         className="mb-5"
         style={{
-          fontSize: 'clamp(2.2rem, 5.5vw, 3.5rem)',
-          lineHeight: 1.08,
+          fontSize: 'clamp(2.4rem, 6vw, 4rem)',
+          lineHeight: 1.05,
           fontWeight: 600,
-          letterSpacing: '-0.025em',
-          color: 'var(--text-primary)'
+          letterSpacing: '-0.03em',
+          color: '#FFFFFF'
         }}
       >
         Building the Future with{' '}
-        <span style={{ position: 'relative' }}>
+        <span className="shimmer-text" style={{ WebkitTextFillColor: 'transparent' }}>
           Artificial Intelligence
-          <motion.span
-            initial={{ width: 0 }}
-            animate={{ width: '100%' }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            style={{
-              position: 'absolute',
-              bottom: '2px',
-              left: 0,
-              height: '8px',
-              background: 'rgba(252, 202, 199, 0.6)',
-              borderRadius: '4px',
-              zIndex: -1
-            }}
-          />
         </span>
       </motion.h1>
 
@@ -80,12 +75,12 @@ const HeroSection = () => (
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.3 }}
-        className="mb-8 mx-auto"
+        className="mb-10 mx-auto"
         style={{
-          fontSize: 'clamp(1rem, 2vw, 1.125rem)',
-          lineHeight: 1.65,
-          color: 'var(--text-secondary)',
-          maxWidth: '620px'
+          fontSize: 'clamp(1rem, 2vw, 1.15rem)',
+          lineHeight: 1.7,
+          color: 'rgba(255,255,255,0.7)',
+          maxWidth: '600px'
         }}
       >
         {companyInfo.subtitle}
@@ -97,21 +92,36 @@ const HeroSection = () => (
         transition={{ duration: 0.6, delay: 0.45 }}
         className="flex flex-col sm:flex-row items-center justify-center gap-4"
       >
-        <Link to="/projects" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem' }}>
+        <Link to="/projects" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2.2rem', background: 'white', color: 'var(--text-primary)' }}>
           Explore Our Projects <ArrowRight className="w-4 h-4" />
         </Link>
-        <Link to="/investors" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.85rem 2rem' }}>
+        <Link to="/investors" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.9rem 2.2rem', color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
           Investor Deck <ArrowUpRight className="w-4 h-4" />
         </Link>
       </motion.div>
 
+      {/* Scroll indicator */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="mt-16 scroll-indicator"
+      >
+        <ChevronDown className="w-5 h-5 mx-auto" style={{ color: 'rgba(255,255,255,0.4)' }} />
+      </motion.div>
     </div>
   </section>
 );
 
 const ServicesSection = () => (
-  <section className="relative py-24" style={{ background: 'var(--bg-page)' }}>
-    <div className="max-w-[1280px] mx-auto px-5 md:px-9">
+  <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+    <div className="bg-image">
+      <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.12) saturate(0.8)' }} />
+    </div>
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.92) 0%, rgba(255,255,255,0.88) 100%)' }} />
+    <div className="floating-orb floating-orb-3" />
+
+    <div className="content-z max-w-[1280px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
       <motion.div {...fadeInUp} className="text-center mb-16">
         <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           What We Do
@@ -131,11 +141,11 @@ const ServicesSection = () => (
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, y: 24, scale: 0.96 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08 }}
-              className={`voice-card ${accents[i % accents.length]}`}
+              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              className={`voice-card glow-card ${accents[i % accents.length]}`}
               style={{ padding: '1.75rem' }}
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: 'rgba(0,0,0,0.06)' }}>
@@ -156,74 +166,60 @@ const ServicesSection = () => (
 );
 
 const ImageShowcase = () => (
-  <section className="relative py-20 overflow-hidden">
-    <div className="absolute inset-0 z-0">
-      <img src={images.mountainTerrace} alt="Himachal Pradesh" className="w-full h-full object-cover" style={{ filter: 'brightness(0.35)' }} />
+  <section className="img-bg-section" style={{ padding: '5rem 0' }}>
+    <div className="bg-image">
+      <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.25) saturate(1.1)' }} />
     </div>
-    <div className="relative z-10 max-w-[1100px] mx-auto px-5 md:px-9">
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%)' }} />
+
+    <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
+      <motion.div {...fadeInUp} className="text-center mb-12">
+        <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2 }}>
+          Where Mountains Meet Machines
+        </h2>
+        <p className="mt-3 mx-auto" style={{ maxWidth: '500px', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+          Innovation rooted in the serene landscapes of Himachal Pradesh.
+        </p>
+      </motion.div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="glass-strong"
-          style={{ padding: '2rem', borderRadius: '1rem' }}
-        >
-          <div className="rounded-xl overflow-hidden mb-4" style={{ height: '160px' }}>
-            <img src={images.robot} alt="AI Robot" className="w-full h-full object-cover" />
-          </div>
-          <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-            AI-First Approach
-          </h3>
-          <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-            Every solution we build is powered by cutting-edge artificial intelligence.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="glass-strong"
-          style={{ padding: '2rem', borderRadius: '1rem' }}
-        >
-          <div className="rounded-xl overflow-hidden mb-4" style={{ height: '160px' }}>
-            <img src={images.workspace} alt="Developer workspace" className="w-full h-full object-cover" />
-          </div>
-          <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-            Modern Engineering
-          </h3>
-          <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-            Built with the latest tools, frameworks, and AI-powered development environments.
-          </p>
-        </motion.div>
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass-strong"
-          style={{ padding: '2rem', borderRadius: '1rem' }}
-        >
-          <div className="rounded-xl overflow-hidden mb-4" style={{ height: '160px' }}>
-            <img src={images.neuralBrain} alt="Neural network" className="w-full h-full object-cover" />
-          </div>
-          <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-            Intelligent Systems
-          </h3>
-          <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-            Neural networks and deep learning models tailored for your business needs.
-          </p>
-        </motion.div>
+        {[
+          { img: images.robot, title: 'AI-First Approach', desc: 'Every solution is powered by cutting-edge artificial intelligence.' },
+          { img: images.workspace, title: 'Modern Engineering', desc: 'Built with the latest tools and AI-powered development environments.' },
+          { img: images.neuralBrain, title: 'Intelligent Systems', desc: 'Neural networks and deep learning models for your business.' }
+        ].map((item, i) => (
+          <motion.div
+            key={i}
+            initial={{ opacity: 0, y: 28, rotateX: 4 }}
+            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
+            className="glass-strong"
+            style={{ padding: '1.5rem', borderRadius: '1rem' }}
+          >
+            <div className="img-zoom" style={{ height: '160px', marginBottom: '1rem' }}>
+              <img src={item.img} alt={item.title} className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
+            </div>
+            <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
+              {item.title}
+            </h3>
+            <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
+              {item.desc}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </div>
   </section>
 );
 
 const ProjectsPreview = () => (
-  <section className="relative py-24" style={{ background: 'var(--bg-section)' }}>
-    <div className="max-w-[1280px] mx-auto px-5 md:px-9">
+  <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+    <div className="bg-image">
+      <img src={images.aiBrain} alt="" style={{ filter: 'brightness(0.1) saturate(0.5)' }} />
+    </div>
+    <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.93)' }} />
+
+    <div className="content-z max-w-[1280px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
       <motion.div {...fadeInUp} className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-4">
         <div>
           <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
@@ -244,13 +240,13 @@ const ProjectsPreview = () => (
           return (
             <motion.div
               key={project.id}
-              initial={{ opacity: 0, y: 24 }}
+              initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
             >
-              <Link to={`/projects`} className="no-underline">
-                <div className={`voice-card ${project.accentClass}`} style={{ padding: '2rem', height: '100%' }}>
+              <Link to="/projects" className="no-underline">
+                <div className={`voice-card glow-card ${project.accentClass}`} style={{ padding: '2rem', height: '100%' }}>
                   <div className="flex items-center gap-3 mb-4">
                     <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.06)' }}>
                       <Icon className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
@@ -283,21 +279,26 @@ const ProjectsPreview = () => (
 );
 
 const CTASection = () => (
-  <section className="ai-bg relative py-24" style={{ background: 'var(--gradient-hero-subtle)' }}>
+  <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+    <div className="bg-image">
+      <img src={images.mountainRange} alt="" style={{ filter: 'brightness(0.3) saturate(1.2)' }} />
+    </div>
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 100%)' }} />
     <ParticlesBg />
-    <div className="relative z-10 max-w-[700px] mx-auto text-center px-5">
+
+    <div className="content-z max-w-[700px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
       <motion.div {...fadeInUp}>
-        <h2 className="mb-4" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.15 }}>
+        <h2 className="mb-4" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15 }}>
           Ready to Build with AI?
         </h2>
-        <p className="mb-8" style={{ color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.6 }}>
+        <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.65 }}>
           Whether you're looking for AI-powered solutions, investment opportunities, or a technology partnership — we'd love to hear from you.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem' }}>
+          <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
             Start a Conversation <ArrowRight className="w-4 h-4" />
           </Link>
-          <Link to="/about" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.85rem 2rem' }}>
+          <Link to="/about" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
             Learn About Us
           </Link>
         </div>
@@ -310,12 +311,9 @@ export default function Home() {
   return (
     <main>
       <HeroSection />
-      <div className="section-divider" />
       <ServicesSection />
       <ImageShowcase />
-      <div className="section-divider" />
       <ProjectsPreview />
-      <div className="section-divider" />
       <CTASection />
     </main>
   );
