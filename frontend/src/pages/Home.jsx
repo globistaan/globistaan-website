@@ -23,9 +23,9 @@ const scaleIn = {
 const HeroSection = () => (
   <section className="img-bg-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
     <div className="bg-image">
-      <img src={images.snowyPeak} alt="" style={{ filter: 'brightness(0.3) saturate(1.2)' }} />
+      <img src={images.snowyPeak} alt="" style={{ filter: 'brightness(0.7) saturate(1.3)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.55) 60%, rgba(0,0,0,0.7) 100%)' }} />
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.5) 100%)' }} />
     {/* Floating Orbs */}
     <div className="floating-orb floating-orb-1" />
     <div className="floating-orb floating-orb-2" />
