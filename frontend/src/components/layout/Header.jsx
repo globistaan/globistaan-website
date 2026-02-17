@@ -95,7 +95,7 @@ export const Header = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden overflow-hidden"
             style={{
-              background: 'rgba(255, 249, 242, 0.98)',
+              background: 'rgba(255, 255, 255, 0.98)',
               backdropFilter: 'blur(20px)',
               borderBottom: '1px solid rgba(153, 153, 153, 0.15)'
             }}
