@@ -15,7 +15,7 @@ Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan T
 - Home (Hero + Services + Projects Preview + CTA)
 - About Us (Story, Mission, Vision, Registrations)
 - Projects (Project Cards with Features)
-- People (Directors, Developers, Clients with circular avatars)
+- People (Developers → Clients → Directors order, with circular avatars)
 - Tech Stack (Cloud, IDE, AI, Frameworks, Databases with actual logos)
 - Investors (Investment Highlights, Tiers, Portfolio)
 - Contact Us (Form + Contact Info)
