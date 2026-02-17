@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, ArrowUpRight, ChevronRight, Sparkles, CheckCircle2 } from 'lucide-react';
-import { companyInfo, heroStats, projects, services } from '../data/mock';
+import { companyInfo, projects, services, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 
