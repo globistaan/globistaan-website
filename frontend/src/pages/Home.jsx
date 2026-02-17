@@ -145,7 +145,7 @@ const ServicesSection = () => (
 const MountainBanner = () => (
   <section className="img-bg-section" style={{ minHeight: '50vh', display: 'flex', alignItems: 'center' }}>
     <div className="bg-image">
-      <img src={images.pineForest} alt="Himachal Pradesh pine forests and mountains" style={{ filter: 'brightness(0.85) saturate(1.2)' }} />
+      <img src={images.dhauladharGreen} alt="Lush green meadows with Dhauladhar peaks" style={{ filter: 'brightness(0.9) saturate(1.15)' }} />
     </div>
     <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
     <div className="content-z max-w-[700px] mx-auto text-center px-5 py-20" style={{ position: 'relative', zIndex: 10 }}>
