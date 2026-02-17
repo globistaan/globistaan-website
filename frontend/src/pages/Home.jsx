@@ -221,7 +221,7 @@ const ProjectsPreview = () => (
 const CTASection = () => (
   <section className="img-bg-section" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
     <div className="bg-image">
-      <img src={images.mountainRange} alt="Himalayan mountain range panorama" style={{ filter: 'brightness(0.8) saturate(1.2)' }} />
+      <img src={images.snowPeakMist} alt="Misty snow-capped Himalayan peaks" style={{ filter: 'brightness(0.85) saturate(1.15)' }} />
     </div>
     <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />
     <ParticlesBg />
