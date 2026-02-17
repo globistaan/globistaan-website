@@ -2,31 +2,29 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, CheckCircle2, ExternalLink } from 'lucide-react';
-import { projects } from '../data/mock';
+import { projects, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 
 const fadeInUp = {
-  initial: { opacity: 0, y: 24 },
+  initial: { opacity: 0, y: 28 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: '-50px' },
-  transition: { duration: 0.6, ease: 'easeOut' }
+  viewport: { once: true, margin: '-60px' },
+  transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
 };
 
 const ProjectCard = ({ project, index }) => {
   const Icon = project.icon;
   return (
     <motion.div
-      initial={{ opacity: 0, y: 24 }}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`voice-card ${project.accentClass}`}
+      transition={{ duration: 0.6, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
+      className={`voice-card glow-card ${project.accentClass}`}
       style={{ padding: '2.5rem' }}
     >
       <div className="flex flex-col lg:flex-row gap-8">
-        {/* Info */}
         <div className="flex-1">
           <div className="flex items-center gap-3 mb-5">
             <div className="w-11 h-11 rounded-lg flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.06)' }}>
@@ -40,7 +38,7 @@ const ProjectCard = ({ project, index }) => {
                 <span style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase' }}>
                   {project.status}
                 </span>
-                <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#b8d1ba' }} />
+                <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#b8d1ba', boxShadow: '0 0 4px #b8d1ba' }} />
               </div>
             </div>
           </div>
@@ -68,7 +66,6 @@ const ProjectCard = ({ project, index }) => {
           </button>
         </div>
 
-        {/* Screenshot Placeholder */}
         <div className="lg:w-[340px] flex-shrink-0">
           <div className="placeholder-img" style={{ minHeight: '240px', borderRadius: '0.75rem' }}>
             {project.placeholder}
@@ -86,34 +83,68 @@ export default function Projects() {
   return (
     <main>
       {/* Hero */}
-      <section className="ai-bg relative pt-32 pb-20" style={{ background: 'var(--gradient-hero-warm)' }}>
+      <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
+        <div className="bg-image">
+          <img src={images.aiInterface} alt="" style={{ filter: 'brightness(0.25) saturate(1.1)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.65) 100%)' }} />
+        <div className="floating-orb floating-orb-1" />
         <ParticlesBg />
-        <div className="relative z-10 max-w-[800px] mx-auto text-center px-5">
+
+        <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Our Projects
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: 'var(--text-primary)', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
           >
             Building Intelligent Products
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: 1.65, color: 'var(--text-secondary)', maxWidth: '580px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: 1.65, color: 'rgba(255,255,255,0.7)', maxWidth: '580px', margin: '0 auto' }}
           >
             In partnership with industry experts, we're building AI-powered products across healthcare, education, commerce, and enterprise.
           </motion.p>
         </div>
       </section>
 
-      <div className="section-divider" />
+      {/* AI Tech Images Strip */}
+      <section className="img-bg-section" style={{ padding: '3rem 0' }}>
+        <div className="bg-image">
+          <img src={images.codeScreen} alt="" style={{ filter: 'brightness(0.12)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.5)' }} />
+        <div className="content-z max-w-[1000px] mx-auto px-5" style={{ position: 'relative', zIndex: 5 }}>
+          <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
+            {[images.robot, images.workspace, images.neuralBrain, images.serverRoom, images.aiBrain, images.circuitBoard].map((img, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.85 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.06 }}
+                className="img-zoom"
+                style={{ height: '90px', borderRadius: '0.5rem' }}
+              >
+                <img src={img} alt="" className="w-full h-full object-cover" style={{ borderRadius: '0.5rem' }} />
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Filter + Project Cards */}
-      <section className="py-20" style={{ background: 'var(--bg-page)' }}>
-        <div className="max-w-[1000px] mx-auto px-5 md:px-9">
+      <section className="img-bg-section" style={{ padding: '5rem 0' }}>
+        <div className="bg-image">
+          <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.1)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.94)' }} />
+
+        <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="flex flex-wrap items-center gap-2 mb-10">
             {['all', 'ai', 'saas'].map((f) => (
               <button
@@ -134,24 +165,26 @@ export default function Projects() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
       {/* CTA */}
-      <section className="ai-bg relative py-20" style={{ background: 'var(--gradient-hero-subtle)' }}>
+      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+        <div className="bg-image">
+          <img src={images.mountainTerrace} alt="" style={{ filter: 'brightness(0.28) saturate(1.2)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.4)' }} />
         <ParticlesBg />
-        <div className="relative z-10 max-w-[600px] mx-auto text-center px-5">
+        <div className="content-z max-w-[600px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
-            <h2 className="mb-4" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+            <h2 className="mb-4" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2 }}>
               Interested in Our Projects?
             </h2>
-            <p className="mb-8" style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6 }}>
               Explore partnership, investment, or early access opportunities.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link to="/investors" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem' }}>
+              <Link to="/investors" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
                 Investment Opportunities <ArrowRight className="w-4 h-4" />
               </Link>
-              <Link to="/contact" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.85rem 2rem' }}>
+              <Link to="/contact" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
                 Get in Touch
               </Link>
             </div>
