@@ -168,9 +168,9 @@ const ServicesSection = () => (
 const ImageShowcase = () => (
   <section className="img-bg-section" style={{ padding: '5rem 0' }}>
     <div className="bg-image">
-      <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.25) saturate(1.1)' }} />
+      <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.6) saturate(1.3)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.5) 100%)' }} />
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
 
     <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
       <motion.div {...fadeInUp} className="text-center mb-12">
