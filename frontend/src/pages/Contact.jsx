@@ -43,9 +43,9 @@ export default function Contact() {
       {/* Hero */}
       <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
         <div className="bg-image">
-          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.3) saturate(1.1)' }} />
+          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.65) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
         <ParticlesBg />
         <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
