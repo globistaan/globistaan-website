@@ -1,51 +1,42 @@
-import { useEffect } from "react";
-import "@/App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import axios from "axios";
+import React, { useEffect } from "react";
+import "./App.css";
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { Toaster } from "./components/ui/sonner";
+import { Header } from "./components/layout/Header";
+import { Footer } from "./components/layout/Footer";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Projects from "./pages/Projects";
+import People from "./pages/People";
+import TechStack from "./pages/TechStack";
+import Investors from "./pages/Investors";
+import Contact from "./pages/Contact";
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
-
-const Home = () => {
-  const helloWorldApi = async () => {
-    try {
-      const response = await axios.get(`${API}/`);
-      console.log(response.data.message);
-    } catch (e) {
-      console.error(e, `errored out requesting / api`);
-    }
-  };
-
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
   useEffect(() => {
-    helloWorldApi();
-  }, []);
-
-  return (
-    <div>
-      <header className="App-header">
-        <a
-          className="App-link"
-          href="https://emergent.sh"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="https://avatars.githubusercontent.com/in/1201222?s=120&u=2686cf91179bbafbc7a71bfbc43004cf9ae1acea&v=4" />
-        </a>
-        <p className="mt-5">Building something incredible ~!</p>
-      </header>
-    </div>
-  );
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
 };
 
 function App() {
   return (
-    <div className="App">
+    <div className="App" style={{ background: 'var(--bg-page)', minHeight: '100vh' }}>
       <BrowserRouter>
+        <ScrollToTop />
+        <Header />
         <Routes>
-          <Route path="/" element={<Home />}>
-            <Route index element={<Home />} />
-          </Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/people" element={<People />} />
+          <Route path="/tech-stack" element={<TechStack />} />
+          <Route path="/investors" element={<Investors />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
+        <Footer />
+        <Toaster position="bottom-right" />
       </BrowserRouter>
     </div>
   );
