@@ -131,9 +131,9 @@ export default function TechStack() {
       {/* Category Overview */}
       <section className="img-bg-section" style={{ padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.neuralBrain} alt="" style={{ filter: 'brightness(0.1)' }} />
+          <img src={images.neuralBrain} alt="" style={{ filter: 'brightness(0.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.92)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
