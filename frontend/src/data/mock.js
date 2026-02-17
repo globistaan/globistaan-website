@@ -178,7 +178,7 @@ export const companyInfo = {
   name: "Globistaan",
   fullName: "Globistaan Technologies and Exports Private Limited",
   tagline: "AI-Powered Solutions from the Himalayas",
-  subtitle: "We transform businesses with cutting-edge artificial intelligence and scalable SaaS platforms — built from the serene mountains of Himachal Pradesh, India, for the world.",
+  subtitle: "We transform businesses with cutting-edge artificial intelligence and scalable SaaS platforms — built from the mountains of Himachal Pradesh, India, for the world.",
   founded: "2023",
   location: "Himachal Pradesh, India",
   founderExperience: "13+ years",
