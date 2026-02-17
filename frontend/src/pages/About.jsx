@@ -46,9 +46,9 @@ export default function About() {
       {/* Story */}
       <section className="img-bg-section" style={{ padding: '6rem 0' }}>
         <div className="bg-image">
-          <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.08)' }} />
+          <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.12)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.94)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.88)' }} />
 
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
