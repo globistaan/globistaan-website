@@ -160,9 +160,9 @@ export default function Investors() {
       {/* Financials */}
       <section className="img-bg-section" style={{ padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.greenValley} alt="" style={{ filter: 'brightness(0.12)' }} />
+          <img src={images.greenValley} alt="" style={{ filter: 'brightness(0.35) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.93)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp}>
             <div className="voice-card" style={{ padding: '3rem', textAlign: 'center', background: 'var(--bg-card)' }}>
