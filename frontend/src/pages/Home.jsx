@@ -268,11 +268,7 @@ const ProjectsPreview = () => (
               transition={{ duration: 0.6, delay: i * 0.1 }}
             >
               <Link to="/projects" className="no-underline">
-                <div className={`voice-card glow-card ${project.accentClass} relative overflow-hidden`} style={{ padding: '2.25rem', height: '100%' }}>
-                  {/* Project background image */}
-                  <div className="absolute inset-0 z-0 opacity-8">
-                    <img src={projectImages[i]} alt="" className="w-full h-full object-cover" />
-                  </div>
+                <div className={`voice-card glow-card ${project.accentClass}`} style={{ padding: '2.25rem', height: '100%' }}>
                   <div className="relative z-10">
                     <div className="flex items-center gap-3 mb-5">
                       <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.06)' }}>
