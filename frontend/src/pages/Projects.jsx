@@ -140,9 +140,9 @@ export default function Projects() {
       {/* Filter + Project Cards */}
       <section className="img-bg-section" style={{ padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.1)' }} />
+          <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.2) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.94)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.88)' }} />
 
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="flex flex-wrap items-center gap-2 mb-10">
