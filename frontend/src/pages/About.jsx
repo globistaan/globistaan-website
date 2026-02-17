@@ -16,115 +16,87 @@ const fadeInUp = {
 export default function About() {
   return (
     <main>
-      {/* Hero */}
-      <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
+      {/* Hero - Full-width Dhauladhar mountain background */}
+      <section className="img-bg-section" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.greenValley} alt="" style={{ filter: 'brightness(0.65) saturate(1.3)' }} />
+          <img src={images.dhauladharGreen} alt="Dhauladhar mountains with green meadows" style={{ filter: 'brightness(0.9) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
-        <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
+        <ParticlesBg />
+        <div className="content-z max-w-[800px] mx-auto text-center px-5 pt-24" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
               Our Story
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 30px rgba(0,0,0,0.4)' }}
           >
             About Globistaan
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: '600px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '600px', margin: '0 auto', textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
           >
             An IT services startup from the mountains of Himachal Pradesh, building AI solutions for the global enterprise.
           </motion.p>
         </div>
       </section>
 
-      {/* Story */}
-      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* Story Section - Mountain backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.12)' }} />
+          <img src={images.dhauladharRange} alt="Dhauladhar mountain range panorama" style={{ filter: 'brightness(0.92) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.88)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.75) 0%, rgba(255,255,255,0.85) 100%)' }} />
 
-        <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-start">
-            <motion.div {...fadeInUp} className="lg:col-span-3">
-              <h2 className="mb-6" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
-                From the Mountains to the World
-              </h2>
-              <div className="flex flex-col gap-5" style={{ fontSize: '0.95rem', lineHeight: 1.7, color: 'var(--text-secondary)' }}>
-                <p>
-                  The idea of Globistaan came into existence as we want to be a valuable part of the global community and see tremendous scope in the technology sector as a software development services company. This venture is a humble attempt in solving challenges and exploring new avenues in the field of technology.
-                </p>
-                <p>
-                  We are a small and lean IT company, open to clients of all sizes and needs, and we are easy to adapt. Whether you are a startup or a large bank that needs talented programmers to build and support your applications — we onboard resources based on client requirement, and we are very fast and careful to match your needs.
-                </p>
-                <p>
-                  Today, we're evolving beyond traditional IT services into the AI frontier — building intelligent products that leverage the latest in machine learning, natural language processing, and generative AI to solve real-world problems.
-                </p>
-              </div>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:col-span-2 flex flex-col gap-5"
-            >
-              <div className="img-zoom" style={{ height: '180px' }}>
-                <img src={images.mountainValley} alt="Himachal Pradesh valley" className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
-              </div>
-              <div className="voice-card accent-orange" style={{ padding: '2rem' }}>
-                <Quote className="w-6 h-6 mb-4" style={{ color: 'var(--accent-orange-400)' }} />
-                <p className="italic mb-5" style={{ fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--text-primary)' }}>
-                  "As a startup founder who has spent close to 13 years in the IT industry developing web applications for global banks, I understand the need for security and trust in the people who support proprietary code."
-                </p>
-                <div>
-                  <p style={{ fontWeight: 500, fontSize: '0.9rem', color: 'var(--text-primary)' }}>[Founder Name]</p>
-                  <p style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Founder & CEO</p>
-                </div>
-              </div>
-            </motion.div>
-          </div>
+        <div className="content-z max-w-[900px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
+          <motion.div {...fadeInUp}>
+            <h2 className="mb-6 text-center" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+              From the Mountains to the World
+            </h2>
+            <div className="flex flex-col gap-5 max-w-[700px] mx-auto" style={{ fontSize: '0.95rem', lineHeight: 1.75, color: 'var(--text-secondary)' }}>
+              <p>
+                The idea of Globistaan came into existence as we want to be a valuable part of the global community and see tremendous scope in the technology sector as a software development services company. This venture is a humble attempt in solving challenges and exploring new avenues in the field of technology.
+              </p>
+              <p>
+                We are a small and lean IT company, open to clients of all sizes and needs, and we are easy to adapt. Whether you are a startup or a large bank that needs talented programmers to build and support your applications — we onboard resources based on client requirement, and we are very fast and careful to match your needs.
+              </p>
+              <p>
+                Today, we're evolving beyond traditional IT services into the AI frontier — building intelligent products that leverage the latest in machine learning, natural language processing, and generative AI to solve real-world problems.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* AI Image Banner */}
-      <section className="img-bg-section" style={{ padding: '4rem 0' }}>
+      {/* Founder Quote - Snow Peak Background */}
+      <section className="img-bg-section" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.serverRoom} alt="" style={{ filter: 'brightness(0.55) saturate(1.2)' }} />
+          <img src={images.snowPeakMist} alt="Snow-capped Himalayan peaks" style={{ filter: 'brightness(0.85) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 100%)' }} />
-        <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[images.robot, images.workspace, images.neuralBlue, images.aiBrain].map((img, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="img-zoom"
-                style={{ height: '140px', borderRadius: '0.75rem' }}
-              >
-                <img src={img} alt="" className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
-              </motion.div>
-            ))}
-          </div>
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
+        <div className="content-z max-w-[700px] mx-auto text-center px-5 py-16" style={{ position: 'relative', zIndex: 10 }}>
+          <motion.div {...fadeInUp}>
+            <Quote className="w-10 h-10 mx-auto mb-6" style={{ color: 'rgba(255,255,255,0.7)' }} />
+            <p className="italic mb-6" style={{ fontSize: 'clamp(1.1rem, 2.5vw, 1.35rem)', lineHeight: 1.7, color: '#FFFFFF', textShadow: '0 1px 15px rgba(0,0,0,0.4)' }}>
+              "As a startup founder who has spent close to 13 years in the IT industry developing web applications for global banks, I understand the need for security and trust in the people who support proprietary code."
+            </p>
+            <div>
+              <p style={{ fontWeight: 500, fontSize: '1rem', color: '#FFFFFF' }}>[Founder Name]</p>
+              <p style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.03em' }}>Founder & CEO</p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Mission & Vision */}
-      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* Mission & Vision - Mountain backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '55vh', display: 'flex', alignItems: 'center', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.neuralBlue} alt="" style={{ filter: 'brightness(0.12)' }} />
+          <img src={images.dhauladharClouds} alt="Dhauladhar peaks with clouds" style={{ filter: 'brightness(0.9) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.87)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.88) 100%)' }} />
 
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -156,12 +128,12 @@ export default function About() {
         </div>
       </section>
 
-      {/* Registrations */}
-      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* Registrations - Green Valley Background */}
+      <section className="img-bg-section" style={{ minHeight: '55vh', display: 'flex', alignItems: 'center', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
+          <img src={images.greenValley} alt="Lush green valley of Himachal Pradesh" style={{ filter: 'brightness(0.85) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.82)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.85) 100%)' }} />
 
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
@@ -200,22 +172,22 @@ export default function About() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* CTA - Majestic Snow Peak */}
+      <section className="img-bg-section" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.65) saturate(1.2)' }} />
+          <img src={images.mountainRange} alt="Himalayan mountain range panorama" style={{ filter: 'brightness(0.8) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
-        <div className="content-z max-w-[600px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="content-z max-w-[600px] mx-auto text-center px-5 py-16" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
-            <h2 className="mb-4" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2 }}>
+            <h2 className="mb-4" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
               Let's Build Together
             </h2>
-            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.6, textShadow: '0 1px 10px rgba(0,0,0,0.3)' }}>
               Explore our projects, meet our team, or start a conversation about how AI can transform your business.
             </p>
-            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
+            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
               Get in Touch <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
