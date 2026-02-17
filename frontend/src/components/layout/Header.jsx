@@ -24,7 +24,7 @@ export const Header = () => {
       className="fixed top-0 left-0 right-0 z-[999] transition-all duration-300"
       style={{
         height: '72px',
-        background: scrolled ? 'rgba(255, 249, 242, 0.95)' : 'rgba(255, 249, 242, 0.8)',
+        background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.8)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
         borderBottom: scrolled ? '1px solid rgba(153, 153, 153, 0.15)' : '1px solid transparent'
