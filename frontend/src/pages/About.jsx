@@ -122,9 +122,9 @@ export default function About() {
       {/* Mission & Vision */}
       <section className="img-bg-section" style={{ padding: '6rem 0' }}>
         <div className="bg-image">
-          <img src={images.neuralBlue} alt="" style={{ filter: 'brightness(0.08)' }} />
+          <img src={images.neuralBlue} alt="" style={{ filter: 'brightness(0.12)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.93)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.87)' }} />
 
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
