@@ -8,8 +8,8 @@ export const companyInfo = {
   founded: "2023",
   location: "Himachal Pradesh, India",
   founderExperience: "13+ years",
-  email: "contact@globistaan.com",
-  phone: "+91 XXXXX XXXXX",
+  email: "ceo@globistaan.com",
+  phone: "+91 8291486041",
   website: "www.globistaan.com"
 };
 
