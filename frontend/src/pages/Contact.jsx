@@ -40,40 +40,40 @@ export default function Contact() {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
+      {/* Hero - Dhauladhar Mountains */}
+      <section className="img-bg-section" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.65) saturate(1.2)' }} />
+          <img src={images.dhauladharRange} alt="Dhauladhar mountain range panorama" style={{ filter: 'brightness(0.88) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
-        <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="content-z max-w-[800px] mx-auto text-center px-5 pt-24" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
               Contact Us
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 30px rgba(0,0,0,0.4)' }}
           >
             Let's Start a Conversation
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: 1.65, color: 'rgba(255,255,255,0.7)', maxWidth: '520px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '520px', margin: '0 auto', textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
           >
             Have a project in mind? Looking to invest? Or just want to say hello?
           </motion.p>
         </div>
       </section>
 
-      {/* Form + Info */}
-      <section className="img-bg-section" style={{ padding: '5rem 0' }}>
+      {/* Form + Info - Green Meadows backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '70vh', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.35) saturate(1.2)' }} />
+          <img src={images.dhauladharGreen} alt="Green meadows with snow-capped peaks" style={{ filter: 'brightness(0.92) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.9) 100%)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Contact Info */}
@@ -101,10 +101,6 @@ export default function Contact() {
                   );
                 })}
               </div>
-              {/* Mountain Image */}
-              <div className="mt-8 img-zoom" style={{ height: '180px', borderRadius: '0.75rem' }}>
-                <img src={images.greenValley} alt="Himachal Pradesh" className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
-              </div>
             </motion.div>
 
             {/* Form */}
@@ -127,22 +123,22 @@ export default function Contact() {
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <Label htmlFor="name" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Name *</Label>
-                        <Input id="name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} placeholder="Your name" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} />
+                        <Input id="name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} placeholder="Your name" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-name-input" />
                       </div>
                       <div>
                         <Label htmlFor="email" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Email *</Label>
-                        <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} placeholder="your@email.com" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} />
+                        <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} placeholder="your@email.com" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-email-input" />
                       </div>
                     </div>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                       <div>
                         <Label htmlFor="company" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Company</Label>
-                        <Input id="company" value={formData.company} onChange={(e) => handleChange('company', e.target.value)} placeholder="Your company" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} />
+                        <Input id="company" value={formData.company} onChange={(e) => handleChange('company', e.target.value)} placeholder="Your company" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-company-input" />
                       </div>
                       <div>
                         <Label className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Inquiry Type</Label>
                         <Select onValueChange={(val) => handleChange('inquiry', val)}>
-                          <SelectTrigger className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }}>
+                          <SelectTrigger className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-inquiry-select">
                             <SelectValue placeholder="Select type" />
                           </SelectTrigger>
                           <SelectContent>
@@ -157,9 +153,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <Label htmlFor="message" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Message *</Label>
-                      <Textarea id="message" value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your project or inquiry..." rows={5} className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)', resize: 'vertical' }} />
+                      <Textarea id="message" value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your project or inquiry..." rows={5} className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)', resize: 'vertical' }} data-testid="contact-message-input" />
                     </div>
-                    <button type="submit" className="btn-primary self-start" style={{ padding: '0.75rem 1.5rem' }}>Send Message <Send className="w-4 h-4" /></button>
+                    <button type="submit" className="btn-primary self-start" style={{ padding: '0.75rem 1.5rem' }} data-testid="contact-submit-btn">Send Message <Send className="w-4 h-4" /></button>
                   </form>
                 </div>
               )}
