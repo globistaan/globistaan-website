@@ -70,8 +70,13 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="lg:col-span-2"
+              className="lg:col-span-2 flex flex-col gap-5"
             >
+              {/* Mountain Image */}
+              <div className="rounded-xl overflow-hidden" style={{ height: '180px' }}>
+                <img src={images.mountainValley} alt="Himachal Pradesh valley" className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
+              </div>
+
               <div className="voice-card accent-orange" style={{ padding: '2rem' }}>
                 <Quote className="w-6 h-6 mb-4" style={{ color: 'var(--accent-orange-400)' }} />
                 <p className="italic mb-5" style={{ fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--text-primary)' }}>
