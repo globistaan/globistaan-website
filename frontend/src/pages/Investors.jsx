@@ -57,9 +57,9 @@ export default function Investors() {
       {/* Investment Highlights */}
       <section className="img-bg-section" style={{ padding: '6rem 0' }}>
         <div className="bg-image">
-          <img src={images.aiBrain} alt="" style={{ filter: 'brightness(0.08)' }} />
+          <img src={images.aiBrain} alt="" style={{ filter: 'brightness(0.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.93)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.87)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Why Invest</Badge>
