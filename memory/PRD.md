@@ -32,6 +32,13 @@ Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan T
 
 ## What's Been Implemented
 
+### Dec 18, 2024 - People Page Update
+- Reordered sections: Developers → Clients → Directors (per user request)
+- Updated hero title to "Developers, Clients & Directors"
+- Updated hero description to reflect new order
+- Changed hero background to Circuit + Deodar Forest split
+- Changed Developers section background to River Forest image
+
 ### Dec 17, 2024 - Final Design Complete
 
 **Home Page Features:**
