@@ -16,7 +16,7 @@ const fadeInUp = {
 const HeroSection = () => (
   <section className="img-bg-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
     <div className="bg-image">
-      <img src={images.himalayanSnow} alt="Snow-capped Himachal Pradesh mountains" style={{ filter: 'brightness(0.85) saturate(1.2)' }} />
+      <img src={images.dhauladharRange} alt="Snow-capped Dhauladhar mountains of Himachal Pradesh" style={{ filter: 'brightness(0.9) saturate(1.15)' }} />
     </div>
     <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)' }} />
     <ParticlesBg />
