@@ -168,9 +168,9 @@ export default function Projects() {
       {/* CTA */}
       <section className="img-bg-section" style={{ padding: '6rem 0' }}>
         <div className="bg-image">
-          <img src={images.mountainTerrace} alt="" style={{ filter: 'brightness(0.28) saturate(1.2)' }} />
+          <img src={images.mountainTerrace} alt="" style={{ filter: 'brightness(0.6) saturate(1.3)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.4)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
         <ParticlesBg />
         <div className="content-z max-w-[600px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
