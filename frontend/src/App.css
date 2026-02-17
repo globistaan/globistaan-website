@@ -324,7 +324,7 @@ body {
   color: var(--text-primary);
 }
 
-/* ===== Image Background Sections ===== */
+/* ===== Full-Page Image Background Sections ===== */
 .img-bg-section {
   position: relative;
   overflow: hidden;
@@ -340,6 +340,12 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: transform 12s ease-out;
+}
+
+/* Subtle zoom on scroll for Ken Burns effect */
+.img-bg-section:hover > .bg-image img {
+  transform: scale(1.03);
 }
 
 .img-bg-section > .bg-overlay {
@@ -351,6 +357,153 @@ body {
 .img-bg-section > .content-z {
   position: relative;
   z-index: 2;
+}
+
+/* ===== Full-Page Background Wrapper ===== */
+.page-bg-wrapper {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.page-bg-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.92);
+}
+
+.page-bg-wrapper .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.1) 100%);
+}
+
+/* ===== Glass Cards for Content ===== */
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 1rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+.glass-card-dark {
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 1rem;
+  color: white;
+}
+
+/* ===== Tech Logo Styles ===== */
+.tech-logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  filter: grayscale(0);
+  transition: all 0.3s ease;
+}
+
+.tech-logo-container {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 12px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.tech-logo-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.tech-logo-container:hover .tech-logo {
+  transform: scale(1.1);
+}
+
+/* ===== Content Visibility Enhancement ===== */
+.content-glass {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border-radius: 1.5rem;
+  padding: 3rem;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.text-shadow-hero {
+  text-shadow: 0 2px 40px rgba(0, 0, 0, 0.5), 0 1px 8px rgba(0, 0, 0, 0.4);
+}
+
+.text-shadow-subtle {
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ===== Blend Mode Effects ===== */
+.blend-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(100, 149, 237, 0.1) 0%,
+    rgba(147, 112, 219, 0.05) 50%,
+    rgba(255, 182, 193, 0.1) 100%
+  );
+  mix-blend-mode: overlay;
+  pointer-events: none;
+}
+
+/* ===== Split Background (Nature + Tech) ===== */
+.split-bg {
+  position: relative;
+}
+
+.split-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ===== Gradient Mesh Background ===== */
+.gradient-mesh {
+  background: 
+    radial-gradient(at 40% 20%, rgba(100, 149, 237, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(147, 112, 219, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(184, 209, 186, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 50%, rgba(255, 182, 193, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(100, 149, 237, 0.1) 0px, transparent 50%);
+}
+
+/* ===== Floating Animation for Elements ===== */
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+.float-animation {
+  animation: floatUp 4s ease-in-out infinite;
+}
+
+@keyframes floatUpSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.float-slow {
+  animation: floatUpSlow 6s ease-in-out infinite;
 }
 
 /* ===== Advanced Animations ===== */
