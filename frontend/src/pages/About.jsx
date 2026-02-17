@@ -19,9 +19,9 @@ export default function About() {
       {/* Hero */}
       <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
         <div className="bg-image">
-          <img src={images.greenValley} alt="" style={{ filter: 'brightness(0.3) saturate(1.2)' }} />
+          <img src={images.greenValley} alt="" style={{ filter: 'brightness(0.65) saturate(1.3)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.6) 100%)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
         <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
