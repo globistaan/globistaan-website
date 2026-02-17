@@ -306,7 +306,7 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-page);
+  background: #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {
