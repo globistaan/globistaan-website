@@ -19,9 +19,9 @@ export default function Investors() {
       {/* Hero */}
       <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
         <div className="bg-image">
-          <img src={images.mountainRange} alt="" style={{ filter: 'brightness(0.28) saturate(1.2)' }} />
+          <img src={images.mountainRange} alt="" style={{ filter: 'brightness(0.6) saturate(1.3)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.45) 0%, rgba(0,0,0,0.6) 100%)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
         <div className="floating-orb floating-orb-1" />
         <div className="floating-orb floating-orb-2" />
         <ParticlesBg />
