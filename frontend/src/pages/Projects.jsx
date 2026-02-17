@@ -85,9 +85,9 @@ export default function Projects() {
       {/* Hero */}
       <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
         <div className="bg-image">
-          <img src={images.aiInterface} alt="" style={{ filter: 'brightness(0.25) saturate(1.1)' }} />
+          <img src={images.aiInterface} alt="" style={{ filter: 'brightness(0.55) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.5) 0%, rgba(0,0,0,0.65) 100%)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 100%)' }} />
         <div className="floating-orb floating-orb-1" />
         <ParticlesBg />
 
