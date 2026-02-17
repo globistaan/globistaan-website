@@ -1,34 +1,184 @@
 import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Sparkles, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
 
+// Strategic image collection: Nature + Technology blend
 export const images = {
-  // Himachal Pradesh Snow-Capped Mountains - Large, prominent backgrounds
+  // === HIMACHAL PRADESH NATURE ===
+  // Rivers & Valleys
+  riverValley: "https://images.unsplash.com/photo-1624697561550-982f5d50f97d?w=1920&q=85", // Green mountains with river
+  riverMountain: "https://images.unsplash.com/photo-1737475236760-070d39c5f833?w=1920&q=85", // Mountain range with river
+  
+  // Snow-Capped Mountains
+  dhauladharRange: "https://images.unsplash.com/photo-1637896175022-7165f16fb523?w=1920&q=85", // Panoramic mountain range
   dhauladharGreen: "https://images.unsplash.com/photo-1627625335607-60187d590493?w=1920&q=85", // Green trees with snow peaks
-  dhauladharRange: "https://images.unsplash.com/photo-1637896175022-7165f16fb523?w=1920&q=85", // Mountain range panorama
-  snowPeakMist: "https://images.unsplash.com/photo-1615101999240-9d1f4da5841f?w=1920&q=85", // Snow covered mountains
-  dhauladharClouds: "https://images.unsplash.com/photo-1641892046220-d8faa2ed612f?w=1920&q=85", // Mountains with clouds
-  himalayanSnow: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=85",
-  pineForest: "https://images.unsplash.com/photo-1552919916-fcee0069bd62?w=1920&q=85",
-  greenValley: "https://images.unsplash.com/photo-1614095431374-c5e71970d70c?w=1920&q=85",
-  mountainValley: "https://images.unsplash.com/photo-1647939701920-e6063dfda2d8?w=1920&q=85",
-  mountainFog: "https://images.unsplash.com/photo-1731934650867-45354be20c81?w=1920&q=85",
-  snowyPeak: "https://images.unsplash.com/photo-1750166302383-2cc4cba437de?w=1920&q=85",
-  mountainRange: "https://images.unsplash.com/photo-1710705293492-38813d6dbe27?w=1920&q=85",
-  snowyPeak2: "https://images.unsplash.com/photo-1709907153050-a668b4473c47?w=1920&q=85",
-  // AI & Technology (secondary)
-  robot: "https://images.unsplash.com/photo-1507162728832-5b8fdb5f99fa?w=1200&q=80",
-  workspace: "https://images.unsplash.com/photo-1646596504587-c3771cf62e81?w=1200&q=80",
-  neuralBrain: "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=1200&q=80",
+  snowPeakMist: "https://images.unsplash.com/photo-1615101999240-9d1f4da5841f?w=1920&q=85", // Misty snow peaks
+  
+  // Forests & Mist
+  mistyForest: "https://images.unsplash.com/photo-1595995518298-5df716362207?w=1920&q=85", // Foggy forest mountains
+  pineForestMist: "https://images.unsplash.com/photo-1656490359541-4574fc234394?w=1920&q=85", // Pine forest with lake
+  pineSilhouette: "https://images.unsplash.com/photo-1771177323692-4cd0132cedd5?w=1920&q=85", // Silhouette pine trees
+  blueHills: "https://images.unsplash.com/photo-1621505697693-9784907b50c9?w=1920&q=85", // Blue layered mountains
+  
+  // Clouds & Sky
+  mountainClouds: "https://images.unsplash.com/photo-1641892046220-d8faa2ed612f?w=1920&q=85", // Mountains with dramatic clouds
+  himalayanSnow: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=85", // Snow-capped Himalayas
+  greenValley: "https://images.unsplash.com/photo-1614095431374-c5e71970d70c?w=1920&q=85", // Lush green valley
+  
+  // === AI & TECHNOLOGY ===
+  // Circuits & Hardware
+  circuitBlue: "https://images.unsplash.com/photo-1731400800900-1bce57414c09?w=1920&q=85", // Blue circuit board macro
+  circuitComponents: "https://images.unsplash.com/photo-1603732551681-2e91159b9dc2?w=1920&q=85", // Circuit with components
+  motherboard: "https://images.unsplash.com/photo-1608869768763-9085a739c5fc?w=1920&q=85", // Blue motherboard
+  
+  // Robots & AI
+  robotBlue: "https://images.unsplash.com/photo-1769839272014-089cd3bbc274?w=1920&q=85", // Blue robots
+  
+  // Code & Development
+  codeScreen: "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?w=1920&q=85", // Code on screen
+  codeMultiple: "https://images.unsplash.com/photo-1754039984985-ef607d80113a?w=1920&q=85", // Multiple code screens
+  neonCode: "https://images.unsplash.com/photo-1710957987034-cea509422852?w=1920&q=85", // Neon light code effect
+  
+  // Server & Data
   serverRoom: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=85",
-  circuitBoard: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=1920&q=85",
-  aiBrain: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=85",
-  codeScreen: "https://images.unsplash.com/photo-1653387319597-84bde7e5368e?w=1920&q=85"
+  aiBrain: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=85"
+};
+
+// Tech Stack with actual logo URLs
+export const techStack = {
+  clouds: [
+    { 
+      name: "AWS", 
+      description: "Primary cloud infrastructure provider", 
+      category: "Cloud",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg"
+    },
+    { 
+      name: "Railway", 
+      description: "Rapid deployment and scaling platform", 
+      category: "Cloud",
+      logo: "https://railway.app/brand/logo-light.svg"
+    },
+    { 
+      name: "Google Cloud", 
+      description: "AI/ML services and compute", 
+      category: "Cloud",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg"
+    },
+    { 
+      name: "Azure", 
+      description: "Enterprise cloud solutions", 
+      category: "Cloud",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg"
+    }
+  ],
+  ides: [
+    { 
+      name: "Cursor", 
+      description: "AI-powered code editor", 
+      category: "IDE",
+      logo: "https://www.cursor.com/favicon.ico"
+    },
+    { 
+      name: "VS Code", 
+      description: "Primary development environment", 
+      category: "IDE",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg"
+    },
+    { 
+      name: "Claude Code", 
+      description: "AI-assisted coding", 
+      category: "IDE",
+      logo: "https://cdn.worldvectorlogo.com/logos/claude-ai-icon.svg"
+    },
+    { 
+      name: "JetBrains", 
+      description: "Enterprise IDE suite", 
+      category: "IDE",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetbrains/jetbrains-original.svg"
+    }
+  ],
+  aiAgents: [
+    { 
+      name: "Gemini", 
+      description: "Google's multimodal AI model", 
+      category: "AI",
+      logo: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg"
+    },
+    { 
+      name: "OpenAI", 
+      description: "GPT models for NLP and generation", 
+      category: "AI",
+      logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg"
+    },
+    { 
+      name: "Claude", 
+      description: "Anthropic's advanced reasoning AI", 
+      category: "AI",
+      logo: "https://cdn.worldvectorlogo.com/logos/claude-ai-icon.svg"
+    },
+    { 
+      name: "LangChain", 
+      description: "AI orchestration framework", 
+      category: "AI",
+      logo: "https://api.nuget.org/v3-flatcontainer/langchain/0.15.1/icon"
+    }
+  ],
+  frameworks: [
+    { 
+      name: "React", 
+      description: "Frontend framework", 
+      category: "Framework",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+    },
+    { 
+      name: "FastAPI", 
+      description: "High-performance Python backend", 
+      category: "Framework",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg"
+    },
+    { 
+      name: "Next.js", 
+      description: "Full-stack React framework", 
+      category: "Framework",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg"
+    },
+    { 
+      name: "TensorFlow", 
+      description: "ML model training", 
+      category: "Framework",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg"
+    },
+    { 
+      name: "PyTorch", 
+      description: "Deep learning framework", 
+      category: "Framework",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg"
+    },
+    { 
+      name: "MongoDB", 
+      description: "NoSQL database", 
+      category: "Database",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg"
+    },
+    { 
+      name: "PostgreSQL", 
+      description: "Relational database", 
+      category: "Database",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+    },
+    { 
+      name: "Redis", 
+      description: "In-memory caching", 
+      category: "Database",
+      logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg"
+    }
+  ]
 };
 
 export const companyInfo = {
   name: "Globistaan",
   fullName: "Globistaan Technologies and Exports Private Limited",
-  tagline: "AI-Powered Solutions for the Global Enterprise",
-  subtitle: "We transform businesses with cutting-edge artificial intelligence and scalable SaaS platforms — built from the mountains of Himachal Pradesh, India, for the world.",
+  tagline: "AI-Powered Solutions from the Himalayas",
+  subtitle: "We transform businesses with cutting-edge artificial intelligence and scalable SaaS platforms — built from the serene mountains of Himachal Pradesh, India, for the world.",
   founded: "2023",
   location: "Himachal Pradesh, India",
   founderExperience: "13+ years",
@@ -135,37 +285,6 @@ export const services = [
     icon: Zap
   }
 ];
-
-export const techStack = {
-  clouds: [
-    { name: "AWS", description: "Primary cloud infrastructure provider", category: "Cloud" },
-    { name: "Railway", description: "Rapid deployment and scaling platform", category: "Cloud" },
-    { name: "Google Cloud", description: "AI/ML services and compute", category: "Cloud" },
-    { name: "Azure", description: "Enterprise cloud solutions", category: "Cloud" }
-  ],
-  ides: [
-    { name: "Cursor", description: "AI-powered code editor", category: "IDE" },
-    { name: "VS Code", description: "Primary development environment", category: "IDE" },
-    { name: "Claude Code", description: "AI-assisted coding", category: "IDE" },
-    { name: "JetBrains", description: "Enterprise IDE suite", category: "IDE" }
-  ],
-  aiAgents: [
-    { name: "Gemini", description: "Google's multimodal AI model", category: "AI" },
-    { name: "OpenAI", description: "GPT models for NLP and generation", category: "AI" },
-    { name: "Claude", description: "Anthropic's advanced reasoning AI", category: "AI" },
-    { name: "LangChain", description: "AI orchestration framework", category: "AI" }
-  ],
-  frameworks: [
-    { name: "React", description: "Frontend framework", category: "Framework" },
-    { name: "FastAPI", description: "High-performance Python backend", category: "Framework" },
-    { name: "Next.js", description: "Full-stack React framework", category: "Framework" },
-    { name: "TensorFlow", description: "ML model training", category: "Framework" },
-    { name: "PyTorch", description: "Deep learning framework", category: "Framework" },
-    { name: "MongoDB", description: "NoSQL database", category: "Database" },
-    { name: "PostgreSQL", description: "Relational database", category: "Database" },
-    { name: "Redis", description: "In-memory caching", category: "Database" }
-  ]
-};
 
 export const directors = [
   {
