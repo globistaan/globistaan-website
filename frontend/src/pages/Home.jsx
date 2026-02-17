@@ -215,9 +215,9 @@ const ImageShowcase = () => (
 const ProjectsPreview = () => (
   <section className="img-bg-section" style={{ padding: '6rem 0' }}>
     <div className="bg-image">
-      <img src={images.aiBrain} alt="" style={{ filter: 'brightness(0.1) saturate(0.5)' }} />
+      <img src={images.aiBrain} alt="" style={{ filter: 'brightness(0.15) saturate(0.5)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.93)' }} />
+    <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.88)' }} />
 
     <div className="content-z max-w-[1280px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
       <motion.div {...fadeInUp} className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-4">
