@@ -137,18 +137,16 @@ export default function People() {
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0" style={{ clipPath: 'polygon(0 0, 50% 0, 50% 100%, 0 100%)' }}>
             <img 
-              src={images.robotBlue} 
-              alt="AI robots" 
+              src={images.circuitBlue} 
+              alt="Technology circuits" 
               className="w-full h-full object-cover"
-              
             />
           </div>
           <div className="absolute inset-0" style={{ clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)' }}>
             <img 
-              src={images.pineSilhouette} 
-              alt="Pine forest silhouette" 
+              src={images.deodarForest} 
+              alt="Deodar forest Himachal" 
               className="w-full h-full object-cover"
-              
             />
           </div>
         </div>
@@ -166,47 +164,15 @@ export default function People() {
             className="text-shadow-hero"
             style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
           >
-            Directors, Developers & Clients
+            Developers, Clients & Directors
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
             className="text-shadow-subtle"
             style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '650px', margin: '0 auto' }}
           >
-            Built from the mountains of Himachal Pradesh — meet the leaders, engineers, and partners driving our AI vision.
+            Built from the mountains of Himachal Pradesh — meet the engineers, partners, and leaders driving our AI vision.
           </motion.p>
-        </div>
-      </section>
-
-      {/* Directors Section - Blue Hills */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={images.blueHills} 
-            alt="Blue layered mountains" 
-            className="w-full h-full object-cover"
-            
-          />
-        </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
-        
-        <div className="relative z-10 max-w-[1000px] mx-auto px-5 md:px-9">
-          <motion.div {...fadeInUp} className="text-center mb-14">
-            <Badge variant="outline" className="mb-4 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
-              Leadership
-            </Badge>
-            <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
-              Directors
-            </h2>
-            <p className="mt-4 mx-auto" style={{ maxWidth: '500px', color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.65 }}>
-              Visionary leaders with deep industry experience steering Globistaan's AI journey.
-            </p>
-          </motion.div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            {directors.map((member, i) => (
-              <DirectorCard key={i} member={member} index={i} />
-            ))}
-          </div>
         </div>
       </section>
 
@@ -214,13 +180,11 @@ export default function People() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.motherboard} 
-            alt="Technology circuits" 
+            src={images.riverForest} 
+            alt="River through forest" 
             className="w-full h-full object-cover"
-            
           />
         </div>
-        <div className="absolute inset-0 z-1 gradient-mesh" style={{ opacity: 0.4 }} />
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.9)' }} />
         
         <div className="relative z-10 max-w-[1000px] mx-auto px-5 md:px-9">
@@ -250,7 +214,6 @@ export default function People() {
             src={images.greenValley} 
             alt="Lush green valley" 
             className="w-full h-full object-cover"
-            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.82)' }} />
@@ -270,6 +233,37 @@ export default function People() {
           <div className="grid grid-cols-1 gap-5">
             {clients.map((client, i) => (
               <ClientCard key={i} client={client} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Directors Section - Blue Hills */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={images.blueHills} 
+            alt="Blue layered mountains" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
+        
+        <div className="relative z-10 max-w-[1000px] mx-auto px-5 md:px-9">
+          <motion.div {...fadeInUp} className="text-center mb-14">
+            <Badge variant="outline" className="mb-4 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Leadership
+            </Badge>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+              Directors
+            </h2>
+            <p className="mt-4 mx-auto" style={{ maxWidth: '500px', color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.65 }}>
+              Visionary leaders with deep industry experience steering Globistaan's AI journey.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            {directors.map((member, i) => (
+              <DirectorCard key={i} member={member} index={i} />
             ))}
           </div>
         </div>
