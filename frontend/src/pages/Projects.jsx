@@ -115,9 +115,9 @@ export default function Projects() {
       {/* AI Tech Images Strip */}
       <section className="img-bg-section" style={{ padding: '3rem 0' }}>
         <div className="bg-image">
-          <img src={images.codeScreen} alt="" style={{ filter: 'brightness(0.12)' }} />
+          <img src={images.codeScreen} alt="" style={{ filter: 'brightness(0.45) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.5)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
         <div className="content-z max-w-[1000px] mx-auto px-5" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
             {[images.robot, images.workspace, images.neuralBrain, images.serverRoom, images.aiBrain, images.circuitBoard].map((img, i) => (
