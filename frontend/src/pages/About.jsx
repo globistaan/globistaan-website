@@ -97,9 +97,9 @@ export default function About() {
       {/* AI Image Banner */}
       <section className="img-bg-section" style={{ padding: '4rem 0' }}>
         <div className="bg-image">
-          <img src={images.serverRoom} alt="" style={{ filter: 'brightness(0.25)' }} />
+          <img src={images.serverRoom} alt="" style={{ filter: 'brightness(0.55) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.5) 100%)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 100%)' }} />
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[images.robot, images.workspace, images.neuralBlue, images.aiBrain].map((img, i) => (
