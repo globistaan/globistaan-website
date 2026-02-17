@@ -16,50 +16,48 @@ const fadeInUp = {
 export default function Investors() {
   return (
     <main>
-      {/* Hero */}
-      <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '6rem' }}>
+      {/* Hero - Dhauladhar Mountain Range */}
+      <section className="img-bg-section" style={{ minHeight: '70vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.mountainRange} alt="" style={{ filter: 'brightness(0.6) saturate(1.3)' }} />
+          <img src={images.dhauladharRange} alt="Dhauladhar mountain range panorama" style={{ filter: 'brightness(0.88) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
-        <div className="floating-orb floating-orb-1" />
-        <div className="floating-orb floating-orb-2" />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
-        <div className="content-z max-w-[850px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="content-z max-w-[850px] mx-auto text-center px-5 pt-24" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
               Investment Opportunities
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 30px rgba(0,0,0,0.4)' }}
           >
             Invest in the AI Future
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: 1.65, color: 'rgba(255,255,255,0.7)', maxWidth: '600px', margin: '0 auto 2rem' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '600px', margin: '0 auto 2rem', textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
           >
             Globistaan is building a portfolio of AI-powered products across healthcare, education, and commerce.
           </motion.p>
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.35 }} className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
+            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
               Request Investor Deck <ArrowRight className="w-4 h-4" />
             </Link>
-            <a href="#tiers" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
+            <a href="#tiers" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', color: 'white', borderColor: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.1)' }}>
               View Tiers <ArrowUpRight className="w-4 h-4" />
             </a>
           </motion.div>
         </div>
       </section>
 
-      {/* Investment Highlights */}
-      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* Investment Highlights - Green Meadows */}
+      <section className="img-bg-section" style={{ minHeight: '60vh', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.aiBrain} alt="" style={{ filter: 'brightness(0.15)' }} />
+          <img src={images.dhauladharGreen} alt="Green meadows with snow-capped peaks" style={{ filter: 'brightness(0.92) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.87)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.9) 100%)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Why Invest</Badge>
@@ -91,12 +89,12 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* Product Portfolio */}
-      <section className="img-bg-section" style={{ padding: '5rem 0' }}>
+      {/* Product Portfolio - Snow Peak */}
+      <section className="img-bg-section" style={{ minHeight: '55vh', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.4) saturate(1.2)' }} />
+          <img src={images.snowPeakMist} alt="Misty snow-capped peaks" style={{ filter: 'brightness(0.9) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.82)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.88) 100%)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Portfolio</Badge>
@@ -122,12 +120,12 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* Investment Tiers */}
-      <section id="tiers" className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* Investment Tiers - Green Valley */}
+      <section id="tiers" className="img-bg-section" style={{ minHeight: '60vh', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.15)' }} />
+          <img src={images.greenValley} alt="Lush green valley of Himachal" style={{ filter: 'brightness(0.88) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.87)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.9) 100%)' }} />
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>Investment Tiers</Badge>
@@ -157,12 +155,12 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* Financials */}
-      <section className="img-bg-section" style={{ padding: '5rem 0' }}>
+      {/* Financials - Dhauladhar Clouds */}
+      <section className="img-bg-section" style={{ minHeight: '45vh', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.greenValley} alt="" style={{ filter: 'brightness(0.35) saturate(1.2)' }} />
+          <img src={images.dhauladharClouds} alt="Dhauladhar peaks with clouds" style={{ filter: 'brightness(0.88) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.88) 100%)' }} />
         <div className="content-z max-w-[1000px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp}>
             <div className="voice-card" style={{ padding: '3rem', textAlign: 'center', background: 'var(--bg-card)' }}>
@@ -177,18 +175,18 @@ export default function Investors() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* CTA - Mountain Range */}
+      <section className="img-bg-section" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.snowyPeak2} alt="" style={{ filter: 'brightness(0.65) saturate(1.2)' }} />
+          <img src={images.mountainRange} alt="Himalayan mountain range panorama" style={{ filter: 'brightness(0.8) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
-        <div className="content-z max-w-[650px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="content-z max-w-[650px] mx-auto text-center px-5 py-16" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
-            <h2 className="mb-4" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15 }}>Ready to Partner with Us?</h2>
-            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.6 }}>Schedule a call with our founding team to discuss investment opportunities.</p>
-            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', background: 'white', color: 'var(--text-primary)' }}>Schedule a Call <ArrowRight className="w-4 h-4" /></Link>
+            <h2 className="mb-4" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>Ready to Partner with Us?</h2>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.6, textShadow: '0 1px 10px rgba(0,0,0,0.3)' }}>Schedule a call with our founding team to discuss investment opportunities.</p>
+            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', background: 'white', color: 'var(--text-primary)' }}>Schedule a Call <ArrowRight className="w-4 h-4" /></Link>
           </motion.div>
         </div>
       </section>
