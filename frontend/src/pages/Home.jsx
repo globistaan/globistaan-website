@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { motion, useScroll, useTransform } from 'motion/react';
+import { motion } from 'motion/react';
 import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { companyInfo, projects, services, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
@@ -13,22 +13,12 @@ const fadeInUp = {
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
 };
 
-const scaleIn = {
-  initial: { opacity: 0, scale: 0.92 },
-  whileInView: { opacity: 1, scale: 1 },
-  viewport: { once: true },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-};
-
 const HeroSection = () => (
-  <section className="img-bg-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+  <section className="img-bg-section" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center' }}>
     <div className="bg-image">
-      <img src={images.snowyPeak} alt="" style={{ filter: 'brightness(0.7) saturate(1.3)' }} />
+      <img src={images.himalayanSnow} alt="Snow-capped Himachal Pradesh mountains" style={{ filter: 'brightness(0.85) saturate(1.2)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.35) 60%, rgba(0,0,0,0.5) 100%)' }} />
-    {/* Floating Orbs */}
-    <div className="floating-orb floating-orb-1" />
-    <div className="floating-orb floating-orb-2" />
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.45) 100%)' }} />
     <ParticlesBg />
 
     <div className="content-z max-w-[900px] mx-auto text-center px-5 py-32" style={{ position: 'relative', zIndex: 10 }}>
@@ -38,17 +28,17 @@ const HeroSection = () => (
         transition={{ duration: 0.5 }}
         className="inline-flex items-center gap-2 mb-6 px-4 py-1.5 rounded-full"
         style={{
-          background: 'rgba(255,255,255,0.12)',
+          background: 'rgba(255,255,255,0.15)',
           backdropFilter: 'blur(12px)',
-          border: '1px solid rgba(255,255,255,0.2)',
+          border: '1px solid rgba(255,255,255,0.25)',
           fontFamily: "'SF Mono', monospace",
           fontSize: '0.72rem',
           textTransform: 'uppercase',
           letterSpacing: '0.06em',
-          color: 'rgba(255,255,255,0.85)'
+          color: 'rgba(255,255,255,0.9)'
         }}
       >
-        <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#b8d1ba', boxShadow: '0 0 6px #b8d1ba' }} />
+        <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#b8d1ba', boxShadow: '0 0 8px #b8d1ba' }} />
         AI-Powered Innovation from the Himalayas
       </motion.div>
 
@@ -63,7 +53,7 @@ const HeroSection = () => (
           fontWeight: 600,
           letterSpacing: '-0.03em',
           color: '#FFFFFF',
-          textShadow: '0 2px 20px rgba(0,0,0,0.4), 0 1px 6px rgba(0,0,0,0.25)'
+          textShadow: '0 2px 30px rgba(0,0,0,0.5), 0 1px 8px rgba(0,0,0,0.3)'
         }}
       >
         Building the Future with{' '}
@@ -80,8 +70,9 @@ const HeroSection = () => (
         style={{
           fontSize: 'clamp(1rem, 2vw, 1.15rem)',
           lineHeight: 1.7,
-          color: 'rgba(255,255,255,0.7)',
-          maxWidth: '600px'
+          color: 'rgba(255,255,255,0.85)',
+          maxWidth: '600px',
+          textShadow: '0 1px 12px rgba(0,0,0,0.4)'
         }}
       >
         {companyInfo.subtitle}
@@ -96,33 +87,21 @@ const HeroSection = () => (
         <Link to="/projects" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2.2rem', background: 'white', color: 'var(--text-primary)' }}>
           Explore Our Projects <ArrowRight className="w-4 h-4" />
         </Link>
-        <Link to="/investors" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.9rem 2.2rem', color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
+        <Link to="/investors" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.9rem 2.2rem', color: 'white', borderColor: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.1)' }}>
           Investor Deck <ArrowUpRight className="w-4 h-4" />
         </Link>
       </motion.div>
 
-      {/* Scroll indicator */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.8 }}
-        className="mt-16 scroll-indicator"
-      >
-        <ChevronDown className="w-5 h-5 mx-auto" style={{ color: 'rgba(255,255,255,0.4)' }} />
+      <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1.5, duration: 0.8 }} className="mt-16 scroll-indicator">
+        <ChevronDown className="w-5 h-5 mx-auto" style={{ color: 'rgba(255,255,255,0.5)' }} />
       </motion.div>
     </div>
   </section>
 );
 
 const ServicesSection = () => (
-  <section className="img-bg-section" style={{ padding: '6rem 0' }}>
-    <div className="bg-image">
-      <img src={images.circuitBoard} alt="" style={{ filter: 'brightness(0.15) saturate(0.8)' }} />
-    </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.88) 0%, rgba(255,255,255,0.85) 100%)' }} />
-    <div className="floating-orb floating-orb-3" />
-
-    <div className="content-z max-w-[1280px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
+  <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+    <div className="max-w-[1280px] mx-auto px-5 md:px-9">
       <motion.div {...fadeInUp} className="text-center mb-16">
         <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
           What We Do
@@ -142,22 +121,18 @@ const ServicesSection = () => (
           return (
             <motion.div
               key={i}
-              initial={{ opacity: 0, y: 24, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.08, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.5, delay: i * 0.08 }}
               className={`voice-card glow-card ${accents[i % accents.length]}`}
               style={{ padding: '1.75rem' }}
             >
               <div className="w-10 h-10 rounded-lg flex items-center justify-center mb-4" style={{ background: 'rgba(0,0,0,0.06)' }}>
                 <Icon className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
               </div>
-              <h3 style={{ fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-                {service.title}
-              </h3>
-              <p style={{ fontSize: '0.875rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-                {service.description}
-              </p>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: 500, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>{service.title}</h3>
+              <p style={{ fontSize: '0.875rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>{service.description}</p>
             </motion.div>
           );
         })}
@@ -166,61 +141,29 @@ const ServicesSection = () => (
   </section>
 );
 
-const ImageShowcase = () => (
-  <section className="img-bg-section" style={{ padding: '5rem 0' }}>
+/* Full-width mountain panorama with only text */
+const MountainBanner = () => (
+  <section className="img-bg-section" style={{ minHeight: '50vh', display: 'flex', alignItems: 'center' }}>
     <div className="bg-image">
-      <img src={images.pineForest} alt="" style={{ filter: 'brightness(0.6) saturate(1.3)' }} />
+      <img src={images.pineForest} alt="Himachal Pradesh pine forests and mountains" style={{ filter: 'brightness(0.85) saturate(1.2)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
-
-    <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
-      <motion.div {...fadeInUp} className="text-center mb-12">
-        <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 1.85rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2 }}>
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
+    <div className="content-z max-w-[700px] mx-auto text-center px-5 py-20" style={{ position: 'relative', zIndex: 10 }}>
+      <motion.div {...fadeInUp}>
+        <h2 style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
           Where Mountains Meet Machines
         </h2>
-        <p className="mt-3 mx-auto" style={{ maxWidth: '500px', color: 'rgba(255,255,255,0.65)', fontSize: '0.95rem', lineHeight: 1.6 }}>
-          Innovation rooted in the serene landscapes of Himachal Pradesh.
+        <p className="mt-4 mx-auto" style={{ maxWidth: '500px', color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.65, textShadow: '0 1px 10px rgba(0,0,0,0.3)' }}>
+          Innovation rooted in the serene landscapes of Himachal Pradesh — from Billing's paragliding skies to the snow-capped peaks of the Dhauladhar range.
         </p>
       </motion.div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {[
-          { img: images.robot, title: 'AI-First Approach', desc: 'Every solution is powered by cutting-edge artificial intelligence.' },
-          { img: images.workspace, title: 'Modern Engineering', desc: 'Built with the latest tools and AI-powered development environments.' },
-          { img: images.neuralBrain, title: 'Intelligent Systems', desc: 'Neural networks and deep learning models for your business.' }
-        ].map((item, i) => (
-          <motion.div
-            key={i}
-            initial={{ opacity: 0, y: 28, rotateX: 4 }}
-            whileInView={{ opacity: 1, y: 0, rotateX: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
-            className="glass-strong"
-            style={{ padding: '1.5rem', borderRadius: '1rem' }}
-          >
-            <div className="img-zoom" style={{ height: '160px', marginBottom: '1rem' }}>
-              <img src={item.img} alt={item.title} className="w-full h-full object-cover" style={{ borderRadius: '0.75rem' }} />
-            </div>
-            <h3 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-              {item.title}
-            </h3>
-            <p style={{ fontSize: '0.8rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-              {item.desc}
-            </p>
-          </motion.div>
-        ))}
-      </div>
     </div>
   </section>
 );
 
 const ProjectsPreview = () => (
-  <section className="img-bg-section" style={{ padding: '6rem 0' }}>
-    <div className="bg-image">
-      <img src={images.aiBrain} alt="" style={{ filter: 'brightness(0.15) saturate(0.5)' }} />
-    </div>
-    <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.88)' }} />
-
-    <div className="content-z max-w-[1280px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
+  <section style={{ padding: '6rem 0', background: '#FFFFFF' }}>
+    <div className="max-w-[1280px] mx-auto px-5 md:px-9">
       <motion.div {...fadeInUp} className="flex flex-col md:flex-row items-start md:items-end justify-between mb-12 gap-4">
         <div>
           <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
@@ -244,7 +187,7 @@ const ProjectsPreview = () => (
               initial={{ opacity: 0, y: 28 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+              transition={{ duration: 0.6, delay: i * 0.1 }}
             >
               <Link to="/projects" className="no-underline">
                 <div className={`voice-card glow-card ${project.accentClass}`} style={{ padding: '2rem', height: '100%' }}>
@@ -256,12 +199,8 @@ const ProjectsPreview = () => (
                       {project.category}
                     </Badge>
                   </div>
-                  <h3 style={{ fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>
-                    {project.title}
-                  </h3>
-                  <p style={{ fontSize: '0.875rem', lineHeight: 1.55, color: 'var(--text-secondary)', marginBottom: '1rem' }}>
-                    {project.description}
-                  </p>
+                  <h3 style={{ fontSize: '1.2rem', fontWeight: 500, marginBottom: '0.5rem', color: 'var(--text-primary)' }}>{project.title}</h3>
+                  <p style={{ fontSize: '0.875rem', lineHeight: 1.55, color: 'var(--text-secondary)', marginBottom: '1rem' }}>{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.features.slice(0, 3).map((f, fi) => (
                       <span key={fi} className="flex items-center gap-1" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontFamily: "'SF Mono', monospace" }}>
@@ -280,26 +219,25 @@ const ProjectsPreview = () => (
 );
 
 const CTASection = () => (
-  <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+  <section className="img-bg-section" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
     <div className="bg-image">
-      <img src={images.mountainRange} alt="" style={{ filter: 'brightness(0.65) saturate(1.3)' }} />
+      <img src={images.mountainRange} alt="Himalayan mountain range panorama" style={{ filter: 'brightness(0.8) saturate(1.2)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />
     <ParticlesBg />
-
-    <div className="content-z max-w-[700px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+    <div className="content-z max-w-[700px] mx-auto text-center px-5 py-16" style={{ position: 'relative', zIndex: 10 }}>
       <motion.div {...fadeInUp}>
-        <h2 className="mb-4" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15 }}>
+        <h2 className="mb-4" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
           Ready to Build with AI?
         </h2>
-        <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '1rem', lineHeight: 1.65 }}>
+        <p className="mb-8" style={{ color: 'rgba(255,255,255,0.9)', fontSize: '1rem', lineHeight: 1.65, textShadow: '0 1px 10px rgba(0,0,0,0.3)' }}>
           Whether you're looking for AI-powered solutions, investment opportunities, or a technology partnership — we'd love to hear from you.
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
             Start a Conversation <ArrowRight className="w-4 h-4" />
           </Link>
-          <Link to="/about" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
+          <Link to="/about" className="btn-secondary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', color: 'white', borderColor: 'rgba(255,255,255,0.4)', background: 'rgba(255,255,255,0.1)' }}>
             Learn About Us
           </Link>
         </div>
@@ -313,7 +251,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <ServicesSection />
-      <ImageShowcase />
+      <MountainBanner />
       <ProjectsPreview />
       <CTASection />
     </main>
