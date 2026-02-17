@@ -5,9 +5,19 @@ export const images = {
   workspace: "https://images.unsplash.com/photo-1646596504587-c3771cf62e81?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDQ2NDF8MHwxfHNlYXJjaHw0fHxjb21wdXRlciUyMHdvcmtzcGFjZXxlbnwwfHx8fDE3NzEzMjI1NDd8MA&ixlib=rb-4.1.0&q=85&w=800",
   neuralBlue: "https://images.unsplash.com/photo-1644088379091-d574269d422f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwxfHxuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc3MTMyMjU1Mnww&ixlib=rb-4.1.0&q=85&w=800",
   neuralBrain: "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODh8MHwxfHNlYXJjaHwzfHxuZXVyYWwlMjBuZXR3b3JrfGVufDB8fHx8MTc3MTMyMjU1Mnww&ixlib=rb-4.1.0&q=85&w=800",
-  mountainValley: "https://images.unsplash.com/photo-1647939701920-e6063dfda2d8?w=800&q=80",
-  mountainFog: "https://images.unsplash.com/photo-1731934650867-45354be20c81?w=800&q=80",
-  mountainTerrace: "https://images.unsplash.com/photo-1761376397940-e4d7422a102e?w=800&q=80"
+  mountainValley: "https://images.unsplash.com/photo-1647939701920-e6063dfda2d8?w=1200&q=80",
+  mountainFog: "https://images.unsplash.com/photo-1731934650867-45354be20c81?w=1200&q=80",
+  mountainTerrace: "https://images.unsplash.com/photo-1761376397940-e4d7422a102e?w=1200&q=80",
+  serverRoom: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80",
+  circuitBoard: "https://images.unsplash.com/photo-1562408590-e32931084e23?w=1200&q=80",
+  aiInterface: "https://images.unsplash.com/photo-1694903089438-bf28d4697d9a?w=1200&q=80",
+  codeScreen: "https://images.unsplash.com/photo-1653387319597-84bde7e5368e?w=1200&q=80",
+  aiBrain: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1200&q=80",
+  snowyPeak: "https://images.unsplash.com/photo-1750166302383-2cc4cba437de?w=1200&q=80",
+  pineForest: "https://images.unsplash.com/photo-1552919916-fcee0069bd62?w=1200&q=80",
+  greenValley: "https://images.unsplash.com/photo-1614095431374-c5e71970d70c?w=1200&q=80",
+  mountainRange: "https://images.unsplash.com/photo-1710705293492-38813d6dbe27?w=1200&q=80",
+  snowyPeak2: "https://images.unsplash.com/photo-1709907153050-a668b4473c47?w=1200&q=80"
 };
 
 export const companyInfo = {
