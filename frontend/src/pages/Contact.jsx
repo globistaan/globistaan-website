@@ -40,46 +40,60 @@ export default function Contact() {
 
   return (
     <main>
-      {/* Hero - Dhauladhar Mountains */}
-      <section className="img-bg-section" style={{ minHeight: '60vh', display: 'flex', alignItems: 'center' }}>
-        <div className="bg-image">
-          <img src={images.dhauladharRange} alt="Dhauladhar mountain range panorama" style={{ filter: 'brightness(0.88) saturate(1.15)' }} />
+      {/* Hero - River + Mountains Full Page */}
+      <section className="relative min-h-[60vh] flex items-center overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={images.riverMountain} 
+            alt="River valley with mountains" 
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.88) saturate(1.15)' }}
+          />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
         <ParticlesBg />
-        <div className="content-z max-w-[800px] mx-auto text-center px-5 pt-24" style={{ position: 'relative', zIndex: 10 }}>
+        
+        <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
               Contact Us
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 30px rgba(0,0,0,0.4)' }}
+            className="text-shadow-hero"
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
           >
             Let's Start a Conversation
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '520px', margin: '0 auto', textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
+            className="text-shadow-subtle"
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.95)', maxWidth: '550px', margin: '0 auto' }}
           >
             Have a project in mind? Looking to invest? Or just want to say hello?
           </motion.p>
         </div>
       </section>
 
-      {/* Form + Info - Green Meadows backdrop */}
-      <section className="img-bg-section" style={{ minHeight: '70vh', padding: '5rem 0' }}>
-        <div className="bg-image">
-          <img src={images.dhauladharGreen} alt="Green meadows with snow-capped peaks" style={{ filter: 'brightness(0.92) saturate(1.1)' }} />
+      {/* Form + Info - Blue Hills Background */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={images.blueHills} 
+            alt="Blue layered mountains" 
+            className="w-full h-full object-cover"
+            style={{ filter: 'brightness(0.95) saturate(1.1)' }}
+          />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.9) 100%)' }} />
-        <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.88)' }} />
+        
+        <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Contact Info */}
             <motion.div {...fadeInUp} className="lg:col-span-2">
-              <h2 className="mb-6" style={{ fontSize: '1.4rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>Get in Touch</h2>
-              <div className="flex flex-col gap-5">
+              <h2 className="mb-8" style={{ fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>Get in Touch</h2>
+              <div className="flex flex-col gap-6">
                 {[
                   { icon: MapPin, label: 'Location', value: companyInfo.location },
                   { icon: Mail, label: 'Email', value: companyInfo.email },
@@ -89,56 +103,115 @@ export default function Contact() {
                 ].map((item, i) => {
                   const Icon = item.icon;
                   return (
-                    <div key={i} className="flex items-start gap-3">
-                      <div className="w-9 h-9 rounded-lg flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,0,0,0.04)' }}>
-                        <Icon className="w-4 h-4" style={{ color: 'var(--text-primary)' }} />
+                    <motion.div 
+                      key={i} 
+                      className="flex items-start gap-4"
+                      initial={{ opacity: 0, x: -20 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.08 }}
+                    >
+                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,0,0,0.05)' }}>
+                        <Icon className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
                       </div>
                       <div>
-                        <p style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.15rem' }}>{item.label}</p>
-                        <p style={{ fontSize: '0.9rem', color: 'var(--text-primary)' }}>{item.value}</p>
+                        <p style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.2rem' }}>{item.label}</p>
+                        <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)', fontWeight: 500 }}>{item.value}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
+              
+              {/* Small Nature Image */}
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mt-10 rounded-2xl overflow-hidden"
+                style={{ boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}
+              >
+                <img 
+                  src={images.pineForestMist} 
+                  alt="Pine forest with lake" 
+                  className="w-full h-40 object-cover"
+                />
+              </motion.div>
             </motion.div>
 
             {/* Form */}
-            <motion.div initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7, delay: 0.15 }} className="lg:col-span-3">
+            <motion.div 
+              initial={{ opacity: 0, y: 28 }} 
+              whileInView={{ opacity: 1, y: 0 }} 
+              viewport={{ once: true }} 
+              transition={{ duration: 0.7, delay: 0.15 }} 
+              className="lg:col-span-3"
+            >
               {submitted ? (
-                <div className="voice-card accent-green" style={{ padding: '3rem', textAlign: 'center' }}>
-                  <div className="w-14 h-14 rounded-full mx-auto mb-5 flex items-center justify-center" style={{ background: 'rgba(0,0,0,0.06)' }}>
-                    <Send className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
+                <div className="voice-card accent-green content-glass" style={{ textAlign: 'center' }}>
+                  <div className="w-16 h-16 rounded-full mx-auto mb-6 flex items-center justify-center float-animation" style={{ background: 'rgba(184,209,186,0.3)' }}>
+                    <Send className="w-7 h-7" style={{ color: 'var(--text-primary)' }} />
                   </div>
-                  <h3 className="mb-3" style={{ fontSize: '1.3rem', fontWeight: 600, color: 'var(--text-primary)' }}>Message Sent!</h3>
-                  <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)', maxWidth: '380px', margin: '0 auto' }}>
+                  <h3 className="mb-4" style={{ fontSize: '1.4rem', fontWeight: 600, color: 'var(--text-primary)' }}>Message Sent!</h3>
+                  <p style={{ fontSize: '0.95rem', lineHeight: 1.65, color: 'var(--text-secondary)', maxWidth: '400px', margin: '0 auto' }}>
                     Thank you for reaching out. We'll get back to you within 24-48 business hours.
                   </p>
-                  <button onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', company: '', inquiry: '', message: '' }); }} className="btn-secondary mt-6 text-xs">Send Another Message</button>
+                  <button 
+                    onClick={() => { setSubmitted(false); setFormData({ name: '', email: '', company: '', inquiry: '', message: '' }); }} 
+                    className="btn-secondary mt-8"
+                  >
+                    Send Another Message
+                  </button>
                 </div>
               ) : (
-                <div className="voice-card glow-card" style={{ padding: '2.5rem', background: 'var(--bg-card)' }}>
-                  <h3 className="mb-6" style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--text-primary)' }}>Send Us a Message</h3>
-                  <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                <div className="voice-card glow-card content-glass">
+                  <h3 className="mb-8" style={{ fontSize: '1.25rem', fontWeight: 500, color: 'var(--text-primary)' }}>Send Us a Message</h3>
+                  <form onSubmit={handleSubmit} className="flex flex-col gap-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="name" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Name *</Label>
-                        <Input id="name" value={formData.name} onChange={(e) => handleChange('name', e.target.value)} placeholder="Your name" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-name-input" />
+                        <Label htmlFor="name" className="mb-2 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)' }}>Name *</Label>
+                        <Input 
+                          id="name" 
+                          value={formData.name} 
+                          onChange={(e) => handleChange('name', e.target.value)} 
+                          placeholder="Your name" 
+                          className="rounded-xl" 
+                          style={{ borderColor: 'var(--border-input)', background: 'white', padding: '0.9rem 1rem' }} 
+                          data-testid="contact-name-input" 
+                        />
                       </div>
                       <div>
-                        <Label htmlFor="email" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Email *</Label>
-                        <Input id="email" type="email" value={formData.email} onChange={(e) => handleChange('email', e.target.value)} placeholder="your@email.com" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-email-input" />
+                        <Label htmlFor="email" className="mb-2 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)' }}>Email *</Label>
+                        <Input 
+                          id="email" 
+                          type="email" 
+                          value={formData.email} 
+                          onChange={(e) => handleChange('email', e.target.value)} 
+                          placeholder="your@email.com" 
+                          className="rounded-xl" 
+                          style={{ borderColor: 'var(--border-input)', background: 'white', padding: '0.9rem 1rem' }} 
+                          data-testid="contact-email-input" 
+                        />
                       </div>
                     </div>
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="company" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Company</Label>
-                        <Input id="company" value={formData.company} onChange={(e) => handleChange('company', e.target.value)} placeholder="Your company" className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-company-input" />
+                        <Label htmlFor="company" className="mb-2 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)' }}>Company</Label>
+                        <Input 
+                          id="company" 
+                          value={formData.company} 
+                          onChange={(e) => handleChange('company', e.target.value)} 
+                          placeholder="Your company" 
+                          className="rounded-xl" 
+                          style={{ borderColor: 'var(--border-input)', background: 'white', padding: '0.9rem 1rem' }} 
+                          data-testid="contact-company-input" 
+                        />
                       </div>
                       <div>
-                        <Label className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Inquiry Type</Label>
+                        <Label className="mb-2 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)' }}>Inquiry Type</Label>
                         <Select onValueChange={(val) => handleChange('inquiry', val)}>
-                          <SelectTrigger className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)' }} data-testid="contact-inquiry-select">
+                          <SelectTrigger className="rounded-xl" style={{ borderColor: 'var(--border-input)', background: 'white', padding: '0.9rem 1rem', height: 'auto' }} data-testid="contact-inquiry-select">
                             <SelectValue placeholder="Select type" />
                           </SelectTrigger>
                           <SelectContent>
@@ -152,10 +225,26 @@ export default function Contact() {
                       </div>
                     </div>
                     <div>
-                      <Label htmlFor="message" className="mb-1.5 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--text-muted)' }}>Message *</Label>
-                      <Textarea id="message" value={formData.message} onChange={(e) => handleChange('message', e.target.value)} placeholder="Tell us about your project or inquiry..." rows={5} className="rounded-lg" style={{ borderColor: 'var(--border-input)', background: 'var(--bg-page)', resize: 'vertical' }} data-testid="contact-message-input" />
+                      <Label htmlFor="message" className="mb-2 block" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--text-muted)' }}>Message *</Label>
+                      <Textarea 
+                        id="message" 
+                        value={formData.message} 
+                        onChange={(e) => handleChange('message', e.target.value)} 
+                        placeholder="Tell us about your project or inquiry..." 
+                        rows={5} 
+                        className="rounded-xl" 
+                        style={{ borderColor: 'var(--border-input)', background: 'white', padding: '0.9rem 1rem', resize: 'vertical' }} 
+                        data-testid="contact-message-input" 
+                      />
                     </div>
-                    <button type="submit" className="btn-primary self-start" style={{ padding: '0.75rem 1.5rem' }} data-testid="contact-submit-btn">Send Message <Send className="w-4 h-4" /></button>
+                    <button 
+                      type="submit" 
+                      className="btn-primary self-start" 
+                      style={{ padding: '0.9rem 2rem' }} 
+                      data-testid="contact-submit-btn"
+                    >
+                      Send Message <Send className="w-4 h-4" />
+                    </button>
                   </form>
                 </div>
               )}
