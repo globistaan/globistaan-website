@@ -137,9 +137,9 @@ export default function People() {
             src={images.mountainValley}
             alt="Himachal Pradesh mountains"
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.4)' }}
+            style={{ filter: 'brightness(0.6) saturate(1.3)' }}
           />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.6) 100%)' }} />
+          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
         </div>
         <div className="relative z-10 max-w-[800px] mx-auto text-center px-5">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
