@@ -538,6 +538,15 @@ body {
   transform: scale(1.08);
 }
 
+/* Text shadow for readability on image backgrounds */
+.text-shadow-lg {
+  text-shadow: 0 2px 20px rgba(0,0,0,0.5), 0 1px 6px rgba(0,0,0,0.3);
+}
+
+.text-shadow-sm {
+  text-shadow: 0 1px 12px rgba(0,0,0,0.4), 0 1px 4px rgba(0,0,0,0.2);
+}
+
 /* ===== Placeholder Image Style ===== */
 .placeholder-img {
   display: flex;
