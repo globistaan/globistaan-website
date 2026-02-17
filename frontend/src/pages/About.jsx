@@ -16,9 +16,11 @@ const fadeInUp = {
 export default function About() {
   return (
     <main>
-      {/* Hero */}
-      <section className="ai-bg relative pt-32 pb-20" style={{ background: 'var(--gradient-hero-warm)' }}>
-        <ParticlesBg />
+      {/* Hero with mountain background */}
+      <section className="relative pt-32 pb-20 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img src={images.mountainTerrace} alt="Himachal Pradesh mountains" className="w-full h-full object-cover" style={{ filter: 'brightness(0.35)' }} />
+        </div>
         <div className="relative z-10 max-w-[800px] mx-auto text-center px-5">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
             <Badge variant="outline" className="mb-5 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
