@@ -1,23 +1,20 @@
 import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Sparkles, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
 
 export const images = {
-  // Himachal Pradesh Mountains - Large, clearly visible
-  snowPeakHP: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1920&q=85",
-  kasol: "https://images.unsplash.com/photo-3Tv7zYEWz0c?w=1920&q=85",
-  sissuValley: "https://images.unsplash.com/photo-1645495702782-38b8a6c8d74c?w=1920&q=85",
-  mountainValley: "https://images.unsplash.com/photo-1647939701920-e6063dfda2d8?w=1920&q=85",
-  mountainFog: "https://images.unsplash.com/photo-1731934650867-45354be20c81?w=1920&q=85",
-  mountainTerrace: "https://images.unsplash.com/photo-1761376397940-e4d7422a102e?w=1920&q=85",
-  snowyPeak: "https://images.unsplash.com/photo-1750166302383-2cc4cba437de?w=1920&q=85",
+  // Himachal Pradesh Snow-Capped Mountains - Large, prominent backgrounds
+  dhauladharGreen: "https://images.unsplash.com/photo-1627625335607-60187d590493?w=1920&q=85", // Green trees with snow peaks
+  dhauladharRange: "https://images.unsplash.com/photo-1637896175022-7165f16fb523?w=1920&q=85", // Mountain range panorama
+  snowPeakMist: "https://images.unsplash.com/photo-1615101999240-9d1f4da5841f?w=1920&q=85", // Snow covered mountains
+  dhauladharClouds: "https://images.unsplash.com/photo-1641892046220-d8faa2ed612f?w=1920&q=85", // Mountains with clouds
+  himalayanSnow: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=85",
   pineForest: "https://images.unsplash.com/photo-1552919916-fcee0069bd62?w=1920&q=85",
   greenValley: "https://images.unsplash.com/photo-1614095431374-c5e71970d70c?w=1920&q=85",
+  mountainValley: "https://images.unsplash.com/photo-1647939701920-e6063dfda2d8?w=1920&q=85",
+  mountainFog: "https://images.unsplash.com/photo-1731934650867-45354be20c81?w=1920&q=85",
+  snowyPeak: "https://images.unsplash.com/photo-1750166302383-2cc4cba437de?w=1920&q=85",
   mountainRange: "https://images.unsplash.com/photo-1710705293492-38813d6dbe27?w=1920&q=85",
   snowyPeak2: "https://images.unsplash.com/photo-1709907153050-a668b4473c47?w=1920&q=85",
-  himalayanSnow: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=85",
-  dharamsala: "https://images.unsplash.com/photo-1597074866923-dc0589150358?w=1920&q=85",
-  manaliValley: "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1920&q=85",
-  spiti: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=85",
-  // AI & Technology
+  // AI & Technology (secondary)
   robot: "https://images.unsplash.com/photo-1507162728832-5b8fdb5f99fa?w=1200&q=80",
   workspace: "https://images.unsplash.com/photo-1646596504587-c3771cf62e81?w=1200&q=80",
   neuralBrain: "https://images.unsplash.com/photo-1674027444485-cec3da58eef4?w=1200&q=80",
