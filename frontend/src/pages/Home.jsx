@@ -105,25 +105,6 @@ const HeroSection = () => (
         </Link>
       </motion.div>
 
-      {/* Stats */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.65 }}
-        className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-16 glass-strong"
-        style={{ padding: '1.5rem 2rem', borderRadius: '1rem' }}
-      >
-        {heroStats.map((stat, i) => (
-          <div key={i} className="text-center">
-            <div style={{ fontSize: 'clamp(1.5rem, 3vw, 2rem)', fontWeight: 600, color: 'var(--text-primary)', lineHeight: 1.2 }}>
-              {stat.value}
-            </div>
-            <div style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginTop: '0.25rem' }}>
-              {stat.label}
-            </div>
-          </div>
-        ))}
-      </motion.div>
     </div>
   </section>
 );
