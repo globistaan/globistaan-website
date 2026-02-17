@@ -92,9 +92,9 @@ export default function TechStack() {
       {/* Tech Images Strip */}
       <section className="img-bg-section" style={{ padding: '2.5rem 0' }}>
         <div className="bg-image">
-          <img src={images.codeScreen} alt="" style={{ filter: 'brightness(0.15)' }} />
+          <img src={images.codeScreen} alt="" style={{ filter: 'brightness(0.4) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.4)' }} />
+        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5" style={{ position: 'relative', zIndex: 5 }}>
           <div className="grid grid-cols-4 gap-3">
             {[images.workspace, images.circuitBoard, images.neuralBlue, images.aiBrain].map((img, i) => (
