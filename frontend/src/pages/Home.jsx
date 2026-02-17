@@ -312,6 +312,7 @@ export default function Home() {
       <HeroSection />
       <div className="section-divider" />
       <ServicesSection />
+      <ImageShowcase />
       <div className="section-divider" />
       <ProjectsPreview />
       <div className="section-divider" />
