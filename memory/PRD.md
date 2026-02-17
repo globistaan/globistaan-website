@@ -1,7 +1,7 @@
-# Globistaan - AI-as-a-Service & SaaS Website
+# Globistaan Technologies and Exports Private Limited - Website
 
 ## Original Problem Statement
-Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan" - an IT services company from Himachal Pradesh, India. The website should be appealing to investors and clients, showcasing the company's AI projects and services.
+Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan Technologies and Exports Private Limited" - an IT services company from Himachal Pradesh, India. The website should be appealing to investors and clients, with a serene combination of Himachal Pradesh scenery and AI/technology imagery.
 
 ## Core Requirements
 
@@ -16,42 +16,38 @@ Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan" 
 - About Us (Story, Mission, Vision, Registrations)
 - Projects (Project Cards with Features)
 - People (Directors, Developers, Clients with circular avatars)
-- Tech Stack (Cloud, IDE, AI, Frameworks, Databases)
+- Tech Stack (Cloud, IDE, AI, Frameworks, Databases with actual logos)
 - Investors (Investment Highlights, Tiers, Portfolio)
 - Contact Us (Form + Contact Info)
 
 ### Design Requirements
-- ✅ Snow-capped Himachal Pradesh mountains (Dhauladhar range) as prominent backgrounds
-- ✅ Text-only overlays on mountain backgrounds (no images layered on images)
-- ✅ Light backgrounds for content readability
-- ✅ AI-themed particles animation
+- ✅ Full-page Himachal Pradesh scenery backgrounds (rivers, mountains, valleys, forests, clouds)
+- ✅ Strategic blend of nature + AI/technology imagery (robots, code, circuits)
+- ✅ Clear text visibility - NO blurred backgrounds
+- ✅ Actual tech logos on Tech Stack page
+- ✅ Image backgrounds for cards where appropriate
 - ✅ Smooth animations with Framer Motion
 - ✅ Circular avatar placeholders for people
-- ✅ Placeholder text for content to be added later
 
 ## What's Been Implemented
 
-### Dec 17, 2024 - Visual Redesign Complete
-- **Complete site-wide redesign** with large, prominent Himachal Pradesh mountain backgrounds
-- **Pages updated:**
-  - Home.jsx - Dhauladhar mountain range hero, green meadows banner, snow peak CTA
-  - About.jsx - Green meadows hero, mountain range story section, snow peak quote
-  - Projects.jsx - Dhauladhar range hero, green meadows project cards section
-  - People.jsx - Green meadows hero, mountain range directors, snow peak developers
-  - TechStack.jsx - Dhauladhar clouds hero, green meadows tools grid
-  - Investors.jsx - Dhauladhar range hero, green meadows highlights, green valley tiers
-  - Contact.jsx - Dhauladhar range hero, green meadows form section
-- **Image updates in mock data** - Added new Dhauladhar-specific images from Unsplash
-- **Text-only overlays** - All mountain backgrounds have only text content overlaid
+### Dec 17, 2024 - Major Redesign Complete
+- **Full-page scenic backgrounds** covering entire pages
+- **Strategic nature + tech blend**:
+  - Split hero sections (code on left, mountains on right)
+  - River valleys, forests, blue hills, snow peaks
+  - Circuit boards, robots, code screens as tech elements
+- **Clear visibility** - removed all blur effects
+- **Actual tech logos** on Tech Stack page (AWS, Google Cloud, OpenAI, Gemini, Claude, React, etc.)
+- **"Tools We Use"** instead of "Technology Partners"
+- **Fixed runtime error** in TechStack page
 
-### Previous Implementation
-- Multi-page React application with React Router
-- Framer Motion animations
-- Custom warm-AI design system (CSS variables, voice cards, glass morphism)
-- ParticlesBg component for AI-themed floating particles
-- Mock data structure for projects, people, tech stack, registrations
-- Contact form with localStorage persistence
-- Responsive design with Tailwind CSS
+### Image Strategy
+- **Rivers & Valleys**: Home hero, Contact backgrounds
+- **Mountains & Snow Peaks**: CTA sections, hero sections
+- **Forests & Mist**: About story, Projects cards section
+- **Circuit Boards & Code**: Services section, Tech Stack backgrounds
+- **Robots**: People page hero (split with forest)
 
 ## Tech Stack
 - **Frontend:** React 18, React Router DOM, Framer Motion, Tailwind CSS
@@ -69,20 +65,20 @@ Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan" 
 └── frontend/
     ├── src/
     │   ├── pages/
-    │   │   ├── Home.jsx
-    │   │   ├── About.jsx
-    │   │   ├── Projects.jsx
-    │   │   ├── People.jsx
-    │   │   ├── TechStack.jsx
-    │   │   ├── Investors.jsx
-    │   │   └── Contact.jsx
+    │   │   ├── Home.jsx - River valley hero, circuit services, forest banner
+    │   │   ├── About.jsx - River hero, circuit story, forest quote
+    │   │   ├── Projects.jsx - AI brain + mountains split hero
+    │   │   ├── People.jsx - Robots + forest split hero
+    │   │   ├── TechStack.jsx - Code + mountains split, actual logos
+    │   │   ├── Investors.jsx - Snow peaks hero, circuit highlights
+    │   │   └── Contact.jsx - River hero, blue hills form section
     │   ├── components/
     │   │   ├── ui/ (Shadcn components)
     │   │   └── layout/ (Header, Footer, ParticlesBg)
     │   ├── data/
-    │   │   └── mock.js
+    │   │   └── mock.js - Strategic images + tech logos
     │   ├── App.js
-    │   └── App.css
+    │   └── App.css - Clear glass cards, no blur
     ├── package.json
     └── .env
 ```
@@ -90,9 +86,12 @@ Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan" 
 ## Prioritized Backlog
 
 ### P0 - Completed
-- [x] Visual redesign with prominent Himachal Pradesh mountain backgrounds
-- [x] Text-only overlays on all mountain background sections
-- [x] All pages updated with consistent design pattern
+- [x] Full-page scenic backgrounds
+- [x] Nature + tech blend imagery
+- [x] Clear visibility (no blur)
+- [x] Actual tech logos
+- [x] Fixed TechStack runtime error
+- [x] Company name: Globistaan Technologies and Exports Private Limited
 
 ### P1 - Next Steps
 - [ ] Backend Integration
@@ -108,15 +107,6 @@ Build a modern and professional AI-as-a-Service + SaaS website for "Globistaan" 
 - [ ] Blog/News section
 - [ ] Project detail pages
 - [ ] Team member detail pages
-- [ ] Animation performance optimization
-
-## Key Image URLs (from mock.js)
-- dhauladharGreen: Green trees with snow peaks background
-- dhauladharRange: Mountain range panorama (main hero images)
-- snowPeakMist: Misty snow-capped peaks
-- dhauladharClouds: Mountains with dramatic clouds
-- greenValley: Lush green valley of Himachal
-- mountainRange: Wide Himalayan panorama
 
 ## Contact Information
 - Email: ceo@globistaan.com
