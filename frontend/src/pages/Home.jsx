@@ -281,9 +281,9 @@ const ProjectsPreview = () => (
 const CTASection = () => (
   <section className="img-bg-section" style={{ padding: '6rem 0' }}>
     <div className="bg-image">
-      <img src={images.mountainRange} alt="" style={{ filter: 'brightness(0.3) saturate(1.2)' }} />
+      <img src={images.mountainRange} alt="" style={{ filter: 'brightness(0.65) saturate(1.3)' }} />
     </div>
-    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.55) 100%)' }} />
+    <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
     <ParticlesBg />
 
     <div className="content-z max-w-[700px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
