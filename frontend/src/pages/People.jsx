@@ -260,7 +260,7 @@ export default function People() {
             src={images.mountainFog}
             alt="Himachal Pradesh misty mountains"
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.35)' }}
+            style={{ filter: 'brightness(0.55) saturate(1.2)' }}
           />
         </div>
         <div className="relative z-10 max-w-[600px] mx-auto text-center px-5">
