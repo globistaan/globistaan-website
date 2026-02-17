@@ -47,7 +47,7 @@ export default function Contact() {
             src={images.riverMountain} 
             alt="River valley with mountains" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.88) saturate(1.15)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
@@ -83,7 +83,7 @@ export default function Contact() {
             src={images.blueHills} 
             alt="Blue layered mountains" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.95) saturate(1.1)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.88)' }} />

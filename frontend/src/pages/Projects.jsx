@@ -86,7 +86,7 @@ export default function Projects() {
               src={images.aiBrain} 
               alt="AI and machine learning" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.35) saturate(1.3)' }}
+              
             />
           </div>
           <div className="absolute inset-0" style={{ clipPath: 'polygon(55% 0, 100% 0, 100% 100%, 45% 100%)' }}>
@@ -94,7 +94,7 @@ export default function Projects() {
               src={images.dhauladharGreen} 
               alt="Himachal mountain scenery" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.85) saturate(1.15)' }}
+              
             />
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function Projects() {
             src={images.mistyForest} 
             alt="Misty mountain forest" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.92) saturate(1.1)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
@@ -165,7 +165,7 @@ export default function Projects() {
             src={images.riverValley} 
             alt="River valley mountains" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.85) saturate(1.15)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />

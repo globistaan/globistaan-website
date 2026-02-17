@@ -23,7 +23,7 @@ export default function About() {
             src={images.riverMountain} 
             alt="Himachal Pradesh river valley" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.9) saturate(1.15)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
@@ -59,7 +59,7 @@ export default function About() {
             src={images.circuitComponents} 
             alt="Technology circuits" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.15) saturate(1.3)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1 gradient-mesh" style={{ opacity: 0.5 }} />
@@ -92,7 +92,7 @@ export default function About() {
             src={images.pineForestMist} 
             alt="Pine forest with lake" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.85) saturate(1.15)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
@@ -118,7 +118,7 @@ export default function About() {
             src={images.blueHills} 
             alt="Blue layered mountains" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.95) saturate(1.1)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.82)' }} />
@@ -160,7 +160,7 @@ export default function About() {
             src={images.greenValley} 
             alt="Lush green valley" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.88) saturate(1.15)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.82)' }} />
@@ -209,7 +209,7 @@ export default function About() {
             src={images.dhauladharRange} 
             alt="Dhauladhar mountain range" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.8) saturate(1.2)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />

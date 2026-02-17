@@ -23,7 +23,7 @@ export default function Investors() {
             src={images.himalayanSnow} 
             alt="Snow-capped Himalayas" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.85) saturate(1.2)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.3) 100%)' }} />
@@ -67,7 +67,7 @@ export default function Investors() {
             src={images.circuitBlue} 
             alt="Technology circuits" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.12) saturate(1.5)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1 gradient-mesh" style={{ opacity: 0.5 }} />
@@ -124,7 +124,7 @@ export default function Investors() {
             src={images.mistyForest} 
             alt="Misty mountain forest" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.9) saturate(1.15)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
@@ -174,7 +174,7 @@ export default function Investors() {
             src={images.riverValley} 
             alt="River valley" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.92) saturate(1.1)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
@@ -242,7 +242,7 @@ export default function Investors() {
             src={images.neonCode} 
             alt="Neon code" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.25) saturate(1.5)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.9)' }} />
@@ -270,7 +270,7 @@ export default function Investors() {
             src={images.dhauladharRange} 
             alt="Dhauladhar mountain range" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.8) saturate(1.2)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />

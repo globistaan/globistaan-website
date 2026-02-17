@@ -140,7 +140,7 @@ export default function People() {
               src={images.robotBlue} 
               alt="AI robots" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.5) saturate(1.2)' }}
+              
             />
           </div>
           <div className="absolute inset-0" style={{ clipPath: 'polygon(50% 0, 100% 0, 100% 100%, 50% 100%)' }}>
@@ -148,7 +148,7 @@ export default function People() {
               src={images.pineSilhouette} 
               alt="Pine forest silhouette" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.9) saturate(1.1)' }}
+              
             />
           </div>
         </div>
@@ -185,7 +185,7 @@ export default function People() {
             src={images.blueHills} 
             alt="Blue layered mountains" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.95) saturate(1.1)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
@@ -217,7 +217,7 @@ export default function People() {
             src={images.motherboard} 
             alt="Technology circuits" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.15) saturate(1.3)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1 gradient-mesh" style={{ opacity: 0.4 }} />
@@ -250,7 +250,7 @@ export default function People() {
             src={images.greenValley} 
             alt="Lush green valley" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.88) saturate(1.15)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.82)' }} />
@@ -282,7 +282,7 @@ export default function People() {
             src={images.dhauladharRange} 
             alt="Dhauladhar mountain range" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.8) saturate(1.2)' }}
+            
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />
