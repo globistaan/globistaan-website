@@ -32,7 +32,6 @@ const TechCard = ({ item, index }) => {
       style={{ padding: '1.75rem' }}
     >
       <div className="flex items-start gap-4">
-        {/* Logo Container */}
         <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,255,255,0.95)', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
           {item.logo && !imgError ? (
             <img 
@@ -62,7 +61,6 @@ const TechCard = ({ item, index }) => {
   );
 };
 
-// Logo Grid Component - Simple display
 const LogoGrid = ({ items, title }) => (
   <div className="mb-14">
     <h3 className="text-center mb-8" style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--text-primary)' }}>{title}</h3>
@@ -112,32 +110,30 @@ export default function TechStack() {
 
   return (
     <main>
-      {/* Hero - Split: Code on left, Mountains on right */}
+      {/* Hero - Split: Code on left, Mountains on right - HD NO FILTER */}
       <section className="relative min-h-[70vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0" style={{ clipPath: 'polygon(0 0, 55% 0, 45% 100%, 0 100%)' }}>
             <img 
-              src={images.codeScreen} 
-              alt="Code and programming" 
+              src={images.serverGreen} 
+              alt="Server room" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.5)' }}
             />
           </div>
           <div className="absolute inset-0" style={{ clipPath: 'polygon(55% 0, 100% 0, 100% 100%, 45% 100%)' }}>
             <img 
-              src={images.blueHills} 
-              alt="Blue Himalayan mountains" 
+              src={images.manaliSnow} 
+              alt="Manali snow mountains" 
               className="w-full h-full object-cover"
-              style={{ filter: 'brightness(0.9)' }}
             />
           </div>
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.25) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5 border-white/40 text-white" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', background: 'rgba(0,0,0,0.3)' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5 border-white/40 text-white" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', background: 'rgba(0,0,0,0.4)' }}>
               Tech Stack
             </Badge>
           </motion.div>
@@ -156,14 +152,14 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Logo Showcase Section - Clear background */}
+      {/* Logo Showcase Section - HD Circuit Background */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={images.circuitBlue} 
-            alt="Technology hardware" 
+            alt="Circuit board" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.15)' }}
+            style={{ opacity: 0.15 }}
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.95)' }} />
@@ -181,17 +177,16 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Filter + Grid - Mountain backdrop, clear overlay */}
+      {/* Filter + Grid - HD Forest Background */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={images.mistyForest} 
-            alt="Misty mountain forest" 
+            alt="Himalayan forest" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.95)' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.92)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.93)' }} />
         
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="flex flex-wrap items-center justify-center gap-2 mb-12">
@@ -214,17 +209,16 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Category Overview - Clear visibility */}
+      {/* Category Overview - HD Green Valley */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={images.greenValley} 
             alt="Green valley" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.9)' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.92)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.93)' }} />
         
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-14">
@@ -234,10 +228,10 @@ export default function TechStack() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: 'Cloud Platforms', desc: 'Scalable infrastructure across AWS, Railway, Google Cloud, and Azure for reliable deployments.', accent: 'accent-blue', icon: Cloud },
-              { title: 'AI-Powered IDEs', desc: 'Cursor and Claude Code enable AI-assisted development, accelerating code quality.', accent: 'accent-purple', icon: Code2 },
-              { title: 'AI Agents & Models', desc: 'Gemini, OpenAI GPT, Claude, and LangChain form our intelligent product capabilities.', accent: 'accent-orange', icon: Cpu },
-              { title: 'Frameworks & Databases', desc: 'React, FastAPI, Next.js paired with MongoDB, PostgreSQL, and Redis.', accent: 'accent-green', icon: Layers }
+              { title: 'Cloud Platforms', desc: 'Scalable infrastructure across AWS, Railway, Google Cloud, and Azure for reliable deployments.', accent: 'accent-blue', icon: Cloud, bgImg: images.serverBlue },
+              { title: 'AI-Powered IDEs', desc: 'Cursor and Claude Code enable AI-assisted development, accelerating code quality.', accent: 'accent-purple', icon: Code2, bgImg: images.codeScreen },
+              { title: 'AI Agents & Models', desc: 'Gemini, OpenAI GPT, Claude, and LangChain form our intelligent product capabilities.', accent: 'accent-orange', icon: Cpu, bgImg: images.robotOrange },
+              { title: 'Frameworks & Databases', desc: 'React, FastAPI, Next.js paired with MongoDB, PostgreSQL, and Redis.', accent: 'accent-green', icon: Layers, bgImg: images.networkCables }
             ].map((cat, i) => {
               const Icon = cat.icon;
               return (
@@ -247,14 +241,19 @@ export default function TechStack() {
                   whileInView={{ opacity: 1, y: 0 }} 
                   viewport={{ once: true }} 
                   transition={{ duration: 0.5, delay: i * 0.1 }} 
-                  className={`voice-card glow-card ${cat.accent}`} 
+                  className={`voice-card glow-card ${cat.accent} relative overflow-hidden`} 
                   style={{ padding: '2.25rem' }}
                 >
-                  <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(0,0,0,0.06)' }}>
-                    <Icon className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
+                  <div className="absolute inset-0 z-0 opacity-10">
+                    <img src={cat.bgImg} alt="" className="w-full h-full object-cover" />
                   </div>
-                  <h3 style={{ fontSize: '1.15rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--text-primary)' }}>{cat.title}</h3>
-                  <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>{cat.desc}</p>
+                  <div className="relative z-10">
+                    <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-5" style={{ background: 'rgba(0,0,0,0.06)' }}>
+                      <Icon className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
+                    </div>
+                    <h3 style={{ fontSize: '1.15rem', fontWeight: 500, marginBottom: '0.6rem', color: 'var(--text-primary)' }}>{cat.title}</h3>
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>{cat.desc}</p>
+                  </div>
                 </motion.div>
               );
             })}
@@ -262,17 +261,16 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* CTA - Mountain Range */}
+      {/* CTA - HD Dhauladhar Range */}
       <section className="relative min-h-[45vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src={images.dhauladharRange} 
             alt="Dhauladhar mountain range" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.85)' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[650px] mx-auto text-center px-5 py-16">
