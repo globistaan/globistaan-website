@@ -1,45 +1,58 @@
 import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Sparkles, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
 
-// Strategic image collection: Nature + Technology blend
+// HIGH DEFINITION Images - NO BLUR, NO FILTERS
 export const images = {
-  // === HIMACHAL PRADESH NATURE ===
-  // Rivers & Valleys
-  riverValley: "https://images.unsplash.com/photo-1624697561550-982f5d50f97d?w=1920&q=85", // Green mountains with river
-  riverMountain: "https://images.unsplash.com/photo-1737475236760-070d39c5f833?w=1920&q=85", // Mountain range with river
+  // === HIMACHAL PRADESH - CRYSTAL CLEAR HD ===
+  // Kullu Manali Valley
+  kulluValley: "https://images.unsplash.com/photo-1615552714321-dca9935c0981?w=1920&q=90", // Green grass mountain cloudy
+  manaliSnow: "https://images.unsplash.com/photo-1711943729014-396f093d0fb5?w=1920&q=90", // Snow mountain with trees
+  manaliRange: "https://images.unsplash.com/photo-1711943728995-f8cbcd6ebb69?w=1920&q=90", // Mountain range snow
+  kulluMist: "https://images.unsplash.com/photo-1615552713642-73c367c8915c?w=1920&q=90", // Green grass field mountain
   
-  // Snow-Capped Mountains
-  dhauladharRange: "https://images.unsplash.com/photo-1637896175022-7165f16fb523?w=1920&q=85", // Panoramic mountain range
-  dhauladharGreen: "https://images.unsplash.com/photo-1627625335607-60187d590493?w=1920&q=85", // Green trees with snow peaks
-  snowPeakMist: "https://images.unsplash.com/photo-1615101999240-9d1f4da5841f?w=1920&q=85", // Misty snow peaks
+  // Rivers & Valleys
+  riverValley: "https://images.unsplash.com/photo-1624697561550-982f5d50f97d?w=1920&q=90", // Green mountains with river
+  riverMountain: "https://images.unsplash.com/photo-1737475236760-070d39c5f833?w=1920&q=90", // Mountain range with river
+  
+  // Snow-Capped Mountains  
+  dhauladharRange: "https://images.unsplash.com/photo-1637896175022-7165f16fb523?w=1920&q=90", // Panoramic mountain range
+  dhauladharGreen: "https://images.unsplash.com/photo-1627625335607-60187d590493?w=1920&q=90", // Green trees with snow peaks
+  snowPeakMist: "https://images.unsplash.com/photo-1615101999240-9d1f4da5841f?w=1920&q=90", // Misty snow peaks
   
   // Forests & Mist
-  mistyForest: "https://images.unsplash.com/photo-1595995518298-5df716362207?w=1920&q=85", // Foggy forest mountains
-  pineForestMist: "https://images.unsplash.com/photo-1656490359541-4574fc234394?w=1920&q=85", // Pine forest with lake
-  pineSilhouette: "https://images.unsplash.com/photo-1771177323692-4cd0132cedd5?w=1920&q=85", // Silhouette pine trees
-  blueHills: "https://images.unsplash.com/photo-1621505697693-9784907b50c9?w=1920&q=85", // Blue layered mountains
+  mistyForest: "https://images.unsplash.com/photo-1595995518298-5df716362207?w=1920&q=90", // Foggy forest mountains
+  pineForestMist: "https://images.unsplash.com/photo-1656490359541-4574fc234394?w=1920&q=90", // Pine forest with lake
+  pineSilhouette: "https://images.unsplash.com/photo-1771177323692-4cd0132cedd5?w=1920&q=90", // Silhouette pine trees
+  blueHills: "https://images.unsplash.com/photo-1621505697693-9784907b50c9?w=1920&q=90", // Blue layered mountains
   
-  // Clouds & Sky
-  mountainClouds: "https://images.unsplash.com/photo-1641892046220-d8faa2ed612f?w=1920&q=85", // Mountains with dramatic clouds
-  himalayanSnow: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=85", // Snow-capped Himalayas
-  greenValley: "https://images.unsplash.com/photo-1614095431374-c5e71970d70c?w=1920&q=85", // Lush green valley
+  // Clouds & Valleys
+  mountainClouds: "https://images.unsplash.com/photo-1641892046220-d8faa2ed612f?w=1920&q=90", // Mountains with clouds
+  himalayanSnow: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=90", // Snow-capped Himalayas
+  greenValley: "https://images.unsplash.com/photo-1614095431374-c5e71970d70c?w=1920&q=90", // Lush green valley
   
-  // === AI & TECHNOLOGY ===
+  // === AI & TECHNOLOGY - CRYSTAL CLEAR HD ===
+  // Robots
+  robotYellow: "https://images.unsplash.com/photo-1767955006100-cf73d990599f?w=1920&q=90", // Boy with yellow robot
+  robotOrange: "https://images.unsplash.com/photo-1768400730810-5c4398d58ae7?w=1920&q=90", // Orange robot
+  robotTwins: "https://images.unsplash.com/photo-1768400730812-039f5971185d?w=1920&q=90", // Two glowing robots
+  robotCat: "https://images.unsplash.com/photo-1767716134895-296cbd7aec1a?w=1920&q=90", // Yellow cat robot
+  
+  // Server & Data Centers
+  serverGreen: "https://images.unsplash.com/photo-1680992046626-418f7e910589?w=1920&q=90", // Server room green glow
+  serverBlue: "https://images.unsplash.com/photo-1680992044138-ce4864c2b962?w=1920&q=90", // Server close up
+  networkCables: "https://images.unsplash.com/photo-1691435828932-911a7801adfb?w=1920&q=90", // Network with cables
+  
   // Circuits & Hardware
-  circuitBlue: "https://images.unsplash.com/photo-1731400800900-1bce57414c09?w=1920&q=85", // Blue circuit board macro
-  circuitComponents: "https://images.unsplash.com/photo-1603732551681-2e91159b9dc2?w=1920&q=85", // Circuit with components
-  motherboard: "https://images.unsplash.com/photo-1608869768763-9085a739c5fc?w=1920&q=85", // Blue motherboard
-  
-  // Robots & AI
-  robotBlue: "https://images.unsplash.com/photo-1769839272014-089cd3bbc274?w=1920&q=85", // Blue robots
+  circuitBlue: "https://images.unsplash.com/photo-1731400800900-1bce57414c09?w=1920&q=90", // Blue circuit board
+  circuitComponents: "https://images.unsplash.com/photo-1603732551681-2e91159b9dc2?w=1920&q=90", // Circuit with components
+  motherboard: "https://images.unsplash.com/photo-1608869768763-9085a739c5fc?w=1920&q=90", // Blue motherboard
   
   // Code & Development
-  codeScreen: "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?w=1920&q=85", // Code on screen
-  codeMultiple: "https://images.unsplash.com/photo-1754039984985-ef607d80113a?w=1920&q=85", // Multiple code screens
-  neonCode: "https://images.unsplash.com/photo-1710957987034-cea509422852?w=1920&q=85", // Neon light code effect
+  codeScreen: "https://images.unsplash.com/photo-1759661881353-5b9cc55e1cf4?w=1920&q=90", // Code on screen
+  codeMultiple: "https://images.unsplash.com/photo-1754039984985-ef607d80113a?w=1920&q=90", // Multiple code screens
+  neonCode: "https://images.unsplash.com/photo-1710957987034-cea509422852?w=1920&q=90", // Neon light code effect
   
-  // Server & Data
-  serverRoom: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1920&q=85",
-  aiBrain: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=85"
+  // AI Brain
+  aiBrain: "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=90"
 };
 
 // Tech Stack with actual logo URLs
