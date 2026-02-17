@@ -2,7 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Quote } from 'lucide-react';
-import { companyInfo, registrations } from '../data/mock';
+import { companyInfo, registrations, images } from '../data/mock';
 import { ParticlesBg, NeuralGrid } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 
