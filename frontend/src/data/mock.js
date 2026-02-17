@@ -153,42 +153,33 @@ export const techStack = {
   ]
 };
 
-export const teamMembers = [
+export const directors = [
   {
-    name: "[Founder Name]",
+    name: "[Director Name]",
     role: "Founder & CEO",
     bio: "13+ years in IT industry developing web applications for global banks. Passionate about leveraging AI to solve real-world challenges.",
-    placeholder: "[Photo placeholder]"
+    avatar: null
   },
   {
-    name: "[Team Member]",
-    role: "CTO",
-    bio: "[Bio placeholder - Add team member details here]",
-    placeholder: "[Photo placeholder]"
+    name: "[Director Name]",
+    role: "Co-Founder & COO",
+    bio: "[Bio placeholder - Add director details here]",
+    avatar: null
+  }
+];
+
+export const developers = [
+  {
+    name: "[Developer Name]",
+    role: "Freelance Full Stack Developer",
+    bio: "[Bio placeholder - Add developer details here]",
+    avatar: null
   },
   {
-    name: "[Team Member]",
-    role: "Lead AI Engineer",
-    bio: "[Bio placeholder - Add team member details here]",
-    placeholder: "[Photo placeholder]"
-  },
-  {
-    name: "[Team Member]",
-    role: "Full Stack Developer",
-    bio: "[Bio placeholder - Add team member details here]",
-    placeholder: "[Photo placeholder]"
-  },
-  {
-    name: "[Team Member]",
-    role: "ML Engineer",
-    bio: "[Bio placeholder - Add team member details here]",
-    placeholder: "[Photo placeholder]"
-  },
-  {
-    name: "[Team Member]",
-    role: "Product Designer",
-    bio: "[Bio placeholder - Add team member details here]",
-    placeholder: "[Photo placeholder]"
+    name: "[Developer Name]",
+    role: "Freelance ML Engineer",
+    bio: "[Bio placeholder - Add developer details here]",
+    avatar: null
   }
 ];
 
