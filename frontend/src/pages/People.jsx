@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Quote, Briefcase, User, Crown, Code2 } from 'lucide-react';
+import { ArrowRight, Quote, Crown, Code2, User } from 'lucide-react';
 import { directors, developers, clients, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from '../components/ui/tabs';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 24 },
@@ -130,43 +129,42 @@ const ClientCard = ({ client, index }) => {
 export default function People() {
   return (
     <main>
-      {/* Hero with mountain background */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={images.mountainValley}
-            alt="Himachal Pradesh mountains"
-            className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.6) saturate(1.3)' }}
-          />
-          <div className="absolute inset-0" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
+      {/* Hero - Dhauladhar Mountain backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '65vh', display: 'flex', alignItems: 'center' }}>
+        <div className="bg-image">
+          <img src={images.dhauladharGreen} alt="Dhauladhar mountains with green meadows" style={{ filter: 'brightness(0.9) saturate(1.15)' }} />
         </div>
-        <div className="relative z-10 max-w-[800px] mx-auto text-center px-5">
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
+        <ParticlesBg />
+        <div className="content-z max-w-[800px] mx-auto text-center px-5 pt-24" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
               Our People
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 30px rgba(0,0,0,0.4)' }}
           >
             Directors, Developers & Clients
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: 1.65, color: 'rgba(255,255,255,0.75)', maxWidth: '580px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '600px', margin: '0 auto', textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
           >
             Built from the mountains of Himachal Pradesh — meet the leaders, engineers, and partners driving our AI vision.
           </motion.p>
         </div>
       </section>
 
-      <div className="section-divider" />
-
-      {/* Directors Section */}
-      <section className="py-20" style={{ background: 'var(--bg-page)' }}>
-        <div className="max-w-[900px] mx-auto px-5 md:px-9">
+      {/* Directors Section - Mountain backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '55vh', padding: '5rem 0' }}>
+        <div className="bg-image">
+          <img src={images.dhauladharRange} alt="Dhauladhar mountain range" style={{ filter: 'brightness(0.92) saturate(1.1)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.9) 100%)' }} />
+        
+        <div className="content-z max-w-[900px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-12">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Leadership
@@ -186,11 +184,14 @@ export default function People() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
-      {/* Developers Section */}
-      <section className="py-20" style={{ background: 'var(--bg-section)' }}>
-        <div className="max-w-[900px] mx-auto px-5 md:px-9">
+      {/* Developers Section - Snow Peak backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '55vh', padding: '5rem 0' }}>
+        <div className="bg-image">
+          <img src={images.snowPeakMist} alt="Misty snow-capped peaks" style={{ filter: 'brightness(0.9) saturate(1.15)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.88) 100%)' }} />
+        
+        <div className="content-z max-w-[900px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-12">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Engineering
@@ -202,23 +203,6 @@ export default function People() {
               Talented engineers building the next generation of AI-powered products.
             </p>
           </motion.div>
-
-          {/* Robot & Computer Image Row */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 gap-4 mb-10"
-          >
-            <div className="rounded-xl overflow-hidden" style={{ height: '180px' }}>
-              <img src={images.robot} alt="AI Robot" className="w-full h-full object-cover" style={{ filter: 'brightness(0.95)' }} />
-            </div>
-            <div className="rounded-xl overflow-hidden" style={{ height: '180px' }}>
-              <img src={images.workspace} alt="Developer workspace" className="w-full h-full object-cover" />
-            </div>
-          </motion.div>
-
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {developers.map((member, i) => (
               <DeveloperCard key={i} member={member} index={i} />
@@ -227,11 +211,14 @@ export default function People() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
-      {/* Clients Section */}
-      <section className="py-20" style={{ background: 'var(--bg-page)' }}>
-        <div className="max-w-[900px] mx-auto px-5 md:px-9">
+      {/* Clients Section - Green Valley backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '60vh', padding: '5rem 0' }}>
+        <div className="bg-image">
+          <img src={images.greenValley} alt="Lush green valley of Himachal" style={{ filter: 'brightness(0.88) saturate(1.15)' }} />
+        </div>
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.88) 100%)' }} />
+        
+        <div className="content-z max-w-[900px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-12">
             <Badge variant="outline" className="mb-4 rounded-full px-3 py-1" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Partnerships
@@ -251,27 +238,22 @@ export default function People() {
         </div>
       </section>
 
-      <div className="section-divider" />
-
       {/* Mountain CTA */}
-      <section className="relative py-24 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img
-            src={images.mountainFog}
-            alt="Himachal Pradesh misty mountains"
-            className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.55) saturate(1.2)' }}
-          />
+      <section className="img-bg-section" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
+        <div className="bg-image">
+          <img src={images.mountainRange} alt="Himalayan mountain range panorama" style={{ filter: 'brightness(0.8) saturate(1.2)' }} />
         </div>
-        <div className="relative z-10 max-w-[600px] mx-auto text-center px-5">
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
+        <ParticlesBg />
+        <div className="content-z max-w-[600px] mx-auto text-center px-5 py-16" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
-            <h2 className="mb-4" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2 }}>
+            <h2 className="mb-4" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
               Join Our Team or Become a Client
             </h2>
-            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.6, textShadow: '0 1px 10px rgba(0,0,0,0.3)' }}>
               We're always looking for talented engineers and ambitious clients who want to build with AI.
             </p>
-            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
+            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
               Get in Touch <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
