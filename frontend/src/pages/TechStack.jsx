@@ -60,58 +60,40 @@ export default function TechStack() {
 
   return (
     <main>
-      {/* Hero */}
-      <section className="img-bg-section" style={{ paddingTop: '8rem', paddingBottom: '5rem' }}>
+      {/* Hero - Dhauladhar Mountains */}
+      <section className="img-bg-section" style={{ minHeight: '65vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.serverRoom} alt="" style={{ filter: 'brightness(0.5) saturate(1.2)' }} />
+          <img src={images.dhauladharClouds} alt="Dhauladhar peaks with clouds" style={{ filter: 'brightness(0.88) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.4) 100%)' }} />
-        <div className="floating-orb floating-orb-2" />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
-        <div className="content-z max-w-[800px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="content-z max-w-[800px] mx-auto text-center px-5 pt-24" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/80" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-3 py-1 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
               Tech Stack
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 30px rgba(0,0,0,0.4)' }}
           >
             Tools Our Developers Use
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.125rem)', lineHeight: 1.65, color: 'rgba(255,255,255,0.7)', maxWidth: '580px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.15rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '600px', margin: '0 auto', textShadow: '0 1px 12px rgba(0,0,0,0.3)' }}
           >
             From cloud infrastructure to AI agents — the technology stack powering our AI products and services.
           </motion.p>
         </div>
       </section>
 
-      {/* Tech Images Strip */}
-      <section className="img-bg-section" style={{ padding: '2.5rem 0' }}>
+      {/* Filter + Grid - Mountain backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '65vh', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.codeScreen} alt="" style={{ filter: 'brightness(0.4) saturate(1.1)' }} />
+          <img src={images.dhauladharGreen} alt="Green meadows with snow-capped peaks" style={{ filter: 'brightness(0.92) saturate(1.1)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
-        <div className="content-z max-w-[1100px] mx-auto px-5" style={{ position: 'relative', zIndex: 5 }}>
-          <div className="grid grid-cols-4 gap-3">
-            {[images.workspace, images.circuitBoard, images.neuralBlue, images.aiBrain].map((img, i) => (
-              <motion.div key={i} initial={{ opacity: 0, scale: 0.85 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: i * 0.08 }} className="img-zoom" style={{ height: '100px', borderRadius: '0.5rem' }}>
-                <img src={img} alt="" className="w-full h-full object-cover" style={{ borderRadius: '0.5rem' }} />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Filter + Grid */}
-      <section className="img-bg-section" style={{ padding: '5rem 0' }}>
-        <div className="bg-image">
-          <img src={images.mountainFog} alt="" style={{ filter: 'brightness(0.45) saturate(1.2)' }} />
-        </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.82)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.82) 0%, rgba(255,255,255,0.9) 100%)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="flex flex-wrap items-center gap-2 mb-10">
             {categories.map((cat) => (
@@ -128,12 +110,12 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Category Overview */}
-      <section className="img-bg-section" style={{ padding: '5rem 0' }}>
+      {/* Category Overview - Snow Peak backdrop */}
+      <section className="img-bg-section" style={{ minHeight: '55vh', padding: '5rem 0' }}>
         <div className="bg-image">
-          <img src={images.neuralBrain} alt="" style={{ filter: 'brightness(0.15)' }} />
+          <img src={images.snowPeakMist} alt="Misty snow-capped peaks" style={{ filter: 'brightness(0.9) saturate(1.15)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(255,255,255,0.85)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.88) 100%)' }} />
         <div className="content-z max-w-[1100px] mx-auto px-5 md:px-9" style={{ position: 'relative', zIndex: 5 }}>
           <motion.div {...fadeInUp} className="text-center mb-14">
             <h2 style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
@@ -162,22 +144,22 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="img-bg-section" style={{ padding: '6rem 0' }}>
+      {/* CTA - Mountain Range */}
+      <section className="img-bg-section" style={{ minHeight: '45vh', display: 'flex', alignItems: 'center' }}>
         <div className="bg-image">
-          <img src={images.snowyPeak} alt="" style={{ filter: 'brightness(0.6) saturate(1.2)' }} />
+          <img src={images.mountainRange} alt="Himalayan mountain range panorama" style={{ filter: 'brightness(0.8) saturate(1.2)' }} />
         </div>
-        <div className="bg-overlay" style={{ background: 'rgba(0,0,0,0.2)' }} />
+        <div className="bg-overlay" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.25) 100%)' }} />
         <ParticlesBg />
-        <div className="content-z max-w-[600px] mx-auto text-center px-5" style={{ position: 'relative', zIndex: 10 }}>
+        <div className="content-z max-w-[600px] mx-auto text-center px-5 py-16" style={{ position: 'relative', zIndex: 10 }}>
           <motion.div {...fadeInUp}>
-            <h2 className="mb-4" style={{ fontSize: 'clamp(1.3rem, 3vw, 1.75rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2 }}>
+            <h2 className="mb-4" style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.2, textShadow: '0 2px 20px rgba(0,0,0,0.4)' }}>
               Want to Work With Our Stack?
             </h2>
-            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.7)', fontSize: '0.95rem', lineHeight: 1.6 }}>
+            <p className="mb-8" style={{ color: 'rgba(255,255,255,0.85)', fontSize: '1rem', lineHeight: 1.6, textShadow: '0 1px 10px rgba(0,0,0,0.3)' }}>
               Whether you're a developer or a client who wants to leverage these tools — let's talk.
             </p>
-            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.85rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
+            <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '0.9rem 2rem', background: 'white', color: 'var(--text-primary)' }}>
               Get in Touch <ArrowRight className="w-4 h-4" />
             </Link>
           </motion.div>
