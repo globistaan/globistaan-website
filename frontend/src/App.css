@@ -424,14 +424,12 @@ body {
   transform: scale(1.1);
 }
 
-/* ===== Content Visibility Enhancement ===== */
+/* ===== Content Visibility Enhancement - Clear, no blur ===== */
 .content-glass {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(255, 255, 255, 0.97);
   border-radius: 1.5rem;
   padding: 3rem;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 .text-shadow-hero {
