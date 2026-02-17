@@ -187,26 +187,23 @@ export const clients = [
   {
     name: "[Client Company 1]",
     industry: "Banking & Finance",
+    contact: "[Client Contact Name]",
     testimonial: "[Testimonial placeholder - Add client feedback here]",
-    placeholder: "[Logo placeholder]"
+    avatar: null
   },
   {
     name: "[Client Company 2]",
     industry: "Healthcare / Pharma",
+    contact: "[Client Contact Name]",
     testimonial: "[Testimonial placeholder - Add client feedback here]",
-    placeholder: "[Logo placeholder]"
+    avatar: null
   },
   {
     name: "[Client Company 3]",
     industry: "E-Commerce",
+    contact: "[Client Contact Name]",
     testimonial: "[Testimonial placeholder - Add client feedback here]",
-    placeholder: "[Logo placeholder]"
-  },
-  {
-    name: "[Client Company 4]",
-    industry: "Education",
-    testimonial: "[Testimonial placeholder - Add client feedback here]",
-    placeholder: "[Logo placeholder]"
+    avatar: null
   }
 ];
 
