@@ -15,11 +15,11 @@ const fadeInUp = {
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* HD Background - Kullu Valley */}
+    {/* HD Background - Shimla Landscape */}
     <div className="absolute inset-0 z-0">
       <img 
-        src={images.kulluValley} 
-        alt="Kullu Valley Himachal Pradesh" 
+        src={images.shimlaLandscape} 
+        alt="Shimla Himachal Pradesh Landscape" 
         className="w-full h-full object-cover"
       />
     </div>
@@ -56,11 +56,11 @@ const HeroSection = () => (
           letterSpacing: '-0.03em'
         }}
       >
-        <span className="headline-where" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)', color: '#8B4513' }}>Where </span>
-        <span className="headline-mountains">Mountains</span>
+        <span className="headline-where" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7)', color: '#E8F4F8' }}>Where </span>
+        <span className="headline-mountains" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7)', color: '#B8E0F0' }}>Mountains</span>
         <br />
-        <span className="headline-meet" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}> Meet </span>
-        <span className="headline-machines">Machines</span>
+        <span className="headline-meet" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7)', color: '#E8F4F8' }}> Meet </span>
+        <span className="headline-machines" style={{ textShadow: '0 2px 20px rgba(0,0,0,0.7)', color: '#D0E8F5' }}>Machines</span>
       </motion.h1>
 
       {/* Image thumbnails showing mountains and machines */}

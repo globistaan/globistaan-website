@@ -13,6 +13,10 @@ export const natureImages = {
   kulluValley: "https://images.unsplash.com/photo-1615552714321-dca9935c0981?w=1920&q=90",
   blueHills: "https://images.unsplash.com/photo-1621505697693-9784907b50c9?w=1920&q=90",
   
+  // BUILDINGS & ARCHITECTURE
+  shimlaMunicipal: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&q=90",
+  shimlaLandscape: "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=1920&q=90",
+  
   // RIVERS
   riverRocks: "https://images.unsplash.com/photo-1655470062301-e813948e9874?w=1920&q=90",
   riverForest: "https://images.unsplash.com/photo-1611523658822-385aa008324c?w=1920&q=90",
