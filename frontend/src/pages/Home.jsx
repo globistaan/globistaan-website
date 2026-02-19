@@ -15,11 +15,11 @@ const fadeInUp = {
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* HD Background - Shimla Landscape */}
+    {/* HD Background - Dharamshala Valley */}
     <div className="absolute inset-0 z-0">
       <img 
-        src={images.shimlaLandscape} 
-        alt="Shimla Himachal Pradesh Landscape" 
+        src={images.dharamshalaValley} 
+        alt="Dharamshala Valley Himachal Pradesh" 
         className="w-full h-full object-cover"
       />
     </div>
