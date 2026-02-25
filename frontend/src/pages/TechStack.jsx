@@ -231,7 +231,7 @@ export default function TechStack() {
               { title: 'Cloud Platforms', desc: 'Scalable infrastructure across AWS, Railway, Google Cloud, and Azure for reliable deployments.', accent: 'accent-blue', icon: Cloud, bgImg: images.serverBlue },
               { title: 'AI-Powered IDEs', desc: 'Cursor and Claude Code enable AI-assisted development, accelerating code quality.', accent: 'accent-purple', icon: Code2, bgImg: images.codeScreen },
               { title: 'AI Agents & Models', desc: 'Gemini, OpenAI GPT, Claude, and LangChain form our intelligent product capabilities.', accent: 'accent-orange', icon: Cpu, bgImg: images.robotOrange },
-              { title: 'Frameworks & Databases', desc: 'React, FastAPI, Next.js paired with MongoDB, PostgreSQL, and Redis.', accent: 'accent-green', icon: Layers, bgImg: images.networkCables }
+              { title: 'Modern Frameworks', desc: 'React, Next.js, and Tailwind CSS for building beautiful, responsive applications.', accent: 'accent-green', icon: Layers, bgImg: images.networkCables }
             ].map((cat, i) => {
               const Icon = cat.icon;
               return (

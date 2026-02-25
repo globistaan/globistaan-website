@@ -70,13 +70,10 @@ export const techStack = {
   ],
   frameworks: [
     { name: "React", description: "Frontend framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "FastAPI", description: "High-performance Python backend", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
     { name: "Next.js", description: "Full-stack React framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
     { name: "TensorFlow", description: "ML model training", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
     { name: "PyTorch", description: "Deep learning framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
-    { name: "MongoDB", description: "NoSQL database", category: "Database", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" },
-    { name: "PostgreSQL", description: "Relational database", category: "Database", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
-    { name: "Redis", description: "In-memory caching", category: "Database", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" }
+    { name: "Tailwind CSS", description: "Utility-first CSS framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
   ]
 };
 
