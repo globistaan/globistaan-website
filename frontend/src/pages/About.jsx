@@ -20,13 +20,13 @@ export default function About() {
       <section className="relative min-h-[75vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.riverMountain} 
-            alt="Himachal Pradesh river valley" 
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop"
+            alt="Snow-dusted Himalayan peaks at golden hour with orange-pink sky and rolling mist" 
             className="w-full h-full object-cover"
-            
+            style={{ objectPosition: 'center 40%' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(10,10,25,0.25) 0%, rgba(10,10,30,0.5) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">
@@ -70,6 +70,23 @@ export default function About() {
             <h2 className="mb-8 text-center" style={{ fontSize: 'clamp(1.5rem, 3.5vw, 2.25rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
               From the Mountains to the World
             </h2>
+            
+            {/* Mountain Image */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="mb-8 rounded-2xl overflow-hidden shadow-2xl"
+            >
+              <img 
+                src="https://images.unsplash.com/photo-1540979388789-6cee28a1cdc9?q=80&w=1600&auto=format&fit=crop" 
+                alt="Majestic Himalayan mountains representing our journey from the mountains to the world" 
+                className="w-full h-auto object-cover"
+                style={{ maxHeight: '400px' }}
+              />
+            </motion.div>
+            
             <div className="flex flex-col gap-6" style={{ fontSize: '1rem', lineHeight: 1.8, color: 'var(--text-secondary)' }}>
               <p>
                 The idea of Globistaan came into existence as we want to be a valuable part of the global community and see tremendous scope in the technology sector as a software development services company. This venture is a humble attempt in solving challenges and exploring new avenues in the field of technology.
@@ -89,13 +106,15 @@ export default function About() {
       <section className="relative min-h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.pineForestMist} 
-            alt="Pine forest with lake" 
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?q=90&w=2400&auto=format&fit=crop"
+            alt="Misty pine forest at dawn with golden sunrise light filtering through tall trees" 
             className="w-full h-full object-cover"
-            
+            style={{ objectPosition: 'center 40%' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ 
+          background: 'linear-gradient(180deg, rgba(10,18,35,0.55) 0%, rgba(10,18,35,0.65) 100%)'
+        }} />
         
         <div className="relative z-10 max-w-[750px] mx-auto text-center px-5 py-20">
           <motion.div {...fadeInUp}>
@@ -206,13 +225,13 @@ export default function About() {
       <section className="relative min-h-[45vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.dhauladharRange} 
-            alt="Dhauladhar mountain range" 
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop"
+            alt="Cinematic Himalayan mountains at golden hour" 
             className="w-full h-full object-cover"
-            
+            style={{ objectPosition: 'center 60%' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(10,10,25,0.35) 0%, rgba(10,10,30,0.65) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[650px] mx-auto text-center px-5 py-20">

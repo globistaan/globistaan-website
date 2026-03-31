@@ -7,11 +7,15 @@ export const natureImages = {
   // SNOW-CAPPED MOUNTAINS
   manaliSnow: "https://images.unsplash.com/photo-1711943729014-396f093d0fb5?w=1920&q=90",
   manaliRange: "https://images.unsplash.com/photo-1711943728995-f8cbcd6ebb69?w=1920&q=90",
-  dhauladharRange: "https://images.unsplash.com/photo-1637896175022-7165f16fb523?w=1920&q=90",
+  dhauladharRange: "https://images.unsplash.com/photo-1626808642875-0aa545482dfb?q=90&w=1920&auto=format&fit=crop",
   dhauladharGreen: "https://images.unsplash.com/photo-1627625335607-60187d590493?w=1920&q=90",
   himalayanSnow: "https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?w=1920&q=90",
   kulluValley: "https://images.unsplash.com/photo-1615552714321-dca9935c0981?w=1920&q=90",
   blueHills: "https://images.unsplash.com/photo-1621505697693-9784907b50c9?w=1920&q=90",
+  // CINEMATIC GOLDEN HOUR - Primary hero background
+  cinematicHimalaya: "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=90&w=2400&auto=format&fit=crop",
+  goldenHourPeaks: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=90&w=2400&auto=format&fit=crop",
+  snowPeaksSunset: "https://images.unsplash.com/photo-1519904981063-b0cf448d479e?q=90&w=2400&auto=format&fit=crop",
   
   // BUILDINGS & ARCHITECTURE
   shimlaMunicipal: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&q=90",

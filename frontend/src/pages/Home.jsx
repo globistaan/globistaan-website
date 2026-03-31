@@ -15,19 +15,19 @@ const fadeInUp = {
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Stunning HD Background - Himachal Pradesh Green Mountains with Pine Forests */}
+    {/* Breathtaking Snow-Dusted Himalayan Peaks at Golden Hour Sunset */}
     <div className="absolute inset-0 z-0">
       <img 
-        src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2400&auto=format&fit=crop" 
-        alt="Lush green mountains of Himachal Pradesh with pine forests and waterfalls" 
+        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=90&w=2400&auto=format&fit=crop" 
+        alt="Snow-dusted Himalayan peaks at golden hour sunset with mist and pine trees" 
         className="w-full h-full object-cover"
-        style={{ objectPosition: 'center center' }}
+        style={{ objectPosition: 'center 45%' }}
       />
     </div>
     
-    {/* Subtle gradient overlay for depth */}
+    {/* Cinematic gradient — warm at top, deep blue at bottom */}
     <div className="absolute inset-0 z-1" style={{ 
-      background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.25) 50%, rgba(0,0,0,0.35) 100%)'
+      background: 'linear-gradient(180deg, rgba(10,10,25,0.2) 0%, rgba(10,10,30,0.35) 50%, rgba(5,10,25,0.6) 100%)'
     }} />
     
     <ParticlesBg />
@@ -424,63 +424,67 @@ const ProjectsPreview = () => (
 );
 
 const CTASection = () => (
-  <section className="relative min-h-[55vh] flex items-center overflow-hidden">
-    {/* HD Background - Dhauladhar Range */}
+  <section className="relative min-h-[70vh] flex items-center overflow-hidden">
+    {/* Breathtaking Snow-Dusted Himalayan Peaks at Golden Hour */}
     <div className="absolute inset-0 z-0">
       <img 
-        src={images.dhauladharRange} 
-        alt="Dhauladhar mountain range" 
+        src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop" 
+        alt="Snow-dusted Himalayan peaks at golden hour sunset with orange-pink sky and rolling mist" 
         className="w-full h-full object-cover"
+        style={{ objectPosition: 'center 50%' }}
       />
     </div>
-    <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.35) 100%)' }} />
+    <div className="absolute inset-0 z-1" style={{ 
+      background: 'linear-gradient(180deg, rgba(10,10,25,0.3) 0%, rgba(10,10,30,0.55) 60%, rgba(5,10,25,0.75) 100%)'
+    }} />
     <ParticlesBg />
     
-    <div className="relative z-10 max-w-[850px] mx-auto px-5 py-20">
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10">
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true }}
-          className="rounded-xl overflow-hidden shadow-lg h-24"
-        >
-          <img src={images.mistyForest} alt="Forest" className="w-full h-full object-cover" />
-        </motion.div>
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true }}
-          transition={{ delay: 0.1 }}
-          className="rounded-xl overflow-hidden shadow-lg h-24"
-        >
-          <img src={images.robotCat} alt="Robot" className="w-full h-full object-cover" />
-        </motion.div>
-        <motion.div 
-          initial={{ opacity: 0, y: 20 }} 
-          whileInView={{ opacity: 1, y: 0 }} 
-          viewport={{ once: true }}
-          transition={{ delay: 0.2 }}
-          className="rounded-xl overflow-hidden shadow-lg h-24"
-        >
-          <img src={images.manaliRange} alt="Mountains" className="w-full h-full object-cover" />
-        </motion.div>
-      </div>
-      
-      <motion.div {...fadeInUp} className="text-center">
-        <h2 className="mb-5" style={{ fontSize: 'clamp(1.6rem, 4vw, 2.5rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15, textShadow: '0 2px 15px rgba(0,0,0,0.4)' }}>
-          Ready to Build with AI?
+    <div className="relative z-10 max-w-[1000px] mx-auto px-5 md:px-9 py-24">
+      <motion.div {...fadeInUp} className="text-center mb-12">
+        <h2 className="mb-8" style={{ 
+          fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
+          fontWeight: 700, 
+          letterSpacing: '-0.03em', 
+          color: '#FFFFFF', 
+          lineHeight: 1.15, 
+          textShadow: '0 4px 20px rgba(0,0,0,0.6)'
+        }}>
+          From the Mountains to the World
         </h2>
-        <p className="mb-10" style={{ color: 'rgba(255,255,255,0.95)', fontSize: '1.1rem', lineHeight: 1.7, textShadow: '0 1px 8px rgba(0,0,0,0.3)' }}>
-          Whether you're looking for AI-powered solutions, investment opportunities, or a technology partnership — we'd love to hear from you.
-        </p>
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', background: 'white', color: 'var(--text-primary)', fontSize: '0.9rem' }}>
-            Start a Conversation <ArrowRight className="w-4 h-4" />
-          </Link>
-          <Link to="/about" className="btn-secondary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', color: 'white', borderColor: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.15)' }}>
-            Learn About Us
-          </Link>
+        
+        <div className="text-left max-w-[850px] mx-auto space-y-6" style={{ 
+          color: 'rgba(255,255,255,0.9)', 
+          fontSize: '1.05rem', 
+          lineHeight: 1.8,
+          textShadow: '0 2px 8px rgba(0,0,0,0.4)'
+        }}>
+          <p>
+            The idea of Globistaan came into existence as we want to be a valuable part of the global community and see tremendous scope in the technology sector as a software development services company. This venture is a humble attempt in solving challenges and exploring new avenues in the field of technology.
+          </p>
+          
+          <p>
+            We are a small and lean IT company, open to clients of all sizes and needs, and we are easy to adapt. Whether you are a startup or a large bank that needs talented programmers to build and support your applications — we onboard resources based on client requirement, and we are very fast and careful to match your needs.
+          </p>
+          
+          <p>
+            Today, we're evolving beyond traditional IT services into the AI frontier — building intelligent products that leverage the latest in machine learning, natural language processing, and generative AI to solve real-world problems.
+          </p>
         </div>
+      </motion.div>
+      
+      <motion.div 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: 0.3 }}
+        className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
+      >
+        <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', background: 'white', color: 'var(--text-primary)', fontSize: '0.9rem' }}>
+          Start a Conversation <ArrowRight className="w-4 h-4" />
+        </Link>
+        <Link to="/about" className="btn-secondary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', color: 'white', borderColor: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.15)' }}>
+          Learn About Us
+        </Link>
       </motion.div>
     </div>
   </section>
