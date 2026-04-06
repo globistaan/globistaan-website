@@ -44,7 +44,7 @@ The application will open at http://localhost:3000
 - `npm run build` - Builds the app for production
 - `npm test` - Runs the test suite
 
-## Project Structure
+## Project Structurerurrr
 
 ```
 frontend/

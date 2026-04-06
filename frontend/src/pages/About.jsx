@@ -20,13 +20,13 @@ export default function About() {
       <section className="relative min-h-[75vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop"
-            alt="Snow-dusted Himalayan peaks at golden hour with orange-pink sky and rolling mist" 
+            src="https://images.unsplash.com/photo-1615552714321-dca9935c0981?q=90&w=2400&auto=format&fit=crop"
+            alt="Parvati Valley Himachal Pradesh — lush green pine forests and snow-capped peaks" 
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 40%' }}
+            style={{ objectPosition: 'center 45%' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(10,10,25,0.25) 0%, rgba(10,10,30,0.5) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(5,15,10,0.2) 0%, rgba(5,15,10,0.5) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">
@@ -120,7 +120,7 @@ export default function About() {
           <motion.div {...fadeInUp}>
             <Quote className="w-12 h-12 mx-auto mb-6" style={{ color: 'rgba(255,255,255,0.7)' }} />
             <p className="italic mb-8 text-shadow-hero" style={{ fontSize: 'clamp(1.15rem, 2.5vw, 1.5rem)', lineHeight: 1.75, color: '#FFFFFF' }}>
-              "As a startup founder who has spent close to 13 years in the IT industry developing web applications for global banks, I understand the need for security and trust in the people who support proprietary code."
+              "In the shadow of ancient Himalayas, where mist-kissed pines whisper secrets to the wind, we stand together — like roots weaving through fertile earth. Let's build together: not just code, but futures. From quiet valleys to soaring peaks, every line we write carves a path upward. Your vision. My craft. Our summit."
             </p>
             <div>
               <p style={{ fontWeight: 500, fontSize: '1.1rem', color: '#FFFFFF' }}>[Founder Name]</p>
@@ -225,13 +225,13 @@ export default function About() {
       <section className="relative min-h-[45vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop"
-            alt="Cinematic Himalayan mountains at golden hour" 
+            src="https://images.unsplash.com/photo-1531366936337-7c912a4589a7?q=90&w=2400&auto=format&fit=crop"
+            alt="Snow-dusted Himalayan peaks under starry night sky" 
             className="w-full h-full object-cover"
             style={{ objectPosition: 'center 60%' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(10,10,25,0.35) 0%, rgba(10,10,30,0.65) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(5,8,20,0.4) 0%, rgba(5,8,20,0.68) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[650px] mx-auto text-center px-5 py-20">

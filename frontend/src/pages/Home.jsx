@@ -15,19 +15,18 @@ const fadeInUp = {
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Breathtaking Snow-Dusted Himalayan Peaks at Golden Hour Sunset */}
+    {/* Photorealistic Parvati Valley — Lush Green Pine Forests, River, Snow Peaks */}
     <div className="absolute inset-0 z-0">
       <img 
-        src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=90&w=2400&auto=format&fit=crop" 
-        alt="Snow-dusted Himalayan peaks at golden hour sunset with mist and pine trees" 
+        src="https://images.unsplash.com/photo-1627625335607-60187d590493?q=90&w=2400&auto=format&fit=crop" 
+        alt="Parvati Valley Himachal Pradesh — lush green pine forests, river, snow-capped Himalayan peaks at golden hour" 
         className="w-full h-full object-cover"
-        style={{ objectPosition: 'center 45%' }}
+        style={{ objectPosition: 'center 55%' }}
       />
     </div>
-    
-    {/* Cinematic gradient — warm at top, deep blue at bottom */}
+    {/* Cinematic overlay — preserves earthy greens and blues */}
     <div className="absolute inset-0 z-1" style={{ 
-      background: 'linear-gradient(180deg, rgba(10,10,25,0.2) 0%, rgba(10,10,30,0.35) 50%, rgba(5,10,25,0.6) 100%)'
+      background: 'linear-gradient(180deg, rgba(5,15,10,0.25) 0%, rgba(5,15,10,0.4) 50%, rgba(5,15,10,0.65) 100%)'
     }} />
     
     <ParticlesBg />
@@ -425,17 +424,17 @@ const ProjectsPreview = () => (
 
 const CTASection = () => (
   <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-    {/* Breathtaking Snow-Dusted Himalayan Peaks at Golden Hour */}
+    {/* Photorealistic Parvati Valley — River, Pine Forests, Snow Peaks at Golden Hour */}
     <div className="absolute inset-0 z-0">
       <img 
-        src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop" 
-        alt="Snow-dusted Himalayan peaks at golden hour sunset with orange-pink sky and rolling mist" 
+        src="https://images.unsplash.com/photo-1621505697693-9784907b50c9?q=90&w=2400&auto=format&fit=crop" 
+        alt="Parvati Valley Himachal Pradesh — river winding through lush green pine forests with snow-capped peaks" 
         className="w-full h-full object-cover"
         style={{ objectPosition: 'center 50%' }}
       />
     </div>
     <div className="absolute inset-0 z-1" style={{ 
-      background: 'linear-gradient(180deg, rgba(10,10,25,0.3) 0%, rgba(10,10,30,0.55) 60%, rgba(5,10,25,0.75) 100%)'
+      background: 'linear-gradient(180deg, rgba(5,15,10,0.3) 0%, rgba(5,15,10,0.55) 60%, rgba(5,15,10,0.78) 100%)'
     }} />
     <ParticlesBg />
     
