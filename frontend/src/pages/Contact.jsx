@@ -44,32 +44,30 @@ export default function Contact() {
       <section className="relative min-h-[60vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.riverMountain} 
-            alt="River valley with mountains" 
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=90&w=2400&auto=format&fit=crop"
+            alt="Clean white desk with flowers, phone and pen — contact us" 
             className="w-full h-full object-cover"
-            
+            style={{ objectPosition: 'center center' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.3) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.4) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5 border-white/30 text-white/90" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.1)' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.7)', borderColor: 'rgba(0,0,0,0.15)', color: '#1e293b' }}>
               Contact Us
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-shadow-hero"
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#0f172a', marginBottom: '1.25rem' }}
           >
             Let's Start a Conversation
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            className="text-shadow-subtle"
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.95)', maxWidth: '550px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: '#334155', maxWidth: '550px', margin: '0 auto' }}
           >
             Have a project in mind? Looking to invest? Or just want to say hello?
           </motion.p>
@@ -80,10 +78,10 @@ export default function Contact() {
       <section className="relative py-24 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.blueHills} 
-            alt="Blue layered mountains" 
+            src="/contact-bg.jpg" 
+            alt="Contact background" 
             className="w-full h-full object-cover"
-            
+            style={{ objectPosition: 'center top' }}
           />
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.88)' }} />

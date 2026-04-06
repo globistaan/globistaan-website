@@ -1,8 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2, Brain, Sparkles, Zap } from 'lucide-react';
-import { companyInfo, projects, services, images } from '../data/mock';
+import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2, Brain, Sparkles, Zap } from 'lucide-react';import { companyInfo, projects, services, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 
@@ -422,73 +421,6 @@ const ProjectsPreview = () => (
   </section>
 );
 
-const CTASection = () => (
-  <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-    {/* Photorealistic Parvati Valley — River, Pine Forests, Snow Peaks at Golden Hour */}
-    <div className="absolute inset-0 z-0">
-      <img 
-        src="https://images.unsplash.com/photo-1621505697693-9784907b50c9?q=90&w=2400&auto=format&fit=crop" 
-        alt="Parvati Valley Himachal Pradesh — river winding through lush green pine forests with snow-capped peaks" 
-        className="w-full h-full object-cover"
-        style={{ objectPosition: 'center 50%' }}
-      />
-    </div>
-    <div className="absolute inset-0 z-1" style={{ 
-      background: 'linear-gradient(180deg, rgba(5,15,10,0.3) 0%, rgba(5,15,10,0.55) 60%, rgba(5,15,10,0.78) 100%)'
-    }} />
-    <ParticlesBg />
-    
-    <div className="relative z-10 max-w-[1000px] mx-auto px-5 md:px-9 py-24">
-      <motion.div {...fadeInUp} className="text-center mb-12">
-        <h2 className="mb-8" style={{ 
-          fontSize: 'clamp(2rem, 5vw, 3.5rem)', 
-          fontWeight: 700, 
-          letterSpacing: '-0.03em', 
-          color: '#FFFFFF', 
-          lineHeight: 1.15, 
-          textShadow: '0 4px 20px rgba(0,0,0,0.6)'
-        }}>
-          From the Mountains to the World
-        </h2>
-        
-        <div className="text-left max-w-[850px] mx-auto space-y-6" style={{ 
-          color: 'rgba(255,255,255,0.9)', 
-          fontSize: '1.05rem', 
-          lineHeight: 1.8,
-          textShadow: '0 2px 8px rgba(0,0,0,0.4)'
-        }}>
-          <p>
-            The idea of Globistaan came into existence as we want to be a valuable part of the global community and see tremendous scope in the technology sector as a software development services company. This venture is a humble attempt in solving challenges and exploring new avenues in the field of technology.
-          </p>
-          
-          <p>
-            We are a small and lean IT company, open to clients of all sizes and needs, and we are easy to adapt. Whether you are a startup or a large bank that needs talented programmers to build and support your applications — we onboard resources based on client requirement, and we are very fast and careful to match your needs.
-          </p>
-          
-          <p>
-            Today, we're evolving beyond traditional IT services into the AI frontier — building intelligent products that leverage the latest in machine learning, natural language processing, and generative AI to solve real-world problems.
-          </p>
-        </div>
-      </motion.div>
-      
-      <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ delay: 0.3 }}
-        className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10"
-      >
-        <Link to="/contact" className="btn-primary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', background: 'white', color: 'var(--text-primary)', fontSize: '0.9rem' }}>
-          Start a Conversation <ArrowRight className="w-4 h-4" />
-        </Link>
-        <Link to="/about" className="btn-secondary" style={{ textDecoration: 'none', padding: '1rem 2.5rem', color: 'white', borderColor: 'rgba(255,255,255,0.5)', background: 'rgba(255,255,255,0.15)' }}>
-          Learn About Us
-        </Link>
-      </motion.div>
-    </div>
-  </section>
-);
-
 export default function Home() {
   return (
     <main>
@@ -496,7 +428,6 @@ export default function Home() {
       <ServicesSection />
       <MountainBanner />
       <ProjectsPreview />
-      <CTASection />
     </main>
   );
 }
