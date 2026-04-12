@@ -50,24 +50,24 @@ export default function Contact() {
             style={{ objectPosition: 'center center' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.4) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0.7) 100%)' }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">
           <motion.div initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
-            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.7)', borderColor: 'rgba(0,0,0,0.15)', color: '#1e293b' }}>
+            <Badge variant="outline" className="mb-5 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.06em', backdropFilter: 'blur(8px)', background: 'rgba(255,255,255,0.15)', borderColor: 'rgba(255,255,255,0.3)', color: 'white' }}>
               Contact Us
             </Badge>
           </motion.div>
           <motion.h1
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
-            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#0f172a', marginBottom: '1.25rem' }}
+            style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem' }}
           >
             Let's Start a Conversation
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: '#334155', maxWidth: '550px', margin: '0 auto' }}
+            style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.9)', maxWidth: '550px', margin: '0 auto' }}
           >
             Have a project in mind? Looking to invest? Or just want to say hello?
           </motion.p>
@@ -84,13 +84,13 @@ export default function Contact() {
             style={{ objectPosition: 'center top' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.88)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(0,0,0,0.72)' }} />
         
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-12">
             {/* Contact Info */}
             <motion.div {...fadeInUp} className="lg:col-span-2">
-              <h2 className="mb-8" style={{ fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)' }}>Get in Touch</h2>
+              <h2 className="mb-8" style={{ fontSize: '1.5rem', fontWeight: 600, letterSpacing: '-0.02em', color: '#ffffff' }}>Get in Touch</h2>
               <div className="flex flex-col gap-6">
                 {[
                   { icon: MapPin, label: 'Location', value: companyInfo.location },
@@ -109,12 +109,12 @@ export default function Contact() {
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: i * 0.08 }}
                     >
-                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,0,0,0.05)' }}>
-                        <Icon className="w-5 h-5" style={{ color: 'var(--text-primary)' }} />
+                      <div className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                        <Icon className="w-5 h-5" style={{ color: 'rgba(255,255,255,0.8)' }} />
                       </div>
                       <div>
-                        <p style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.2rem' }}>{item.label}</p>
-                        <p style={{ fontSize: '0.95rem', color: 'var(--text-primary)', fontWeight: 500 }}>{item.value}</p>
+                        <p style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'rgba(255,255,255,0.5)', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.2rem' }}>{item.label}</p>
+                        <p style={{ fontSize: '0.95rem', color: '#ffffff', fontWeight: 500 }}>{item.value}</p>
                       </div>
                     </motion.div>
                   );

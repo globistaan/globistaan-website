@@ -63,7 +63,7 @@ const TechCard = ({ item, index }) => {
 
 const LogoGrid = ({ items, title }) => (
   <div className="mb-14">
-    <h3 className="text-center mb-8" style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--text-primary)' }}>{title}</h3>
+    <h3 className="text-center mb-8" style={{ fontSize: '1.15rem', fontWeight: 500, color: 'rgba(255,255,255,0.7)' }}>{title}</h3>
     <div className="flex flex-wrap justify-center gap-8">
       {items.map((item, i) => (
         <motion.div
@@ -86,7 +86,7 @@ const LogoGrid = ({ items, title }) => (
               <Cpu className="w-8 h-8" style={{ color: 'var(--text-primary)' }} />
             )}
           </div>
-          <span style={{ fontSize: '0.8rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-primary)', fontWeight: 500 }}>
+          <span style={{ fontSize: '0.8rem', fontFamily: "'SF Mono', monospace", color: 'rgba(255,255,255,0.8)', fontWeight: 500 }}>
             {item.name}
           </span>
         </motion.div>
@@ -152,21 +152,26 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Logo Showcase Section - HD Circuit Background */}
+      {/* Logo Showcase Section - Subtle Dark AI Neural Network Background */}
       <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0" style={{
+          background: 'linear-gradient(135deg, #0a0f1e 0%, #0d1230 40%, #120a2e 70%, #0a0f1e 100%)'
+        }}>
           <img 
-            src={images.circuitBlue} 
-            alt="Circuit board" 
-            className="w-full h-full object-cover"
-            style={{ opacity: 0.15 }}
+            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2400&auto=format&fit=crop"
+            alt="Subtle AI neural network background" 
+            className="w-full h-full object-cover mix-blend-luminosity"
+            style={{ opacity: 0.07 }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.95)' }} />
-        
+        {/* Faint circuit pattern + glowing nodes */}
+        <div className="absolute inset-0 z-1" style={{
+          background: 'radial-gradient(circle at 20% 30%, rgba(59,130,246,0.08) 0%, transparent 45%), radial-gradient(circle at 80% 70%, rgba(139,92,246,0.07) 0%, transparent 45%), radial-gradient(circle at 50% 50%, rgba(6,182,212,0.05) 0%, transparent 60%)'
+        }} />
+
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-14">
-            <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#ffffff', lineHeight: 1.2 }}>
               Tools We Use
             </h2>
           </motion.div>

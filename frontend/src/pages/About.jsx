@@ -20,13 +20,15 @@ export default function About() {
       <section className="relative min-h-[75vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src="https://images.unsplash.com/photo-1615552714321-dca9935c0981?q=90&w=2400&auto=format&fit=crop"
-            alt="Parvati Valley Himachal Pradesh — lush green pine forests and snow-capped peaks" 
+            src="https://images.unsplash.com/photo-1585409677983-0f6c41ca9c3b?q=90&w=2400&auto=format&fit=crop"
+            alt="Breathtaking wide-angle Himalayan peaks glowing in golden sunrise with dramatic clouds and misty valleys" 
             className="w-full h-full object-cover"
-            style={{ objectPosition: 'center 45%' }}
+            style={{ objectPosition: 'center 30%' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(5,15,10,0.2) 0%, rgba(5,15,10,0.5) 100%)' }} />
+        <div className="absolute inset-0 z-1" style={{ 
+          background: 'linear-gradient(180deg, rgba(5,10,20,0.1) 0%, rgba(5,10,20,0.25) 40%, rgba(5,10,20,0.7) 100%)'
+        }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[900px] mx-auto text-center px-5 pt-24">

@@ -20,13 +20,27 @@ export default function Investors() {
       <section className="relative min-h-[75vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.himalayanSnow} 
-            alt="Snow-capped Himalayas" 
+            src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=90&w=2400&auto=format&fit=crop"
+            alt="Futuristic AI neural networks floating above Himalayan mountains at golden hour" 
             className="w-full h-full object-cover"
-            
+            style={{ objectPosition: 'center 40%' }}
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(135deg, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.3) 100%)' }} />
+        {/* Mountain layer blended underneath */}
+        <div className="absolute inset-0 z-0" style={{ mixBlendMode: 'screen', opacity: 0.25 }}>
+          <img 
+            src="https://images.unsplash.com/photo-1519681393784-d120267933ba?q=90&w=2400&auto=format&fit=crop"
+            alt="Himalayan mountains golden hour" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 z-1" style={{ 
+          background: 'linear-gradient(135deg, rgba(10,15,40,0.75) 0%, rgba(20,10,50,0.65) 50%, rgba(10,15,40,0.8) 100%)'
+        }} />
+        {/* Holographic circuit overlay */}
+        <div className="absolute inset-0 z-1" style={{
+          background: 'radial-gradient(circle at 30% 40%, rgba(6,182,212,0.12) 0%, transparent 50%), radial-gradient(circle at 70% 60%, rgba(139,92,246,0.1) 0%, transparent 50%)'
+        }} />
         <ParticlesBg />
         
         <div className="relative z-10 max-w-[950px] mx-auto text-center px-5 pt-24">
