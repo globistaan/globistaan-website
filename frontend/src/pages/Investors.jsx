@@ -191,14 +191,14 @@ export default function Investors() {
             
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.85)' }} />
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(0,0,0,0.75)' }} />
         
         <div className="relative z-10 max-w-[1100px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-16">
-            <Badge variant="outline" className="mb-4 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+            <Badge variant="outline" className="mb-4 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em', background: 'rgba(255,255,255,0.1)', borderColor: 'rgba(255,255,255,0.2)', color: 'rgba(255,255,255,0.8)' }}>
               Investment Tiers
             </Badge>
-            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.5rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.15 }}>
+            <h2 style={{ fontSize: 'clamp(1.6rem, 4vw, 2.5rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#ffffff', lineHeight: 1.15 }}>
               Partnership Opportunities
             </h2>
           </motion.div>

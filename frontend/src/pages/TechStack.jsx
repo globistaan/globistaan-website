@@ -214,20 +214,22 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Category Overview - HD Green Valley */}
+      {/* Category Overview - AI Background */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
-            src={images.greenValley} 
-            alt="Green valley" 
+            src="https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=2400&auto=format&fit=crop"
+            alt="AI technology abstract background" 
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.93)' }} />
+        <div className="absolute inset-0 z-1" style={{ 
+          background: 'linear-gradient(135deg, rgba(10,15,40,0.88) 0%, rgba(20,10,50,0.85) 50%, rgba(10,15,40,0.88) 100%)'
+        }} />
         
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-14">
-            <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#ffffff', lineHeight: 1.2 }}>
               Technology Overview
             </h2>
           </motion.div>

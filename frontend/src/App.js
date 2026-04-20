@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Toaster } from "./components/ui/sonner";
 import { Header } from "./components/layout/Header";
 import { Footer } from "./components/layout/Footer";
+import { useAITextHighlight } from "./hooks/useAITextHighlight";
 import Home from "./pages/Home";
 import About from "./pages/About";
 import Projects from "./pages/Projects";
@@ -20,11 +21,18 @@ const ScrollToTop = () => {
   return null;
 };
 
+const GlobalAITextHighlight = () => {
+  const { pathname } = useLocation();
+  useAITextHighlight(pathname);
+  return null;
+};
+
 function App() {
   return (
     <div className="App" style={{ background: 'var(--bg-page)', minHeight: '100vh' }}>
       <BrowserRouter>
         <ScrollToTop />
+        <GlobalAITextHighlight />
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
