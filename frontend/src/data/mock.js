@@ -21,6 +21,7 @@ export const natureImages = {
   shimlaMunicipal: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=1920&q=90",
   shimlaLandscape: "https://images.unsplash.com/photo-1593696140826-c58b021acf8b?w=1920&q=90",
   dharamshalaValley: "https://images.unsplash.com/photo-1626808642895-77d0ee7f9421?w=1920&q=90",
+  natureLandscape: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&q=90",
   
   // RIVERS
   riverRocks: "https://images.unsplash.com/photo-1655470062301-e813948e9874?w=1920&q=90",

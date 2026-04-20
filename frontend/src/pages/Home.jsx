@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2, Brain, Sparkles, Zap } from 'lucide-react';import { companyInfo, projects, services, images } from '../data/mock';
+import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2, Brain, Sparkles, Zap } from 'lucide-react';
+import { companyInfo, projects, services, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 
@@ -14,11 +15,11 @@ const fadeInUp = {
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* Photorealistic Parvati Valley — Lush Green Pine Forests, River, Snow Peaks */}
+    {/* HD Background - Beautiful Nature Landscape */}
     <div className="absolute inset-0 z-0">
       <img 
-        src="https://images.unsplash.com/photo-1627625335607-60187d590493?q=90&w=2400&auto=format&fit=crop" 
-        alt="Parvati Valley Himachal Pradesh — lush green pine forests, river, snow-capped Himalayan peaks at golden hour" 
+        src={images.natureLandscape} 
+        alt="Beautiful Nature Landscape" 
         className="w-full h-full object-cover"
         style={{ objectPosition: 'center 55%' }}
       />
