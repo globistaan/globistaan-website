@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Crown, Code2, User } from 'lucide-react';
-import { directors, developers, clients, images } from '../data/mock';
+import { ArrowRight, ArrowUpRight, Crown, Code2, Palette, User } from 'lucide-react';
+import { directors, developers, logoDesigners, clients, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 
@@ -81,6 +81,43 @@ const DeveloperCard = ({ member, index }) => {
         <p className="people-card-copy">
           {member.bio}
         </p>
+      </div>
+    </motion.div>
+  );
+};
+
+const LogoDesignerCard = ({ designer, index }) => {
+  const accents = ['accent-purple', 'accent-orange'];
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 24, scale: 0.98 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.12 }}
+      whileHover={{ y: -10, rotateX: 2, rotateY: index % 2 === 0 ? -2 : 2, transition: { duration: 0.22 } }}
+      className={`voice-card glow-card people-card people-profile-card ${accents[index % accents.length]}`}
+      style={{ padding: '2.25rem', textAlign: 'center' }}
+    >
+      <CircularAvatar avatar={designer.avatar} icon={Palette} size="lg" name={designer.name} />
+      <div className="mt-6">
+        <h4 className="people-card-title">
+          {designer.name}
+        </h4>
+        <p className="people-card-kicker">
+          {designer.role}
+        </p>
+        <p className="people-card-copy">
+          {designer.bio}
+        </p>
+        <a
+          href={designer.portfolio}
+          target="_blank"
+          rel="noreferrer"
+          className="btn-primary inline-flex items-center justify-center gap-2 mt-6 text-xs"
+          style={{ padding: '0.75rem 1.25rem', textDecoration: 'none' }}
+        >
+          Visit Portfolio <ArrowUpRight className="w-3.5 h-3.5" />
+        </a>
       </div>
     </motion.div>
   );
@@ -231,6 +268,37 @@ export default function People() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {developers.map((member, i) => (
               <DeveloperCard key={i} member={member} index={i} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Logo Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 z-0">
+          <img 
+            src={images.circuitComponents} 
+            alt="Creative brand design workspace" 
+            className="w-full h-full object-cover"
+          />
+        </div>
+        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.88)' }} />
+        
+        <div className="relative z-10 max-w-[760px] mx-auto px-5 md:px-9">
+          <motion.div {...fadeInUp} className="text-center mb-14">
+            <Badge variant="outline" className="mb-4 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+              Logo
+            </Badge>
+            <h2 style={{ fontSize: 'clamp(1.4rem, 3.5vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: 'var(--text-primary)', lineHeight: 1.2 }}>
+              Company Logo Designed By
+            </h2>
+            <p className="mt-4 mx-auto" style={{ maxWidth: '500px', color: 'var(--text-secondary)', fontSize: '1rem', lineHeight: 1.65 }}>
+              The creative contributor behind Globistaan's company logo.
+            </p>
+          </motion.div>
+          <div className="grid grid-cols-1 gap-6">
+            {logoDesigners.map((designer, i) => (
+              <LogoDesignerCard key={designer.name} designer={designer} index={i} />
             ))}
           </div>
         </div>

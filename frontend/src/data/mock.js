@@ -179,8 +179,18 @@ export const directors = [
 ];
 
 export const developers = [
-  { name: "Sahil", role: "Full Stack Developer", bio: "Freelance full stack developer supporting product engineering across frontend, backend, and integrations.", avatar: "/images/freelancer-sahil.png" },
-  { name: "Shagun", role: "Website Designer", bio: "Freelance website designer focused on clean, responsive, and brand-aligned web experiences, including the current Globistaan company website.", avatar: "/images/freelancer-shagun.png" }
+  { name: "Sahil", role: "Full Stack Developer", bio: "Freelance full stack developer working on AI Pharma Document Generation and AI Language Learning App, with support across frontend, backend, and integrations.", avatar: "/images/freelancer-sahil.png" },
+  { name: "Shagun", role: "Website Designer", bio: "Freelance website designer for the Globistaan Technologies and Exports Private Limited website, focused on clean, responsive, and brand-aligned web experiences.", avatar: "/images/freelancer-shagun.png" }
+];
+
+export const logoDesigners = [
+  {
+    name: "Jay Kumar",
+    role: "Freelance Logo Designer",
+    bio: "Designed the Globistaan company logo, giving the brand a distinct and memorable visual identity.",
+    avatar: "/images/designers/jay-kumar.jpg",
+    portfolio: "https://www.behance.net/jaikumar35"
+  }
 ];
 
 export const clients = [
