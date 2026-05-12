@@ -125,7 +125,7 @@ export default function About() {
               "In the shadow of ancient Himalayas, where mist-kissed pines whisper secrets to the wind, we stand together — like roots weaving through fertile earth. Let's build together: not just code, but futures. From quiet valleys to soaring peaks, every line we write carves a path upward. Your vision. My craft. Our summit."
             </p>
             <div>
-              <p style={{ fontWeight: 500, fontSize: '1.1rem', color: '#FFFFFF' }}>[Founder Name]</p>
+              <p style={{ fontWeight: 500, fontSize: '1.1rem', color: '#FFFFFF' }}>Bejoy K Pramanick</p>
               <p style={{ fontSize: '0.8rem', fontFamily: "'SF Mono', monospace", color: 'rgba(255,255,255,0.7)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>Founder & CEO</p>
             </div>
           </motion.div>

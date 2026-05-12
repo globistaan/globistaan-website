@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Quote, Crown, Code2, User } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Crown, Code2, User } from 'lucide-react';
 import { directors, developers, clients, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
@@ -13,24 +13,16 @@ const fadeInUp = {
   transition: { duration: 0.6, ease: 'easeOut' }
 };
 
-const CircularAvatar = ({ avatar, icon: Icon, size = 'lg', name }) => {
+const CircularAvatar = ({ avatar, icon: Icon, size = 'lg', name, objectPosition = 'center' }) => {
   const sizeClass = size === 'lg' ? 'w-28 h-28' : 'w-20 h-20';
   const iconSize = size === 'lg' ? 'w-10 h-10' : 'w-7 h-7';
 
   return (
     <div
-      className={`${sizeClass} rounded-full mx-auto overflow-hidden flex-shrink-0 float-slow`}
-      style={{
-        background: avatar ? 'transparent' : 'linear-gradient(135deg, rgba(252,202,199,0.5), rgba(228,237,248,0.5))',
-        border: '4px solid rgba(255,255,255,0.8)',
-        boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
-      }}
+      className={`${sizeClass} people-avatar rounded-full mx-auto overflow-hidden flex-shrink-0 float-slow`}
     >
       {avatar ? (
-        <img src={avatar} alt={name} className="w-full h-full object-cover" />
+        <img src={avatar} alt={name} className="w-full h-full object-cover" style={{ objectPosition }} />
       ) : (
         <Icon className={iconSize} style={{ color: 'var(--text-muted)' }} />
       )}
@@ -46,19 +38,19 @@ const DirectorCard = ({ member, index }) => {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.12 }}
-      whileHover={{ y: -6, transition: { duration: 0.2 } }}
-      className={`voice-card glow-card ${accents[index % accents.length]}`}
+      whileHover={{ y: -10, rotateX: 2, rotateY: index % 2 === 0 ? -2 : 2, transition: { duration: 0.22 } }}
+      className={`voice-card glow-card people-card people-profile-card ${accents[index % accents.length]}`}
       style={{ padding: '2.75rem', textAlign: 'center' }}
     >
-      <CircularAvatar avatar={member.avatar} icon={Crown} size="lg" name={member.name} />
+      <CircularAvatar avatar={member.avatar} icon={Crown} size="lg" name={member.name} objectPosition={member.avatarPosition} />
       <div className="mt-6">
-        <h4 style={{ fontSize: '1.2rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.3rem' }}>
+        <h4 className="people-card-title">
           {member.name}
         </h4>
-        <p style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '1.25rem' }}>
+        <p className="people-card-kicker">
           {member.role}
         </p>
-        <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
+        <p className="people-card-copy">
           {member.bio}
         </p>
       </div>
@@ -74,19 +66,19 @@ const DeveloperCard = ({ member, index }) => {
       whileInView={{ opacity: 1, y: 0, scale: 1 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.12 }}
-      whileHover={{ y: -6, transition: { duration: 0.2 } }}
-      className={`voice-card glow-card ${accents[index % accents.length]}`}
+      whileHover={{ y: -10, rotateX: 2, rotateY: index % 2 === 0 ? -2 : 2, transition: { duration: 0.22 } }}
+      className={`voice-card glow-card people-card people-profile-card ${accents[index % accents.length]}`}
       style={{ padding: '2.25rem', textAlign: 'center' }}
     >
       <CircularAvatar avatar={member.avatar} icon={Code2} size="lg" name={member.name} />
       <div className="mt-6">
-        <h4 style={{ fontSize: '1.1rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.3rem' }}>
+        <h4 className="people-card-title">
           {member.name}
         </h4>
-        <p style={{ fontSize: '0.7rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '1.25rem' }}>
+        <p className="people-card-kicker">
           {member.role}
         </p>
-        <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
+        <p className="people-card-copy">
           {member.bio}
         </p>
       </div>
@@ -95,34 +87,71 @@ const DeveloperCard = ({ member, index }) => {
 };
 
 const ClientCard = ({ client, index }) => {
-  const accents = ['accent-pink', 'accent-orange', 'accent-green'];
+  const accents = ['accent-pink', 'accent-orange', 'accent-green', 'accent-blue'];
   return (
     <motion.div
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className={`voice-card glow-card ${accents[index % accents.length]}`}
-      style={{ padding: '2.25rem' }}
+      whileHover={{ y: -8, rotateX: 1.5, rotateY: index % 2 === 0 ? -1.5 : 1.5, transition: { duration: 0.22 } }}
+      className={`voice-card glow-card people-card people-client-card ${accents[index % accents.length]}`}
+      style={{ padding: '1.5rem' }}
     >
-      <div className="flex items-start gap-5">
-        <CircularAvatar avatar={client.avatar} icon={User} size="sm" name={client.contact} />
-        <div className="flex-1">
-          <h4 style={{ fontSize: '1.1rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.25rem' }}>
-            {client.name}
-          </h4>
-          <Badge variant="outline" className="mb-4 rounded-full" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-            {client.industry}
-          </Badge>
-          <p className="mb-3" style={{ fontSize: '0.8rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)' }}>
-            Contact: {client.contact}
+      <div className="flex flex-col sm:flex-row gap-5">
+        <div className="flex flex-col items-center sm:w-32 flex-shrink-0">
+          <CircularAvatar avatar={client.image} icon={User} size="lg" name={client.contact} objectPosition={client.imagePosition} />
+          <p className="mt-4 text-center people-avatar-name">
+            {client.contact}
           </p>
-          <div className="mt-4">
-            <Quote className="w-5 h-5 mb-2" style={{ color: 'var(--text-muted)' }} />
-            <p className="italic" style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
-              {client.testimonial}
+          {client.location && (
+            <p className="mt-1 text-center people-location">
+              {client.location}
             </p>
+          )}
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-3">
+            <div>
+              <h4 className="people-card-title">
+                {client.name}
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                <Badge variant="outline" className="rounded-full" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  {client.relationship}
+                </Badge>
+                <Badge variant="outline" className="rounded-full" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                  {client.industry}
+                </Badge>
+              </div>
+            </div>
+            {client.website && (
+              <a
+                href={client.website}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center gap-1 text-xs no-underline people-visit-link"
+              >
+                Visit site <ArrowUpRight className="w-3.5 h-3.5" />
+              </a>
+            )}
           </div>
+
+          <p className="people-card-copy">
+            {client.testimonial}
+          </p>
+          {client.highlights && (
+            <div className="flex flex-wrap gap-2 mt-4">
+              {client.highlights.map((highlight) => (
+                <span
+                  key={highlight}
+                  className="rounded-full px-3 py-1 text-xs people-chip"
+                >
+                  {highlight}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
     </motion.div>
@@ -230,7 +259,7 @@ export default function People() {
               From startups to enterprises — clients who trust us with their technology.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
             {clients.map((client, i) => (
               <ClientCard key={i} client={client} index={i} />
             ))}

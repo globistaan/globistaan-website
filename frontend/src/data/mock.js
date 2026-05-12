@@ -1,4 +1,4 @@
-import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Sparkles, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
+import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
 
 // ============================================
 // HIMACHAL PRADESH NATURE IMAGES (Page Backgrounds)
@@ -109,7 +109,8 @@ export const projects = [
     title: "AI Chatbot Platform",
     description: "Next-generation conversational AI platform that understands context, sentiment, and intent. Built for enterprise customer support, sales automation, and internal operations.",
     features: ["Multi-language support", "Context-aware responses", "Custom training pipelines", "Analytics dashboard", "API integrations"],
-    status: "In Development",
+    status: "Demo",
+    website: "https://dailogue.globistaan.com/",
     accentClass: "accent-purple",
     icon: Bot,
     category: "AI as a Service",
@@ -140,13 +141,26 @@ export const projects = [
   {
     id: "saas-ecommerce",
     title: "SaaS E-Commerce Platform",
-    description: "Full-featured e-commerce platform with AI-driven product recommendations, inventory management, and automated marketing. Scalable from small shops to enterprise retail.",
-    features: ["AI recommendations", "Inventory automation", "Payment gateway", "Analytics & insights", "Multi-vendor support"],
-    status: "In Development",
+    description: "A focused e-commerce app platform for individual shopkeepers and business owners, with product catalog management, inventory operations, order workflows, and analytics for each standalone online store.",
+    features: ["Single-store setup", "Product catalog management", "Inventory operations", "Order workflows", "Analytics & insights"],
+    status: "Live",
+    website: "https://shop.balajiprintmedia.com/",
     accentClass: "accent-pink",
     icon: ShoppingCart,
     category: "SaaS Platform",
     partnership: "Built in partnership with e-commerce experts"
+  },
+  {
+    id: "dr-nisharg-gastro",
+    title: "Gastroenterologist Website",
+    description: "A live healthcare website for a Surat-based gastroenterologist and liver specialist, built with Astro 6 and Codex and hosted by Globistaan.",
+    features: ["Astro 6 build", "Codex-assisted development", "Healthcare content structure", "Responsive website", "Hosting support"],
+    status: "Live",
+    website: "https://drnishargpatelgastro.com/",
+    accentClass: "accent-green",
+    icon: HeartPulse,
+    category: "SaaS Platform",
+    partnership: "Web design and SEO by Dr Nisharg Patel's design team; web development and hosting by Globistaan"
   }
 ];
 
@@ -160,19 +174,67 @@ export const services = [
 ];
 
 export const directors = [
-  { name: "[Director Name]", role: "Founder & CEO", bio: "13+ years in IT industry developing web applications for global banks. Passionate about leveraging AI to solve real-world challenges.", avatar: null },
-  { name: "[Director Name]", role: "Co-Founder & COO", bio: "[Bio placeholder - Add director details here]", avatar: null }
+  { name: "Bejoy Pramanick", role: "Founder CEO", bio: "Experienced Java developer and team lead with international exposure in the US and project management experience across international banking technology programs.", avatar: "/images/founders/bejoy-pramanick.jpg", avatarPosition: "42% center" },
+  { name: "Yoginder Singh", role: "Co-Founder", bio: "Retired CRPF professional with experience across multiple Indian states and hands-on team management experience in the hospitality sector in Baijnath, Himachal Pradesh.", avatar: "/images/founders/yoginder-singh.png", avatarPosition: "center 35%" }
 ];
 
 export const developers = [
-  { name: "[Developer Name]", role: "Freelance Full Stack Developer", bio: "[Bio placeholder - Add developer details here]", avatar: null },
-  { name: "[Developer Name]", role: "Freelance ML Engineer", bio: "[Bio placeholder - Add developer details here]", avatar: null }
+  { name: "Sahil", role: "Full Stack Developer", bio: "Freelance full stack developer supporting product engineering across frontend, backend, and integrations.", avatar: "/images/freelancer-sahil.png" },
+  { name: "Shagun", role: "Website Designer", bio: "Freelance website designer focused on clean, responsive, and brand-aligned web experiences, including the current Globistaan company website.", avatar: "/images/freelancer-shagun.png" }
 ];
 
 export const clients = [
-  { name: "[Client Company 1]", industry: "Banking & Finance", contact: "[Client Contact Name]", testimonial: "[Testimonial placeholder - Add client feedback here]", avatar: null },
-  { name: "[Client Company 2]", industry: "Healthcare / Pharma", contact: "[Client Contact Name]", testimonial: "[Testimonial placeholder - Add client feedback here]", avatar: null },
-  { name: "[Client Company 3]", industry: "E-Commerce", contact: "[Client Contact Name]", testimonial: "[Testimonial placeholder - Add client feedback here]", avatar: null }
+  {
+    name: "Aytan AI",
+    industry: "Healthcare / Pharma",
+    contact: "Mr. Punit Panjwani",
+    location: "Rhode Island, USA",
+    relationship: "Product Owner",
+    website: "https://aytanai.com/",
+    image: "/images/clients/punit.png",
+    imagePosition: "center 28%",
+    testimonial: "PharmaGen AI is an AI-assisted platform for pharmaceutical document drafting, review, and workflow coordination.",
+    highlights: ["PharmaGen AI", "Document drafting", "Review workflows"],
+    avatar: null
+  },
+  {
+    name: "dAIlogue",
+    industry: "AI Conversation Assistant",
+    contact: "Mr. Vivek Pramanick",
+    location: "Stockholm, Sweden",
+    relationship: "Product Partner",
+    website: "https://dailogue.globistaan.com/",
+    image: "/images/clients/vivek.png",
+    imagePosition: "center 24%",
+    testimonial: "dAIlogue is an AI-powered conversation assistant that supports chatbot automation with human agent handoff.",
+    highlights: ["AI chatbot", "Human agent support", "Conversation workflows"],
+    avatar: null
+  },
+  {
+    name: "Gastroenterologist Website",
+    industry: "Gastroenterologist Website",
+    contact: "Dr Nisharg Patel",
+    location: "Surat, India",
+    relationship: "SaaS Client",
+    website: "https://drnishargpatelgastro.com/",
+    image: "/images/clients/nisharg.png",
+    imagePosition: "center 18%",
+    testimonial: "A gastroenterologist website for Dr Nisharg Patel, a senior and respected gastro and liver specialist in Surat. Built using Astro 6 and Codex; web design and SEO are provided by Dr Nisharg Patel's design team, while web development and hosting are done by Globistaan.",
+    highlights: ["Astro 6", "Codex", "Development & hosting"],
+    avatar: null
+  },
+  {
+    name: "Balaji Print Media",
+    industry: "E-Commerce / Print Media",
+    contact: "Mr. Rakesh Garg",
+    location: "Chandigarh, India",
+    relationship: "SaaS Client",
+    website: "https://shop.balajiprintmedia.com/",
+    image: "/images/clients/balaji.png",
+    testimonial: "An e-commerce storefront for Balaji Print Media, focused on premium quality products and a simple online shopping experience.",
+    highlights: ["Online storefront", "Product catalog", "Print media commerce"],
+    avatar: null
+  }
 ];
 
 export const investmentHighlights = [
@@ -183,9 +245,9 @@ export const investmentHighlights = [
 ];
 
 export const investmentTiers = [
-  { tier: "Seed", range: "[Amount placeholder]", equity: "[Equity % placeholder]", benefits: ["Board observer seat", "Quarterly reports", "Product early access"], highlighted: false },
-  { tier: "Series A", range: "[Amount placeholder]", equity: "[Equity % placeholder]", benefits: ["Board seat", "Monthly reports", "Strategic input", "Co-development rights"], highlighted: true },
-  { tier: "Strategic Partner", range: "[Amount placeholder]", equity: "[Equity % placeholder]", benefits: ["Board seat", "Weekly syncs", "Joint ventures", "White-label rights", "Revenue sharing"], highlighted: false }
+  { tier: "Seed", range: "Open to discussion", equity: "Case-by-case", benefits: ["Board observer seat", "Quarterly reports", "Product early access"], highlighted: false },
+  { tier: "Growth Partnership", range: "Custom proposal", equity: "Negotiable", benefits: ["Monthly reports", "Strategic input", "Co-development rights"], highlighted: true },
+  { tier: "Strategic Partner", range: "Partnership-led", equity: "Flexible structure", benefits: ["Strategic syncs", "Joint ventures", "White-label rights", "Revenue sharing"], highlighted: false }
 ];
 
 export const navLinks = [

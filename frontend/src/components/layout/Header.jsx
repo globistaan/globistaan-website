@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Menu, X, Sparkles } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { navLinks } from '../../data/mock';
 
 export const Header = () => {
@@ -24,20 +24,34 @@ export const Header = () => {
       className="fixed top-0 left-0 right-0 z-[999] transition-all duration-300"
       style={{
         height: '72px',
-        background: scrolled ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.8)',
+        background: scrolled ? 'rgba(0, 0, 0, 0.96)' : 'rgba(0, 0, 0, 0.9)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
-        borderBottom: scrolled ? '1px solid rgba(153, 153, 153, 0.15)' : '1px solid transparent'
+        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.14)' : '1px solid rgba(255, 255, 255, 0.08)'
       }}
     >
-      <div className="max-w-[1280px] mx-auto px-5 md:px-9 h-full flex items-center justify-between">
+      <div className="w-full px-4 md:px-6 h-full flex items-center justify-between">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 no-underline">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ background: 'var(--text-primary)' }}>
-            <Sparkles className="w-4 h-4 text-white" />
-          </div>
-          <span className="text-lg font-semibold tracking-tight" style={{ color: 'var(--text-primary)' }}>
-            Globistaan
+        <Link to="/" className="flex items-center gap-3 no-underline">
+          <img
+            src="/icons/globistaan-live-logo.png"
+            alt="Globistaan logo"
+            className="h-9 w-auto object-contain"
+          />
+          <span className="flex flex-col leading-none" style={{ fontFamily: "'SF Mono', 'Monaco', 'Inconsolata', monospace" }}>
+            <span className="text-xl font-semibold" style={{ color: '#ffffff', lineHeight: 1, letterSpacing: '0.02em' }}>
+              Globistaan
+            </span>
+            <span
+              className="mt-1 text-[0.62rem] font-medium uppercase"
+              style={{
+                color: 'rgba(255,255,255,0.72)',
+                letterSpacing: '0.05em',
+                lineHeight: 1.15
+              }}
+            >
+              Technologies and Exports Pvt Ltd
+            </span>
           </span>
         </Link>
 
@@ -49,8 +63,8 @@ export const Header = () => {
               to={link.path}
               className="px-3 py-2 text-sm font-medium rounded-full no-underline transition-colors duration-200"
               style={{
-                color: location.pathname === link.path ? 'var(--text-primary)' : 'var(--text-muted)',
-                background: location.pathname === link.path ? 'rgba(0,0,0,0.05)' : 'transparent',
+                color: location.pathname === link.path ? '#ffffff' : 'rgba(255,255,255,0.68)',
+                background: location.pathname === link.path ? 'rgba(255,255,255,0.16)' : 'transparent',
                 fontFamily: "'SF Mono', 'Monaco', 'Inconsolata', monospace",
                 fontSize: '0.8rem',
                 letterSpacing: '0.02em'
@@ -66,7 +80,13 @@ export const Header = () => {
           <Link
             to="/contact"
             className="hidden md:inline-flex btn-primary text-xs"
-            style={{ padding: '0.5rem 1.2rem', textDecoration: 'none' }}
+            style={{
+              padding: '0.5rem 1.2rem',
+              textDecoration: 'none',
+              background: '#ffffff',
+              color: '#111111',
+              borderColor: '#ffffff'
+            }}
           >
             Get in Touch
           </Link>
@@ -75,8 +95,8 @@ export const Header = () => {
             className="lg:hidden w-9 h-9 rounded-full flex items-center justify-center border transition-colors duration-200"
             style={{
               background: 'transparent',
-              borderColor: 'rgba(0,0,0,0.1)',
-              color: 'var(--text-primary)',
+              borderColor: 'rgba(255,255,255,0.24)',
+              color: '#ffffff',
               cursor: 'pointer'
             }}
           >
@@ -95,9 +115,9 @@ export const Header = () => {
             transition={{ duration: 0.3 }}
             className="lg:hidden overflow-hidden"
             style={{
-              background: 'rgba(255, 255, 255, 0.98)',
+              background: 'rgba(0, 0, 0, 0.98)',
               backdropFilter: 'blur(20px)',
-              borderBottom: '1px solid rgba(153, 153, 153, 0.15)'
+              borderBottom: '1px solid rgba(255, 255, 255, 0.14)'
             }}
           >
             <nav className="flex flex-col px-5 py-4 gap-1">
@@ -107,8 +127,8 @@ export const Header = () => {
                   to={link.path}
                   className="px-4 py-3 text-sm font-medium rounded-lg no-underline transition-colors duration-200"
                   style={{
-                    color: location.pathname === link.path ? 'var(--text-primary)' : 'var(--text-muted)',
-                    background: location.pathname === link.path ? 'rgba(0,0,0,0.04)' : 'transparent',
+                    color: location.pathname === link.path ? '#ffffff' : 'rgba(255,255,255,0.68)',
+                    background: location.pathname === link.path ? 'rgba(255,255,255,0.14)' : 'transparent',
                     fontFamily: "'SF Mono', monospace",
                     fontSize: '0.85rem'
                   }}
@@ -116,7 +136,16 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link to="/contact" className="btn-primary mt-3 text-center text-xs" style={{ textDecoration: 'none' }}>
+              <Link
+                to="/contact"
+                className="btn-primary mt-3 text-center text-xs"
+                style={{
+                  textDecoration: 'none',
+                  background: '#ffffff',
+                  color: '#111111',
+                  borderColor: '#ffffff'
+                }}
+              >
                 Get in Touch
               </Link>
             </nav>

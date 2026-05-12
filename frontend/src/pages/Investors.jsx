@@ -227,7 +227,7 @@ export default function Investors() {
                   )}
                   <h3 className="mb-1" style={{ fontSize: '1.3rem', fontWeight: 600, color: 'var(--text-primary)' }}>{tier.tier}</h3>
                   <p className="mb-1" style={{ fontSize: '1.15rem', fontWeight: 500, color: 'var(--text-primary)' }}>{tier.range}</p>
-                  <p className="mb-6" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase' }}>Equity: {tier.equity}</p>
+                  <p className="mb-6" style={{ fontSize: '0.75rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase' }}>Structure: {tier.equity}</p>
                   <div className="flex flex-col gap-3">
                     {tier.benefits.map((b, bi) => (
                       <span key={bi} className="flex items-center gap-2.5" style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>

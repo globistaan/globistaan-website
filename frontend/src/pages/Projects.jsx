@@ -63,9 +63,21 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
 
-        <button className="btn-primary text-xs self-start" style={{ padding: '0.7rem 1.4rem' }}>
-          Learn More <ExternalLink className="w-3.5 h-3.5" />
-        </button>
+        {project.website ? (
+          <a
+            href={project.website}
+            target="_blank"
+            rel="noreferrer"
+            className="btn-primary text-xs self-start"
+            style={{ padding: '0.7rem 1.4rem', textDecoration: 'none' }}
+          >
+            Visit Website <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        ) : (
+          <button className="btn-primary text-xs self-start" style={{ padding: '0.7rem 1.4rem' }}>
+            Learn More <ExternalLink className="w-3.5 h-3.5" />
+          </button>
+        )}
       </div>
     </motion.div>
   );

@@ -20,18 +20,72 @@ const fadeInUp = {
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', inquiry: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
 
-  const handleSubmit = (e) => {
+  const buildEmail = () => {
+    const inquiry = formData.inquiry || 'general';
+    const subject = `Globistaan contact: ${inquiry} inquiry from ${formData.name}`;
+    const body = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Company: ${formData.company || 'Not provided'}`,
+      `Inquiry Type: ${inquiry}`,
+      '',
+      'Message:',
+      formData.message,
+      '',
+      `Submitted At: ${new Date().toLocaleString()}`
+    ].join('\n');
+
+    return { subject, body };
+  };
+
+  const openMailFallback = ({ subject, body }) => {
+    const mailto = `mailto:${companyInfo.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailto;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       toast.error('Please fill in all required fields.');
       return;
     }
-    const submissions = JSON.parse(localStorage.getItem('contactSubmissions') || '[]');
-    submissions.push({ ...formData, timestamp: new Date().toISOString() });
-    localStorage.setItem('contactSubmissions', JSON.stringify(submissions));
-    setSubmitted(true);
-    toast.success('Your message has been sent successfully!');
+
+    const { subject, body } = buildEmail();
+    const payload = new FormData();
+    payload.append('_subject', subject);
+    payload.append('_template', 'box');
+    payload.append('_captcha', 'false');
+    payload.append('_replyto', formData.email);
+    payload.append('Name', formData.name);
+    payload.append('Email', formData.email);
+    payload.append('Company', formData.company || 'Not provided');
+    payload.append('Inquiry Type', formData.inquiry || 'General');
+    payload.append('Message', formData.message);
+    payload.append('Submitted At', new Date().toISOString());
+    payload.append('Email Body', body);
+
+    setSending(true);
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${companyInfo.email}`, {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: payload
+      });
+
+      if (!response.ok) {
+        throw new Error('Email service unavailable');
+      }
+
+      setSubmitted(true);
+      toast.success('Your message has been emailed to Globistaan.');
+    } catch (error) {
+      openMailFallback({ subject, body });
+      toast.info('Opening your email app with the message ready to send.');
+    } finally {
+      setSending(false);
+    }
   };
 
   const handleChange = (field, value) => {
@@ -237,11 +291,12 @@ export default function Contact() {
                     </div>
                     <button 
                       type="submit" 
+                      disabled={sending}
                       className="btn-primary self-start" 
-                      style={{ padding: '0.9rem 2rem' }} 
+                      style={{ padding: '0.9rem 2rem', opacity: sending ? 0.7 : 1, cursor: sending ? 'not-allowed' : 'pointer' }} 
                       data-testid="contact-submit-btn"
                     >
-                      Send Message <Send className="w-4 h-4" />
+                      {sending ? 'Sending...' : 'Send Message'} <Send className="w-4 h-4" />
                     </button>
                   </form>
                 </div>
