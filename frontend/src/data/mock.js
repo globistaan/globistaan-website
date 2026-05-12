@@ -185,7 +185,7 @@ export const developers = [
 
 export const logoDesigners = [
   {
-    name: "Jay Kumar",
+    name: "Jai Dogra",
     role: "Freelance Logo Designer",
     bio: "Designed the Globistaan company logo, giving the brand a distinct and memorable visual identity.",
     avatar: "/images/designers/jay-kumar.jpg",
