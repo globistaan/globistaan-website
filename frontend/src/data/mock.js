@@ -55,28 +55,58 @@ export const images = { ...natureImages, ...techImages };
 
 // Tech Stack with actual logo URLs
 export const techStack = {
-  clouds: [
-    { name: "AWS", description: "Primary cloud infrastructure provider", category: "Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-    { name: "Railway", description: "Rapid deployment and scaling platform", category: "Cloud", logo: "https://railway.app/brand/logo-light.svg" },
-    { name: "Google Cloud", description: "Cloud AI services and compute", category: "Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
-    { name: "Azure", description: "Enterprise cloud solutions", category: "Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" }
+  frontend: [
+    { name: "React 18", description: "Main frontend application framework", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+    { name: "TypeScript", description: "Typed frontend development", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+    { name: "Vite", description: "Fast frontend build tooling", category: "Frontend", logo: "https://vitejs.dev/logo.svg" },
+    { name: "React Router", description: "Client-side routing with react-router-dom", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactrouter/reactrouter-original.svg" },
+    { name: "Radix UI", description: "Accessible UI component primitives", category: "Frontend", logo: "https://avatars.githubusercontent.com/u/75042455?s=200&v=4" },
+    { name: "Tailwind CSS", description: "Utility-first styling system", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
+    { name: "Recharts", description: "Charts and data visualization", category: "Frontend", logo: "" },
+    { name: "React Hook Form", description: "Form state management", category: "Frontend", logo: "" },
+    { name: "Zod", description: "Schema validation for forms and data", category: "Frontend", logo: "" },
+    { name: "xlsx", description: "Spreadsheet export support", category: "Frontend", logo: "" }
   ],
-  ides: [
-    { name: "Cursor", description: "AI-powered code editor", category: "IDE", logo: "https://www.cursor.com/favicon.ico" },
-    { name: "VS Code", description: "Primary development environment", category: "IDE", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" },
-    { name: "Claude Code", description: "AI-assisted coding", category: "IDE", logo: "https://cdn.worldvectorlogo.com/logos/claude-ai-icon.svg" },
-    { name: "JetBrains", description: "Enterprise IDE suite", category: "IDE", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetbrains/jetbrains-original.svg" }
+  backend: [
+    { name: "FastAPI", description: "Python microservice API framework", category: "Backend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
+    { name: "Uvicorn", description: "ASGI server for Python services", category: "Backend", logo: "" },
+    { name: "api_gateway", description: "Gateway service in knowledgebot-railway-backend", category: "Backend", logo: "" },
+    { name: "chatbot_orchestration", description: "Conversation orchestration service", category: "Backend", logo: "" },
+    { name: "knowledgebase_ingestion", description: "Knowledgebase ingestion service", category: "Backend", logo: "" },
+    { name: "celery-file-worker", description: "Background file-processing worker", category: "Backend", logo: "" },
+    { name: "celery-web-worker", description: "Background web-processing worker", category: "Backend", logo: "" },
+    { name: "configuration", description: "Runtime configuration service", category: "Backend", logo: "" },
+    { name: "health_monitoring", description: "Service health and monitoring surface", category: "Backend", logo: "" }
   ],
-  aiAgents: [
-    { name: "Gemini", description: "Google's multimodal AI model", category: "AI", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" },
-    { name: "OpenAI", description: "GPT models for NLP and generation", category: "AI", logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg" },
-    { name: "Claude", description: "Anthropic's advanced reasoning AI", category: "AI", logo: "https://cdn.worldvectorlogo.com/logos/claude-ai-icon.svg" }
+  dataInfra: [
+    { name: "PostgreSQL", description: "Primary relational database", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+    { name: "SQLAlchemy", description: "Python database ORM and query layer", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlalchemy/sqlalchemy-original.svg" },
+    { name: "asyncpg / psycopg2", description: "PostgreSQL drivers for async and sync workloads", category: "Data / Infra", logo: "" },
+    { name: "Redis", description: "Queues, pub/sub, cache, and session state", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+    { name: "Docker", description: "Containerized service deployment", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+    { name: "Railway", description: "Deployment configuration and hosting workflow", category: "Data / Infra", logo: "https://railway.app/brand/logo-light.svg" },
+    { name: "OpenTelemetry", description: "Distributed tracing and observability", category: "Data / Infra", logo: "https://opentelemetry.io/img/logos/opentelemetry-logo-nav.png" },
+    { name: "structlog", description: "Structured Python application logging", category: "Data / Infra", logo: "" }
   ],
-  frameworks: [
-    { name: "React", description: "Frontend framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-    { name: "Next.js", description: "Full-stack React framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-    { name: "Pydantic AI", description: "Python agent framework for production-grade AI applications", category: "Framework", logo: "https://avatars.githubusercontent.com/u/110818415?s=200&v=4" },
-    { name: "Tailwind CSS", description: "Utility-first CSS framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
+  aiRag: [
+    { name: "Google Gemini", description: "Chat model via google-genai", category: "AI / RAG", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" },
+    { name: "Pydantic AI", description: "Agent framework for typed AI workflows", category: "AI / RAG", logo: "https://avatars.githubusercontent.com/u/110818415?s=200&v=4" },
+    { name: "OpenAI Embeddings", description: "Embeddings for retrieval workflows", category: "AI / RAG", logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg" },
+    { name: "pgvector-style Search", description: "Vector retrieval with hybrid search", category: "AI / RAG", logo: "" },
+    { name: "FlashRank", description: "Reranking for retrieval quality", category: "AI / RAG", logo: "" },
+    { name: "LLMLingua", description: "Context compression for RAG prompts", category: "AI / RAG", logo: "" }
+  ],
+  documentOcr: [
+    { name: "Rust", description: "Dedicated OCR and extraction worker", category: "Document / OCR", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" },
+    { name: "Tokio", description: "Async runtime for Rust processing", category: "Document / OCR", logo: "" },
+    { name: "kreuzberg", description: "Document extraction pipeline", category: "Document / OCR", logo: "" },
+    { name: "AWS S3 SDK", description: "Object storage integration", category: "Document / OCR", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
+    { name: "Redis", description: "Worker queue and state coordination", category: "Document / OCR", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
+    { name: "PDF / OCR / HTML / Office / Excel", description: "Supported extraction formats", category: "Document / OCR", logo: "" }
+  ],
+  otherSurfaces: [
+    { name: "knowledgebot-bubble", description: "Separate TypeScript frontend package", category: "Other Surfaces", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
+    { name: "globistaan-website/frontend", description: "Company website frontend app in the workspace", category: "Other Surfaces", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
   ]
 };
 
