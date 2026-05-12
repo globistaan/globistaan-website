@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Cloud, Code2, Cpu, Layers, Database, Wrench, Server, FileText, Boxes } from 'lucide-react';
+import { ArrowRight, Code2, Cpu, Database, Wrench, Server, FileText } from 'lucide-react';
 import { techStack, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
@@ -18,16 +18,14 @@ const categoryIcons = {
   'Backend': Server,
   'Data / Infra': Database,
   'AI / RAG': Cpu,
-  'Document / OCR': FileText,
-  'Other Surfaces': Boxes
+  'Document / OCR': FileText
 };
 const categoryAccents = {
   'Frontend': 'accent-purple',
   'Backend': 'accent-blue',
   'Data / Infra': 'accent-green',
   'AI / RAG': 'accent-orange',
-  'Document / OCR': 'accent-pink',
-  'Other Surfaces': 'accent-grey'
+  'Document / OCR': 'accent-pink'
 };
 
 const TechCard = ({ item, index }) => {
@@ -118,8 +116,7 @@ export default function TechStack() {
     { id: 'Backend', label: 'Backend' },
     { id: 'Data / Infra', label: 'Data / Infra' },
     { id: 'AI / RAG', label: 'AI / RAG' },
-    { id: 'Document / OCR', label: 'Document / OCR' },
-    { id: 'Other Surfaces', label: 'Other Surfaces' }
+    { id: 'Document / OCR', label: 'Document / OCR' }
   ];
   const filtered = activeCategory === 'all' ? allTools : allTools.filter(t => t.category === activeCategory);
 
@@ -156,13 +153,13 @@ export default function TechStack() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}
             style={{ fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 600, letterSpacing: '-0.025em', lineHeight: 1.1, color: '#FFFFFF', marginBottom: '1.25rem', textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
           >
-            Main App Tech Stack
+            Technology Stack
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
             style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.95)', maxWidth: '650px', margin: '0 auto', textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
           >
-            React, TypeScript, and Vite on the frontend; FastAPI microservices, PostgreSQL, Redis, Gemini, OpenAI embeddings, and a Rust OCR worker behind the scenes.
+            React, TypeScript, and Vite on the frontend; FastAPI, PostgreSQL, Redis, Gemini, OpenAI embeddings, Pydantic AI, and Kreuzberg across the application stack.
           </motion.p>
         </div>
       </section>
@@ -192,11 +189,10 @@ export default function TechStack() {
           </motion.div>
           
           <LogoGrid items={techStack.frontend} title="Frontend" />
-          <LogoGrid items={techStack.backend.slice(0, 5)} title="Backend Services" />
+          <LogoGrid items={techStack.backend} title="Backend" />
           <LogoGrid items={techStack.dataInfra} title="Data / Infrastructure" />
           <LogoGrid items={techStack.aiRag} title="AI / RAG Stack" />
           <LogoGrid items={techStack.documentOcr} title="Document / OCR Processing" />
-          <LogoGrid items={techStack.otherSurfaces} title="Other Surfaces" />
         </div>
       </section>
 
@@ -254,11 +250,10 @@ export default function TechStack() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
               { title: 'React / TypeScript / Vite Frontend', desc: 'The main app frontend uses React 18, TypeScript, Vite, react-router-dom, Radix UI, Tailwind CSS, Recharts, react-hook-form, zod, and xlsx export.', accent: 'accent-purple', icon: Code2, bgImg: images.codeScreen },
-              { title: 'FastAPI Python Microservices', desc: 'The backend is organized around FastAPI and Uvicorn services including api_gateway, chatbot_orchestration, ingestion, Celery workers, configuration, and health monitoring.', accent: 'accent-blue', icon: Server, bgImg: images.serverGreen },
+              { title: 'FastAPI Python Backend', desc: 'Backend services are built with FastAPI and Uvicorn for clean, high-performance Python APIs.', accent: 'accent-blue', icon: Server, bgImg: images.serverGreen },
               { title: 'PostgreSQL / Redis / Railway', desc: 'Data and infrastructure use PostgreSQL with SQLAlchemy, asyncpg, psycopg2, Redis queues and cache, Dockerized services, Railway config, OpenTelemetry, and structlog.', accent: 'accent-green', icon: Database, bgImg: images.circuitBlue },
               { title: 'Gemini / OpenAI / Pydantic AI RAG', desc: 'The AI stack uses Gemini via google-genai for chat, OpenAI embeddings, Pydantic AI agents, pgvector-style hybrid retrieval, FlashRank reranking, and LLMLingua compression.', accent: 'accent-orange', icon: Cpu, bgImg: images.robotOrange },
-              { title: 'Rust OCR and Extraction Worker', desc: 'A dedicated Rust worker uses Tokio, kreuzberg, AWS S3 SDK, and Redis to support PDF, OCR, HTML, Office, and Excel extraction.', accent: 'accent-pink', icon: FileText, bgImg: images.aiBrain },
-              { title: 'Additional Frontend Surfaces', desc: 'The workspace also includes knowledgebot-bubble as a separate TypeScript frontend package and globistaan-website/frontend as this company website app.', accent: 'accent-grey', icon: Layers, bgImg: images.robotTwins }
+              { title: 'Kreuzberg Document / OCR Processing', desc: 'Kreuzberg powers document and OCR extraction in the application stack.', accent: 'accent-pink', icon: FileText, bgImg: images.aiBrain }
             ].map((cat, i) => {
               const Icon = cat.icon;
               return (

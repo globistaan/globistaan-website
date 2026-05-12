@@ -69,14 +69,7 @@ export const techStack = {
   ],
   backend: [
     { name: "FastAPI", description: "Python microservice API framework", category: "Backend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
-    { name: "Uvicorn", description: "ASGI server for Python services", category: "Backend", logo: "" },
-    { name: "api_gateway", description: "Gateway service in knowledgebot-railway-backend", category: "Backend", logo: "" },
-    { name: "chatbot_orchestration", description: "Conversation orchestration service", category: "Backend", logo: "" },
-    { name: "knowledgebase_ingestion", description: "Knowledgebase ingestion service", category: "Backend", logo: "" },
-    { name: "celery-file-worker", description: "Background file-processing worker", category: "Backend", logo: "" },
-    { name: "celery-web-worker", description: "Background web-processing worker", category: "Backend", logo: "" },
-    { name: "configuration", description: "Runtime configuration service", category: "Backend", logo: "" },
-    { name: "health_monitoring", description: "Service health and monitoring surface", category: "Backend", logo: "" }
+    { name: "Uvicorn", description: "ASGI server for Python services", category: "Backend", logo: "" }
   ],
   dataInfra: [
     { name: "PostgreSQL", description: "Primary relational database", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
@@ -97,16 +90,7 @@ export const techStack = {
     { name: "LLMLingua", description: "Context compression for RAG prompts", category: "AI / RAG", logo: "" }
   ],
   documentOcr: [
-    { name: "Rust", description: "Dedicated OCR and extraction worker", category: "Document / OCR", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/rust/rust-original.svg" },
-    { name: "Tokio", description: "Async runtime for Rust processing", category: "Document / OCR", logo: "" },
-    { name: "kreuzberg", description: "Document extraction pipeline", category: "Document / OCR", logo: "" },
-    { name: "AWS S3 SDK", description: "Object storage integration", category: "Document / OCR", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
-    { name: "Redis", description: "Worker queue and state coordination", category: "Document / OCR", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" },
-    { name: "PDF / OCR / HTML / Office / Excel", description: "Supported extraction formats", category: "Document / OCR", logo: "" }
-  ],
-  otherSurfaces: [
-    { name: "knowledgebot-bubble", description: "Separate TypeScript frontend package", category: "Other Surfaces", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" },
-    { name: "globistaan-website/frontend", description: "Company website frontend app in the workspace", category: "Other Surfaces", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" }
+    { name: "Kreuzberg", description: "Document and OCR extraction toolkit", category: "Document / OCR", logo: "" }
   ]
 };
 
