@@ -64,8 +64,7 @@ export const techStack = {
     { name: "Tailwind CSS", description: "Utility-first styling system", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
     { name: "Recharts", description: "Charts and data visualization", category: "Frontend", logo: "" },
     { name: "React Hook Form", description: "Form state management", category: "Frontend", logo: "" },
-    { name: "Zod", description: "Schema validation for forms and data", category: "Frontend", logo: "" },
-    { name: "xlsx", description: "Spreadsheet export support", category: "Frontend", logo: "" }
+    { name: "Zod", description: "Schema validation for forms and data", category: "Frontend", logo: "" }
   ],
   backend: [
     { name: "FastAPI", description: "Python microservice API framework", category: "Backend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },

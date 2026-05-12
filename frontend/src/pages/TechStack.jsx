@@ -249,7 +249,7 @@ export default function TechStack() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: 'React / TypeScript / Vite Frontend', desc: 'The main app frontend uses React 18, TypeScript, Vite, react-router-dom, Radix UI, Tailwind CSS, Recharts, react-hook-form, zod, and xlsx export.', accent: 'accent-purple', icon: Code2, bgImg: images.codeScreen },
+              { title: 'React / TypeScript / Vite Frontend', desc: 'The frontend uses React 18, TypeScript, Vite, react-router-dom, Radix UI, Tailwind CSS, Recharts, react-hook-form, and zod.', accent: 'accent-purple', icon: Code2, bgImg: images.codeScreen },
               { title: 'FastAPI Python Backend', desc: 'Backend services are built with FastAPI and Uvicorn for clean, high-performance Python APIs.', accent: 'accent-blue', icon: Server, bgImg: images.serverGreen },
               { title: 'PostgreSQL / Redis / Railway', desc: 'Data and infrastructure use PostgreSQL with SQLAlchemy, asyncpg, psycopg2, Redis queues and cache, Dockerized services, Railway config, OpenTelemetry, and structlog.', accent: 'accent-green', icon: Database, bgImg: images.circuitBlue },
               { title: 'Gemini / OpenAI / Pydantic AI RAG', desc: 'The AI stack uses Gemini via google-genai for chat, OpenAI embeddings, Pydantic AI agents, pgvector-style hybrid retrieval, FlashRank reranking, and LLMLingua compression.', accent: 'accent-orange', icon: Cpu, bgImg: images.robotOrange },
