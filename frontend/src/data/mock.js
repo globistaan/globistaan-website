@@ -68,11 +68,30 @@ export const techStack = {
     { name: "Tailwind CSS", description: "Utility-first styling system", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" },
     { name: "Recharts", description: "Charts and data visualization", category: "Frontend", logo: "" },
     { name: "React Hook Form", description: "Form state management", category: "Frontend", logo: "" },
-    { name: "Zod", description: "Schema validation for forms and data", category: "Frontend", logo: "" }
+    { name: "Zod", description: "Schema validation for forms and data", category: "Frontend", logo: "" },
+    { name: "Zustand", description: "Lightweight client-side state management", category: "Frontend", logo: "" },
+    { name: "TanStack React Query", description: "Server-state and data-fetching layer", category: "Frontend", logo: "" },
+    { name: "Framer Motion", description: "Animation library for React interfaces", category: "Frontend", logo: "" },
+    { name: "lucide-react", description: "Icon system for React applications", category: "Frontend", logo: "" },
+    { name: "Three.js", description: "3D rendering for product visuals", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg" },
+    { name: "React Three Fiber", description: "React renderer for Three.js scenes", category: "Frontend", logo: "" },
+    { name: "@react-three/drei", description: "Helpers for React Three Fiber scenes", category: "Frontend", logo: "" },
+    { name: "Leaflet", description: "Interactive map rendering", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leaflet/leaflet-original.svg" },
+    { name: "react-leaflet", description: "React integration for Leaflet maps", category: "Frontend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/leaflet/leaflet-original.svg" },
+    { name: "jsPDF", description: "Client-side PDF generation", category: "Frontend", logo: "" },
+    { name: "html2canvas", description: "DOM-to-canvas capture for exports", category: "Frontend", logo: "" },
+    { name: "JSZip", description: "Client-side ZIP archive generation", category: "Frontend", logo: "" },
+    { name: "html5-qrcode", description: "QR code scanning in the browser", category: "Frontend", logo: "" },
+    { name: "JsBarcode", description: "Barcode generation for web apps", category: "Frontend", logo: "" },
+    { name: "Sonner", description: "Toast notifications", category: "Frontend", logo: "" },
+    { name: "i18next", description: "Internationalization framework", category: "Frontend", logo: "" },
+    { name: "react-i18next", description: "React bindings for i18next", category: "Frontend", logo: "" }
   ],
   backend: [
     { name: "FastAPI", description: "Python microservice API framework", category: "Backend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" },
-    { name: "Uvicorn", description: "ASGI server for Python services", category: "Backend", logo: "" }
+    { name: "Uvicorn", description: "ASGI server for Python services", category: "Backend", logo: "" },
+    { name: "Supabase", description: "Backend, database, and auth platform", category: "Backend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" },
+    { name: "Supabase Edge Functions", description: "Serverless functions for backend workflows", category: "Backend", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" }
   ],
   dataInfra: [
     { name: "PostgreSQL", description: "Primary relational database", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
@@ -82,6 +101,8 @@ export const techStack = {
     { name: "Docker", description: "Containerized service deployment", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
     { name: "Railway", description: "Deployment configuration and hosting workflow", category: "Data / Infra", logo: "https://railway.app/brand/logo-light.svg" },
     { name: "Cloudflare Pages", description: "Static website deployment platform", category: "Data / Infra", logo: "https://www.cloudflare.com/favicon.ico" },
+    { name: "Cloudflare Workers", description: "Serverless edge runtime", category: "Data / Infra", logo: "https://www.cloudflare.com/favicon.ico" },
+    { name: "Wrangler", description: "Cloudflare deployment CLI", category: "Data / Infra", logo: "https://www.cloudflare.com/favicon.ico" },
     { name: "Node.js", description: "JavaScript build runtime", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" },
     { name: "npm", description: "Package manager and build scripts", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" },
     { name: "GitHub", description: "Source control and repository hosting", category: "Data / Infra", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
