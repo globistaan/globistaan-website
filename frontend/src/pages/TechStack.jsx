@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, Code2, Cpu, Database, Wrench, Server, FileText } from 'lucide-react';
+import { ArrowRight, Code2, Cpu, Database, Wrench, Server, FileText, Search } from 'lucide-react';
 import { techStack, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
@@ -17,6 +17,7 @@ const categoryIcons = {
   'Frontend': Code2,
   'Backend': Server,
   'Data / Infra': Database,
+  'Content / SEO': Search,
   'AI / RAG': Cpu,
   'Document / OCR': FileText
 };
@@ -24,6 +25,7 @@ const categoryAccents = {
   'Frontend': 'accent-purple',
   'Backend': 'accent-blue',
   'Data / Infra': 'accent-green',
+  'Content / SEO': 'accent-blue',
   'AI / RAG': 'accent-orange',
   'Document / OCR': 'accent-pink'
 };
@@ -115,6 +117,7 @@ export default function TechStack() {
     { id: 'Frontend', label: 'Frontend' },
     { id: 'Backend', label: 'Backend' },
     { id: 'Data / Infra', label: 'Data / Infra' },
+    { id: 'Content / SEO', label: 'Content / SEO' },
     { id: 'AI / RAG', label: 'AI / RAG' },
     { id: 'Document / OCR', label: 'Document / OCR' }
   ];
@@ -159,7 +162,7 @@ export default function TechStack() {
             initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
             style={{ fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.7, color: 'rgba(255,255,255,0.95)', maxWidth: '650px', margin: '0 auto', textShadow: '0 1px 10px rgba(0,0,0,0.4)' }}
           >
-            React, TypeScript, and Vite on the frontend; FastAPI, PostgreSQL, Redis, Gemini, OpenAI embeddings, Pydantic AI, and Kreuzberg across the application stack.
+            React, TypeScript, Vite, and Astro on the frontend; FastAPI, PostgreSQL, Redis, WordPress REST API, Pagefind, Gemini, OpenAI embeddings, Pydantic AI, and Kreuzberg across the application stack.
           </motion.p>
         </div>
       </section>
@@ -191,6 +194,7 @@ export default function TechStack() {
           <LogoGrid items={techStack.frontend} title="Frontend" />
           <LogoGrid items={techStack.backend} title="Backend" />
           <LogoGrid items={techStack.dataInfra} title="Data / Infrastructure" />
+          <LogoGrid items={techStack.contentSeo} title="Content / SEO" />
           <LogoGrid items={techStack.aiRag} title="AI / RAG Stack" />
           <LogoGrid items={techStack.documentOcr} title="Document / OCR Processing" />
         </div>
@@ -249,9 +253,10 @@ export default function TechStack() {
           </motion.div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {[
-              { title: 'React / TypeScript / Vite Frontend', desc: 'The frontend uses React 18, TypeScript, Vite, react-router-dom, Radix UI, Tailwind CSS, Recharts, react-hook-form, and zod.', accent: 'accent-purple', icon: Code2, bgImg: images.codeScreen },
+              { title: 'React / TypeScript / Vite / Astro Frontend', desc: 'Frontend work uses React 18, TypeScript, Vite, Astro 6, Astro components, CSS, Astro Assets, react-router-dom, Radix UI, Tailwind CSS, Recharts, react-hook-form, and zod.', accent: 'accent-purple', icon: Code2, bgImg: images.codeScreen },
               { title: 'FastAPI Python Backend', desc: 'Backend services are built with FastAPI and Uvicorn for clean, high-performance Python APIs.', accent: 'accent-blue', icon: Server, bgImg: images.serverGreen },
-              { title: 'PostgreSQL / Redis / Railway', desc: 'Data and infrastructure use PostgreSQL with SQLAlchemy, asyncpg, psycopg2, Redis queues and cache, Dockerized services, Railway config, OpenTelemetry, and structlog.', accent: 'accent-green', icon: Database, bgImg: images.circuitBlue },
+              { title: 'PostgreSQL / Redis / Cloud Deployment', desc: 'Data and infrastructure use PostgreSQL with SQLAlchemy, asyncpg, psycopg2, Redis queues and cache, Docker, Railway, Cloudflare Pages, Node.js, npm, GitHub, OpenTelemetry, and structlog.', accent: 'accent-green', icon: Database, bgImg: images.circuitBlue },
+              { title: 'WordPress / Pagefind / SEO', desc: 'Content and SEO workflows use WordPress REST API, WordPress CMS, Pagefind search, JSON-LD schema, @astrojs/sitemap, and meta tags.', accent: 'accent-blue', icon: Search, bgImg: images.serverGreen },
               { title: 'Gemini / OpenAI / Pydantic AI RAG', desc: 'The AI stack uses Gemini via google-genai for chat, OpenAI embeddings, Pydantic AI agents, pgvector-style hybrid retrieval, FlashRank reranking, and LLMLingua compression.', accent: 'accent-orange', icon: Cpu, bgImg: images.robotOrange },
               { title: 'Kreuzberg Document / OCR Processing', desc: 'Kreuzberg powers document and OCR extraction in the application stack.', accent: 'accent-pink', icon: FileText, bgImg: images.aiBrain }
             ].map((cat, i) => {
