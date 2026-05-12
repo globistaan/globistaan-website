@@ -103,7 +103,7 @@ export default function TechStack() {
     { id: 'Cloud', label: 'Cloud Platforms' },
     { id: 'IDE', label: 'IDEs & Editors' },
     { id: 'AI', label: 'AI Agents' },
-    { id: 'Framework', label: 'Frameworks' },
+    { id: 'Framework', label: 'Development Frameworks' },
     { id: 'Database', label: 'Databases' }
   ];
   const filtered = activeCategory === 'all' ? allTools : allTools.filter(t => t.category === activeCategory);
