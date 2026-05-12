@@ -79,7 +79,7 @@ export const Header = () => {
         <div className="flex items-center gap-3">
           <Link
             to="/contact"
-            className="hidden md:inline-flex btn-primary text-xs"
+            className="hidden lg:inline-flex btn-primary text-xs"
             style={{
               padding: '0.5rem 1.2rem',
               textDecoration: 'none',
