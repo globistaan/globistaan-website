@@ -136,18 +136,6 @@ export const Header = () => {
                   {link.label}
                 </Link>
               ))}
-              <Link
-                to="/contact"
-                className="btn-primary mt-3 text-center text-xs"
-                style={{
-                  textDecoration: 'none',
-                  background: '#ffffff',
-                  color: '#111111',
-                  borderColor: '#ffffff'
-                }}
-              >
-                Get in Touch
-              </Link>
             </nav>
           </motion.div>
         )}
