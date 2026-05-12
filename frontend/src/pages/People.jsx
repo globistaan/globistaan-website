@@ -133,7 +133,12 @@ const ClientCard = ({ client, index }) => {
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -8, rotateX: 1.5, rotateY: index % 2 === 0 ? -1.5 : 1.5, transition: { duration: 0.22 } }}
       className={`voice-card glow-card people-card people-client-card ${accents[index % accents.length]}`}
-      style={{ padding: '1.5rem' }}
+      style={{
+        padding: '1.75rem',
+        width: 'min(100%, 820px)',
+        marginLeft: index % 2 === 0 ? 0 : 'auto',
+        marginRight: index % 2 === 0 ? 'auto' : 0
+      }}
     >
       <div className="flex flex-col sm:flex-row gap-5">
         <div className="flex flex-col items-center sm:w-32 flex-shrink-0">
@@ -253,7 +258,7 @@ export default function People() {
         </div>
         <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.9)' }} />
         
-        <div className="relative z-10 max-w-[1000px] mx-auto px-5 md:px-9">
+        <div className="relative z-10 max-w-[1180px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-14">
             <Badge variant="outline" className="mb-4 rounded-full px-4 py-1.5" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
               Engineering
@@ -327,7 +332,7 @@ export default function People() {
               From startups to enterprises — clients who trust us with their technology.
             </p>
           </motion.div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+          <div className="flex flex-col gap-7">
             {clients.map((client, i) => (
               <ClientCard key={i} client={client} index={i} />
             ))}
