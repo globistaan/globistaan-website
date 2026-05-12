@@ -171,6 +171,7 @@ export const projects = [
     description: "Intelligent document generation system for pharmaceutical companies. Automates regulatory submissions, clinical trial reports, and compliance documentation with AI precision.",
     features: ["Regulatory compliance", "Template management", "AI-powered drafting", "Version control", "Audit trails"],
     status: "In Development",
+    website: "https://aytanai.com/",
     accentClass: "accent-blue",
     icon: FileText,
     category: "AI as a Service",
