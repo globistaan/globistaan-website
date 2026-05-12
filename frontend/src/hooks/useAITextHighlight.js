@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const AI_TERMS_REGEX =
-  /\b(ai|a\.i\.|artificial intelligence|ai tool|ai tools|ai service|ai services|machine learning|ml|llm|llms|chatbot|chatbots|generative ai|genai|neural network|neural networks|deep learning|language model|language models|gpt)\b/i;
+  /\b(ai|a\.i\.|artificial intelligence|ai tool|ai tools|ai service|ai services|llm|llms|chatbot|chatbots|generative ai|genai|neural network|neural networks|language model|language models|gpt)\b/i;
 
 const TARGET_TEXT_ELEMENTS = [
   "p",

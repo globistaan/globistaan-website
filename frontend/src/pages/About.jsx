@@ -97,7 +97,7 @@ export default function About() {
                 We are a small and lean IT company, open to clients of all sizes and needs, and we are easy to adapt. Whether you are a startup or a large bank that needs talented programmers to build and support your applications — we onboard resources based on client requirement, and we are very fast and careful to match your needs.
               </p>
               <p>
-                Today, we're evolving beyond traditional IT services into the AI frontier — building intelligent products that leverage the latest in machine learning, natural language processing, and generative AI to solve real-world problems.
+                Today, we're evolving beyond traditional IT services into the AI frontier — building intelligent products that leverage practical automation, natural language interfaces, and generative AI to solve real-world problems.
               </p>
             </div>
           </motion.div>

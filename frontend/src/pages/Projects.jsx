@@ -96,7 +96,7 @@ export default function Projects() {
           <div className="absolute inset-0" style={{ clipPath: 'polygon(0 0, 55% 0, 45% 100%, 0 100%)' }}>
             <img 
               src={images.aiBrain} 
-              alt="AI and machine learning" 
+              alt="AI technology interface" 
               className="w-full h-full object-cover"
               
             />

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Mail, Phone, Send, Clock, Globe } from 'lucide-react';
-import { companyInfo, images } from '../data/mock';
+import { MapPin, Mail, Phone, Send, Clock, Globe, ExternalLink } from 'lucide-react';
+import { companyInfo } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 import { Input } from '../components/ui/input';
@@ -16,6 +16,10 @@ const fadeInUp = {
   viewport: { once: true, margin: '-60px' },
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
 };
+
+const mapLocation = encodeURIComponent(`${companyInfo.fullName}, ${companyInfo.location}`);
+const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${mapLocation}`;
+const openStreetMapEmbedUrl = 'https://www.openstreetmap.org/export/embed.html?bbox=75.450%2C30.250%2C78.950%2C32.650&layer=mapnik&marker=31.1048%2C77.1734';
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', company: '', inquiry: '', message: '' });
@@ -175,20 +179,49 @@ export default function Contact() {
                 })}
               </div>
               
-              {/* Small Nature Image */}
+              {/* Open map preview */}
               <motion.div 
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="mt-10 rounded-2xl overflow-hidden"
-                style={{ boxShadow: '0 12px 40px rgba(0,0,0,0.12)' }}
+                style={{ boxShadow: '0 18px 50px rgba(0,0,0,0.24)', border: '1px solid rgba(255,255,255,0.16)' }}
               >
-                <img 
-                  src={images.pineForestMist} 
-                  alt="Pine forest with lake" 
-                  className="w-full h-40 object-cover"
-                />
+                <a
+                  href={googleMapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Open Globistaan location in Google Maps"
+                  className="relative block no-underline group"
+                  style={{ height: '210px', background: '#e8ecef' }}
+                >
+                  <iframe
+                    title="Globistaan location map"
+                    src={openStreetMapEmbedUrl}
+                    className="w-full h-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    style={{ pointerEvents: 'none', filter: 'saturate(0.92) contrast(1.02)' }}
+                  />
+                  <span
+                    className="absolute left-4 right-4 bottom-4 flex items-center justify-between gap-3 rounded-xl px-4 py-3 transition-transform duration-200 group-hover:-translate-y-0.5"
+                    style={{
+                      background: 'rgba(0,0,0,0.76)',
+                      color: '#ffffff',
+                      backdropFilter: 'blur(10px)',
+                      WebkitBackdropFilter: 'blur(10px)'
+                    }}
+                  >
+                    <span className="flex items-center gap-2 text-sm font-medium">
+                      <MapPin className="w-4 h-4" />
+                      {companyInfo.location}
+                    </span>
+                    <span className="flex items-center gap-1 text-xs" style={{ fontFamily: "'SF Mono', monospace", color: 'rgba(255,255,255,0.72)' }}>
+                      Open Map <ExternalLink className="w-3.5 h-3.5" />
+                    </span>
+                  </span>
+                </a>
               </motion.div>
             </motion.div>
 

@@ -58,7 +58,7 @@ export const techStack = {
   clouds: [
     { name: "AWS", description: "Primary cloud infrastructure provider", category: "Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" },
     { name: "Railway", description: "Rapid deployment and scaling platform", category: "Cloud", logo: "https://railway.app/brand/logo-light.svg" },
-    { name: "Google Cloud", description: "AI/ML services and compute", category: "Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
+    { name: "Google Cloud", description: "Cloud AI services and compute", category: "Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" },
     { name: "Azure", description: "Enterprise cloud solutions", category: "Cloud", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" }
   ],
   ides: [
@@ -76,8 +76,8 @@ export const techStack = {
   frameworks: [
     { name: "React", description: "Frontend framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Next.js", description: "Full-stack React framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-    { name: "TensorFlow", description: "ML model training", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-    { name: "PyTorch", description: "Deep learning framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
+    { name: "TensorFlow", description: "AI workflow tooling", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
+    { name: "PyTorch", description: "AI application tooling", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
     { name: "Tailwind CSS", description: "Utility-first CSS framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
   ]
 };
@@ -165,8 +165,8 @@ export const projects = [
 ];
 
 export const services = [
-  { title: "AI Model Development", description: "Custom AI/ML model training and deployment tailored to your business needs.", icon: Brain },
-  { title: "SaaS Platform Engineering", description: "Scalable, multi-tenant SaaS platforms built with modern cloud-native architecture.", icon: Layers },
+  { title: "AI-Enabled App Development", description: "Business applications with useful AI-assisted workflows, automation, and integrations.", icon: Brain },
+  { title: "SaaS Platform Engineering", description: "Scalable SaaS platforms and standalone business apps built with modern cloud-native architecture.", icon: Layers },
   { title: "Intelligent Automation", description: "Automate complex business workflows with AI-driven decision-making systems.", icon: Workflow },
   { title: "Data Engineering & Analytics", description: "End-to-end data pipelines, warehousing, and AI-powered analytics dashboards.", icon: Database },
   { title: "Cloud Infrastructure", description: "Cloud-native deployments on AWS, Railway, and hybrid architectures for optimal performance.", icon: Cloud },

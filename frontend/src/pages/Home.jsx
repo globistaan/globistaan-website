@@ -154,7 +154,7 @@ const ServicesSection = () => (
           AI Services & Solutions
         </h2>
         <p className="mt-4 mx-auto" style={{ maxWidth: '600px', color: 'rgba(255,255,255,0.8)', fontSize: '1.05rem', lineHeight: 1.65 }}>
-          From custom AI models to enterprise SaaS platforms, we deliver end-to-end technology solutions.
+          From AI-enabled business apps to SaaS platforms, we deliver practical technology solutions for real workflows.
         </p>
       </motion.div>
 
@@ -227,7 +227,7 @@ const MountainBanner = () => (
       </motion.div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* AI Card 1 - Machine Learning */}
+        {/* AI Card 1 - Workflow Automation */}
         <motion.div 
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -245,10 +245,10 @@ const MountainBanner = () => (
             <Brain className="w-7 h-7" style={{ color: '#60A5FA' }} />
           </div>
           <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem', color: '#FFFFFF' }}>
-            Machine Learning
+            AI Workflow Automation
           </h3>
           <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
-            Advanced neural networks and deep learning models that adapt and evolve with your business needs.
+            AI-enabled features and automation flows that make everyday business operations easier to run.
           </p>
         </motion.div>
 

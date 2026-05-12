@@ -85,7 +85,7 @@ export const Footer = () => {
               Services
             </h4>
             <nav className="flex flex-col gap-2.5">
-              {['AI Model Development', 'SaaS Platforms', 'Cloud Infrastructure', 'Data Engineering', 'Enterprise AI', 'Consulting'].map((s) => (
+              {['AI-Enabled Apps', 'SaaS Platforms', 'Cloud Infrastructure', 'Data Engineering', 'Business Automation', 'Consulting'].map((s) => (
                 <span key={s} className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
                   {s}
                 </span>
@@ -115,16 +115,21 @@ export const Footer = () => {
               &copy; {new Date().getFullYear()} {companyInfo.fullName}. All rights reserved.
             </p>
             <div className="flex items-center gap-6">
-              {['Privacy Policy', 'Terms of Service', 'Cookie Policy'].map((item) => (
-                <span
-                  key={item}
-                  className="text-xs cursor-pointer transition-colors duration-200"
+              {[
+                { label: 'Privacy Policy', path: '/privacy-policy' },
+                { label: 'Terms of Service', path: '/terms-of-service' },
+                { label: 'Cookie Policy', path: '/cookie-policy' }
+              ].map((item) => (
+                <Link
+                  key={item.path}
+                  to={item.path}
+                  className="text-xs cursor-pointer transition-colors duration-200 no-underline"
                   style={{ color: 'rgba(255,255,255,0.35)', fontFamily: "'SF Mono', monospace" }}
                   onMouseEnter={(e) => e.target.style.color = 'rgba(255,255,255,0.7)'}
                   onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.35)'}
                 >
-                  {item}
-                </span>
+                  {item.label}
+                </Link>
               ))}
             </div>
           </div>

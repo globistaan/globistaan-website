@@ -176,7 +176,7 @@ export default function TechStack() {
             </h2>
           </motion.div>
           
-          <LogoGrid items={techStack.aiAgents} title="AI & Machine Learning" />
+          <LogoGrid items={techStack.aiAgents} title="AI Tools & Platforms" />
           <LogoGrid items={techStack.clouds} title="Cloud Infrastructure" />
           <LogoGrid items={techStack.frameworks.filter(f => f.category === 'Framework')} title="Development Frameworks" />
         </div>
