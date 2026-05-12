@@ -896,3 +896,13 @@ body {
   letter-spacing: 0.05em;
   min-height: 200px;
 }
+
+.header-desktop-cta {
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .header-desktop-cta {
+    display: inline-flex;
+  }
+}
