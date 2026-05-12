@@ -71,7 +71,7 @@ export const techStack = {
     { name: "Gemini", description: "Google's multimodal AI model", category: "AI", logo: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Google_Gemini_logo.svg" },
     { name: "OpenAI", description: "GPT models for NLP and generation", category: "AI", logo: "https://cdn.worldvectorlogo.com/logos/openai-2.svg" },
     { name: "Claude", description: "Anthropic's advanced reasoning AI", category: "AI", logo: "https://cdn.worldvectorlogo.com/logos/claude-ai-icon.svg" },
-    { name: "LangChain", description: "AI orchestration framework", category: "AI", logo: "https://api.nuget.org/v3-flatcontainer/langchain/0.15.1/icon" }
+    { name: "Pydantic AI", description: "Python agent framework for production-grade AI applications", category: "AI", logo: "https://avatars.githubusercontent.com/u/110818415?s=200&v=4" }
   ],
   frameworks: [
     { name: "React", description: "Frontend framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
