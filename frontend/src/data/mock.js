@@ -76,8 +76,6 @@ export const techStack = {
   frameworks: [
     { name: "React", description: "Frontend framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
     { name: "Next.js", description: "Full-stack React framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" },
-    { name: "TensorFlow", description: "AI workflow tooling", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" },
-    { name: "PyTorch", description: "AI application tooling", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" },
     { name: "Tailwind CSS", description: "Utility-first CSS framework", category: "Framework", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" }
   ]
 };
