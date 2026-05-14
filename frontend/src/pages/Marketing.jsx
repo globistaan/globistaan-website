@@ -7,6 +7,8 @@ import { Badge } from '../components/ui/badge';
 import { images } from '../data/mock';
 
 const arcadeVideoUrl = 'https://demo.arcade.software/video/80m4zsJCGTY3Ahh6Pshz?embed&autoplay=true';
+const marketingTinyUrl = 'https://tinyurl.com/23vnexxc';
+const marketingQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=16&data=${encodeURIComponent(marketingTinyUrl)}`;
 
 const fadeInUp = {
   initial: { opacity: 0, y: 28 },
@@ -85,6 +87,48 @@ export default function Marketing() {
             <Link to="/contact" className="btn-primary text-xs" style={{ textDecoration: 'none', padding: '0.75rem 1.5rem', background: '#ffffff', color: '#111111' }}>
               Start a Conversation <ArrowRight className="w-4 h-4" />
             </Link>
+          </motion.div>
+
+          <motion.div
+            {...fadeInUp}
+            className="mt-10 mx-auto grid grid-cols-1 md:grid-cols-[auto_1fr] gap-6 items-center"
+            style={{
+              maxWidth: '760px',
+              padding: '1.25rem',
+              borderRadius: '1rem',
+              background: 'rgba(255,255,255,0.08)',
+              border: '1px solid rgba(255,255,255,0.16)',
+              backdropFilter: 'blur(12px)'
+            }}
+          >
+            <a
+              href={marketingTinyUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="block mx-auto"
+              aria-label="Open Globistaan marketing page QR code link"
+            >
+              <img
+                src={marketingQrUrl}
+                alt="QR code for Globistaan marketing page"
+                className="w-40 h-40 rounded-xl"
+                style={{ background: '#ffffff', padding: '0.5rem' }}
+              />
+            </a>
+            <div className="text-center md:text-left">
+              <p style={{ color: '#ffffff', fontSize: '1rem', fontWeight: 600, marginBottom: '0.5rem' }}>
+                Scan to open this marketing page
+              </p>
+              <a
+                href={marketingTinyUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-block no-underline"
+                style={{ color: 'rgba(255,255,255,0.82)', fontFamily: "'SF Mono', monospace", fontSize: '0.9rem', wordBreak: 'break-all' }}
+              >
+                {marketingTinyUrl}
+              </a>
+            </div>
           </motion.div>
         </div>
       </section>
