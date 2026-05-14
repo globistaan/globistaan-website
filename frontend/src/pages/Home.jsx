@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2, Brain, Sparkles, Zap } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2 } from 'lucide-react';
 import { companyInfo, projects, services, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
@@ -201,111 +201,6 @@ const ServicesSection = () => (
   </section>
 );
 
-/* Nature + Tech Banner with AI Theme */
-const MountainBanner = () => (
-  <section className="relative min-h-[70vh] flex items-center overflow-hidden">
-    {/* AI-Themed Background - Futuristic Neural Network */}
-    <div className="absolute inset-0 z-0">
-      <img 
-        src="https://images.unsplash.com/photo-1635070041078-e363dbe005cb?q=80&w=2400&auto=format&fit=crop" 
-        alt="AI neural network technology background" 
-        className="w-full h-full object-cover"
-        style={{ opacity: 0.85 }}
-      />
-    </div>
-    <div className="absolute inset-0 z-1" style={{ background: 'linear-gradient(180deg, rgba(10,25,47,0.75) 0%, rgba(10,25,47,0.85) 100%)' }} />
-    <ParticlesBg />
-    
-    <div className="relative z-10 max-w-[1100px] mx-auto px-5 py-20">
-      <motion.div {...fadeInUp} className="text-center mb-12">
-        <h2 style={{ fontSize: 'clamp(1.8rem, 4vw, 2.8rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#FFFFFF', lineHeight: 1.15, textShadow: '0 2px 15px rgba(0,0,0,0.4)' }}>
-          Serenity Meets Innovation
-        </h2>
-        <p className="mt-5 mx-auto" style={{ maxWidth: '700px', color: 'rgba(255,255,255,0.9)', fontSize: '1.1rem', lineHeight: 1.7, textShadow: '0 1px 8px rgba(0,0,0,0.3)' }}>
-          From the tranquil valleys of Himachal Pradesh to cutting-edge AI laboratories — we blend nature's wisdom with technological excellence.
-        </p>
-      </motion.div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {/* AI Card 1 - Workflow Automation */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="rounded-2xl overflow-hidden shadow-2xl"
-          style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '2rem'
-          }}
-        >
-          <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(59, 130, 246, 0.2)' }}>
-            <Brain className="w-7 h-7" style={{ color: '#60A5FA' }} />
-          </div>
-          <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem', color: '#FFFFFF' }}>
-            AI Workflow Automation
-          </h3>
-          <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
-            AI-enabled features and automation flows that make everyday business operations easier to run.
-          </p>
-        </motion.div>
-
-        {/* AI Card 2 - Natural Language Processing */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="rounded-2xl overflow-hidden shadow-2xl"
-          style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '2rem'
-          }}
-        >
-          <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(168, 85, 247, 0.2)' }}>
-            <Sparkles className="w-7 h-7" style={{ color: '#C084FC' }} />
-          </div>
-          <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem', color: '#FFFFFF' }}>
-            AI Automation
-          </h3>
-          <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
-            Intelligent automation systems that streamline workflows and boost productivity across your organization.
-          </p>
-        </motion.div>
-
-        {/* AI Card 3 - Predictive Analytics */}
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          className="rounded-2xl overflow-hidden shadow-2xl"
-          style={{
-            background: 'rgba(255, 255, 255, 0.1)',
-            backdropFilter: 'blur(10px)',
-            border: '1px solid rgba(255, 255, 255, 0.2)',
-            padding: '2rem'
-          }}
-        >
-          <div className="w-14 h-14 rounded-xl flex items-center justify-center mb-4" style={{ background: 'rgba(34, 197, 94, 0.2)' }}>
-            <Zap className="w-7 h-7" style={{ color: '#4ADE80' }} />
-          </div>
-          <h3 style={{ fontSize: '1.25rem', fontWeight: 600, marginBottom: '0.75rem', color: '#FFFFFF' }}>
-            Predictive Analytics
-          </h3>
-          <p style={{ fontSize: '0.95rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.85)' }}>
-            Data-driven insights and forecasting powered by AI to make smarter business decisions.
-          </p>
-        </motion.div>
-      </div>
-    </div>
-  </section>
-);
-
 const ProjectsPreview = () => (
   <section className="relative py-24 overflow-hidden">
     {/* Futuristic Circuit Board Background with Gradient */}
@@ -427,7 +322,6 @@ export default function Home() {
     <main>
       <HeroSection />
       <ServicesSection />
-      <MountainBanner />
       <ProjectsPreview />
     </main>
   );
