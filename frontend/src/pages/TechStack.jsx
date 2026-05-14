@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Code2, Cpu, Database, Wrench, Server, FileText, Search } from 'lucide-react';
@@ -30,99 +30,103 @@ const categoryAccents = {
   'Document / OCR': 'accent-pink'
 };
 
-const TechCard = ({ item, index }) => {
-  const Icon = categoryIcons[item.category] || Wrench;
-  const accent = categoryAccents[item.category] || 'accent-grey';
-  const [imgError, setImgError] = useState(false);
-  
+const mainStack = [
+  'React', 'TypeScript', 'Vite', 'Astro', 'FastAPI', 'Supabase',
+  'PostgreSQL', 'Redis', 'Cloudflare', 'Gemini', 'OpenAI', 'Pydantic AI', 'Kreuzberg'
+];
+
+const branchGroups = [
+  {
+    title: 'Frontend Experience',
+    category: 'Frontend',
+    summary: 'Application UI, static sites, maps, 3D, charts, forms, animation, and multilingual interfaces.',
+    items: techStack.frontend
+  },
+  {
+    title: 'Backend & Serverless',
+    category: 'Backend',
+    summary: 'Python APIs, backend platform services, authentication, and edge/serverless workflows.',
+    items: techStack.backend
+  },
+  {
+    title: 'Data & Infrastructure',
+    category: 'Data / Infra',
+    summary: 'Databases, queues, containers, deployment, observability, package management, and source control.',
+    items: techStack.dataInfra
+  },
+  {
+    title: 'Content & SEO',
+    category: 'Content / SEO',
+    summary: 'Static generation, search, CMS content, structured data, sitemap, and metadata tooling.',
+    items: techStack.contentSeo
+  },
+  {
+    title: 'AI & RAG',
+    category: 'AI / RAG',
+    summary: 'Chat, embeddings, typed agents, retrieval, reranking, and context compression.',
+    items: techStack.aiRag
+  },
+  {
+    title: 'Document / OCR',
+    category: 'Document / OCR',
+    summary: 'Focused extraction and OCR tooling.',
+    items: techStack.documentOcr
+  }
+];
+
+const BranchCard = ({ branch, index }) => {
+  const Icon = categoryIcons[branch.category] || Wrench;
+  const accent = categoryAccents[branch.category] || 'accent-grey';
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20, scale: 0.98 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+    <motion.article
+      initial={{ opacity: 0, y: 24 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 0.5, delay: index * 0.05, ease: [0.22, 1, 0.36, 1] }}
-      whileHover={{ y: -6, transition: { duration: 0.2 } }}
+      transition={{ duration: 0.5, delay: index * 0.07 }}
       className={`voice-card glow-card ${accent}`}
-      style={{ padding: '1.75rem' }}
+      style={{ padding: '1.75rem', minHeight: '100%' }}
     >
-      <div className="flex items-start gap-4">
-        <div className="w-14 h-14 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(255,255,255,0.95)', boxShadow: '0 2px 8px rgba(0,0,0,0.08)' }}>
-          {item.logo && !imgError ? (
-            <img 
-              src={item.logo} 
-              alt={`${item.name} logo`} 
-              className="w-9 h-9 object-contain"
-              onError={() => setImgError(true)}
-            />
-          ) : (
-            <Icon className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
-          )}
+      <div className="flex items-start gap-4 mb-5">
+        <div className="w-12 h-12 rounded-xl flex items-center justify-center flex-shrink-0" style={{ background: 'rgba(0,0,0,0.06)' }}>
+          <Icon className="w-6 h-6" style={{ color: 'var(--text-primary)' }} />
         </div>
-        
-        <div className="flex-1">
-          <h4 style={{ fontSize: '1.05rem', fontWeight: 500, color: 'var(--text-primary)', marginBottom: '0.35rem' }}>
-            {item.name}
-          </h4>
-          <p style={{ fontSize: '0.85rem', lineHeight: 1.5, color: 'var(--text-secondary)' }}>
-            {item.description}
+        <div>
+          <p style={{ fontSize: '0.68rem', fontFamily: "'SF Mono', monospace", color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.06em', marginBottom: '0.35rem' }}>
+            {branch.category}
           </p>
-          <Badge variant="outline" className="mt-3 rounded-full" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-            {item.category}
-          </Badge>
+          <h3 style={{ fontSize: '1.18rem', fontWeight: 600, color: 'var(--text-primary)', marginBottom: '0.45rem' }}>
+            {branch.title}
+          </h3>
+          <p style={{ fontSize: '0.9rem', lineHeight: 1.6, color: 'var(--text-secondary)' }}>
+            {branch.summary}
+          </p>
         </div>
       </div>
-    </motion.div>
+
+      <div className="flex flex-wrap gap-2">
+        {branch.items.map((item) => (
+          <span
+            key={item.name}
+            className="rounded-full px-3 py-1.5"
+            style={{
+              background: 'rgba(255,255,255,0.72)',
+              border: '1px solid rgba(0,0,0,0.08)',
+              color: 'var(--text-primary)',
+              fontFamily: "'SF Mono', monospace",
+              fontSize: '0.72rem',
+              lineHeight: 1.2
+            }}
+          >
+            {item.name}
+          </span>
+        ))}
+      </div>
+    </motion.article>
   );
 };
 
-const LogoGrid = ({ items, title }) => (
-  <div className="mb-14">
-    <h3 className="text-center mb-8" style={{ fontSize: '1.15rem', fontWeight: 500, color: 'rgba(255,255,255,0.7)' }}>{title}</h3>
-    <div className="flex flex-wrap justify-center gap-8">
-      {items.map((item, i) => (
-        <motion.div
-          key={item.name}
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.4, delay: i * 0.08 }}
-          whileHover={{ scale: 1.08, transition: { duration: 0.2 } }}
-          className="flex flex-col items-center gap-3"
-        >
-          <div className="w-20 h-20 rounded-2xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.95)', boxShadow: '0 4px 16px rgba(0,0,0,0.1)' }}>
-            {item.logo ? (
-              <img 
-                src={item.logo} 
-                alt={`${item.name} logo`}
-                className="w-12 h-12 object-contain"
-              />
-            ) : (
-              <Cpu className="w-8 h-8" style={{ color: 'var(--text-primary)' }} />
-            )}
-          </div>
-          <span style={{ fontSize: '0.8rem', fontFamily: "'SF Mono', monospace", color: 'rgba(255,255,255,0.8)', fontWeight: 500 }}>
-            {item.name}
-          </span>
-        </motion.div>
-      ))}
-    </div>
-  </div>
-);
-
 export default function TechStack() {
-  const [activeCategory, setActiveCategory] = useState('all');
-  const allTools = Object.values(techStack).flat();
-  const categories = [
-    { id: 'all', label: 'All Tools' },
-    { id: 'Frontend', label: 'Frontend' },
-    { id: 'Backend', label: 'Backend' },
-    { id: 'Data / Infra', label: 'Data / Infra' },
-    { id: 'Content / SEO', label: 'Content / SEO' },
-    { id: 'AI / RAG', label: 'AI / RAG' },
-    { id: 'Document / OCR', label: 'Document / OCR' }
-  ];
-  const filtered = activeCategory === 'all' ? allTools : allTools.filter(t => t.category === activeCategory);
-
   return (
     <main>
       {/* Hero - Split: Code on left, Mountains on right - HD NO FILTER */}
@@ -167,7 +171,7 @@ export default function TechStack() {
         </div>
       </section>
 
-      {/* Logo Showcase Section - Subtle Dark AI Neural Network Background */}
+      {/* Main Stack + Branches */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 z-0" style={{
           background: 'linear-gradient(135deg, #0a0f1e 0%, #0d1230 40%, #120a2e 70%, #0a0f1e 100%)'
@@ -187,46 +191,48 @@ export default function TechStack() {
         <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="text-center mb-14">
             <h2 style={{ fontSize: 'clamp(1.4rem, 3vw, 2rem)', fontWeight: 600, letterSpacing: '-0.02em', color: '#ffffff', lineHeight: 1.2 }}>
-              Tools We Use
+              Main Tool Stack
             </h2>
+            <p className="mt-4 mx-auto" style={{ maxWidth: '700px', color: 'rgba(255,255,255,0.72)', fontSize: '0.98rem', lineHeight: 1.7 }}>
+              A compact view of the primary stack, with supporting technologies grouped into branches below.
+            </p>
           </motion.div>
-          
-          <LogoGrid items={techStack.frontend} title="Frontend" />
-          <LogoGrid items={techStack.backend} title="Backend" />
-          <LogoGrid items={techStack.dataInfra} title="Data / Infrastructure" />
-          <LogoGrid items={techStack.contentSeo} title="Content / SEO" />
-          <LogoGrid items={techStack.aiRag} title="AI / RAG Stack" />
-          <LogoGrid items={techStack.documentOcr} title="Document / OCR Processing" />
-        </div>
-      </section>
 
-      {/* Filter + Grid - HD Forest Background */}
-      <section className="relative py-20 overflow-hidden">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src={images.mistyForest} 
-            alt="Himalayan forest" 
-            className="w-full h-full object-cover"
-          />
-        </div>
-        <div className="absolute inset-0 z-1" style={{ background: 'rgba(255,255,255,0.93)' }} />
-        
-        <div className="relative z-10 max-w-[1200px] mx-auto px-5 md:px-9">
-          <motion.div {...fadeInUp} className="flex flex-wrap items-center justify-center gap-2 mb-12">
-            {categories.map((cat) => (
-              <button 
-                key={cat.id} 
-                onClick={() => setActiveCategory(cat.id)} 
-                className={`btn-tag ${activeCategory === cat.id ? 'active' : ''}`}
-              >
-                {cat.label}
-              </button>
-            ))}
+          <motion.div
+            {...fadeInUp}
+            className="mx-auto mb-14"
+            style={{
+              maxWidth: '980px',
+              background: 'rgba(255,255,255,0.08)',
+              border: '1px solid rgba(255,255,255,0.15)',
+              borderRadius: '1.25rem',
+              padding: '1.35rem',
+              backdropFilter: 'blur(12px)'
+            }}
+          >
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {mainStack.map((tool) => (
+                <span
+                  key={tool}
+                  className="rounded-full px-4 py-2"
+                  style={{
+                    background: 'rgba(255,255,255,0.92)',
+                    color: '#101010',
+                    fontFamily: "'SF Mono', monospace",
+                    fontSize: '0.78rem',
+                    fontWeight: 600,
+                    boxShadow: '0 8px 22px rgba(0,0,0,0.16)'
+                  }}
+                >
+                  {tool}
+                </span>
+              ))}
+            </div>
           </motion.div>
-          
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {filtered.map((tool, i) => (
-              <TechCard key={`${tool.name}-${tool.category}`} item={tool} index={i} />
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            {branchGroups.map((branch, i) => (
+              <BranchCard key={branch.title} branch={branch} index={i} />
             ))}
           </div>
         </div>
