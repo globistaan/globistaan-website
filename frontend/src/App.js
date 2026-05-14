@@ -13,6 +13,7 @@ import TechStack from "./pages/TechStack";
 import Investors from "./pages/Investors";
 import Contact from "./pages/Contact";
 import Legal from "./pages/Legal";
+import Marketing from "./pages/Marketing";
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -42,6 +43,7 @@ function App() {
           <Route path="/people" element={<People />} />
           <Route path="/tech-stack" element={<TechStack />} />
           <Route path="/investors" element={<Investors />} />
+          <Route path="/marketing" element={<Marketing />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/:slug" element={<Legal />} />
         </Routes>

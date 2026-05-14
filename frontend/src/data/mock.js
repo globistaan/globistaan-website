@@ -317,5 +317,6 @@ export const navLinks = [
   { label: "People", path: "/people" },
   { label: "Tech Stack", path: "/tech-stack" },
   { label: "Investors", path: "/investors" },
+  { label: "Marketing", path: "/marketing" },
   { label: "Contact", path: "/contact" }
 ];
