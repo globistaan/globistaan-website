@@ -6,7 +6,7 @@ import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
 import { images } from '../data/mock';
 
-const arcadeVideoUrl = 'https://demo.arcade.software/video/80m4zsJCGTY3Ahh6Pshz?embed&autoplay=true';
+const arcadeVideoUrl = 'https://demo.arcade.software/video/80m4zsJCGTY3Ahh6Pshz?embed&autoplay=true&muted=true&mute=true&playsinline=true';
 const marketingPageUrl = 'https://www.globistaan.com/marketing';
 const marketingContact = '+91 8291486041';
 const marketingEmail = 'ceo@globistaan.com';
