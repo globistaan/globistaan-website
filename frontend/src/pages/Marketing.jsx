@@ -8,6 +8,7 @@ import { images } from '../data/mock';
 
 const arcadeVideoUrl = 'https://demo.arcade.software/video/80m4zsJCGTY3Ahh6Pshz?embed&autoplay=true';
 const marketingTinyUrl = 'https://tinyurl.com/23vnexxc';
+const marketingContact = '+91 8291486041';
 const marketingQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=16&data=${encodeURIComponent(marketingTinyUrl)}`;
 
 const fadeInUp = {
@@ -125,6 +126,9 @@ export default function Marketing() {
               >
                 {marketingTinyUrl}
               </a>
+              <p style={{ color: 'rgba(255,255,255,0.86)', fontFamily: "'SF Mono', monospace", fontSize: '0.88rem', marginTop: '0.65rem', marginBottom: 0 }}>
+                Contact: {marketingContact}
+              </p>
             </div>
           </motion.div>
         </div>
