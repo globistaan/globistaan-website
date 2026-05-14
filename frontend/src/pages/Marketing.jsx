@@ -7,10 +7,10 @@ import { Badge } from '../components/ui/badge';
 import { images } from '../data/mock';
 
 const arcadeVideoUrl = 'https://demo.arcade.software/video/80m4zsJCGTY3Ahh6Pshz?embed&autoplay=true';
-const marketingTinyUrl = 'https://tinyurl.com/23vnexxc';
+const marketingPageUrl = 'https://www.globistaan.com/marketing';
 const marketingContact = '+91 8291486041';
 const marketingEmail = 'ceo@globistaan.com';
-const marketingQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=16&data=${encodeURIComponent(marketingTinyUrl)}`;
+const marketingQrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=320x320&margin=16&data=${encodeURIComponent(marketingPageUrl)}`;
 
 const fadeInUp = {
   initial: { opacity: 0, y: 28 },
@@ -101,7 +101,7 @@ export default function Marketing() {
             }}
           >
             <a
-              href={marketingTinyUrl}
+              href={marketingPageUrl}
               target="_blank"
               rel="noreferrer"
               className="block mx-auto"
@@ -119,13 +119,13 @@ export default function Marketing() {
                 Scan to open this marketing page
               </p>
               <a
-                href={marketingTinyUrl}
+                href={marketingPageUrl}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-block no-underline"
                 style={{ color: 'rgba(255,255,255,0.82)', fontFamily: "'SF Mono', monospace", fontSize: '0.9rem', wordBreak: 'break-all' }}
               >
-                {marketingTinyUrl}
+                {marketingPageUrl}
               </a>
               <p style={{ color: 'rgba(255,255,255,0.86)', fontFamily: "'SF Mono', monospace", fontSize: '0.88rem', marginTop: '0.65rem', marginBottom: 0 }}>
                 Contact: {marketingContact}
