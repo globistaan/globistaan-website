@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
@@ -81,9 +81,6 @@ export default function Marketing() {
           </motion.div>
 
           <motion.div {...fadeInUp} className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
-            <span className="inline-flex items-center gap-2" style={{ color: 'rgba(255,255,255,0.72)', fontFamily: "'SF Mono', monospace", fontSize: '0.78rem' }}>
-              <Play className="w-4 h-4" /> Plays inline on this page
-            </span>
             <Link to="/contact" className="btn-primary text-xs" style={{ textDecoration: 'none', padding: '0.75rem 1.5rem', background: '#ffffff', color: '#111111' }}>
               Start a Conversation <ArrowRight className="w-4 h-4" />
             </Link>
