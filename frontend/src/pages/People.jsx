@@ -146,6 +146,9 @@ const ClientCard = ({ client, index }) => {
           <p className="mt-4 text-center people-avatar-name">
             {client.contact}
           </p>
+          <p className="mt-2 text-center people-card-kicker" style={{ marginBottom: '0.35rem' }}>
+            {client.relationship}
+          </p>
           {client.location && (
             <p className="mt-1 text-center people-location">
               {client.location}
@@ -159,9 +162,6 @@ const ClientCard = ({ client, index }) => {
                 {client.name}
               </h4>
               <div className="flex flex-wrap gap-2">
-                <Badge variant="outline" className="rounded-full" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
-                  {client.relationship}
-                </Badge>
                 <Badge variant="outline" className="rounded-full" style={{ fontFamily: "'SF Mono', monospace", fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
                   {client.industry}
                 </Badge>
