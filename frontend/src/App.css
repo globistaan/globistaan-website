@@ -251,6 +251,25 @@ body {
     inset 0 1px 0 rgba(255,255,255,0.16);
 }
 
+.project-demo-dialog {
+  width: min(94vw, 980px);
+  max-width: min(94vw, 980px);
+  padding: 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  background: #ffffff;
+}
+
+.project-demo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  border-radius: 0.85rem;
+  background: #080808;
+  box-shadow: 0 24px 60px rgba(0,0,0,0.2);
+}
+
 .btn-secondary {
   background: rgba(255, 255, 255, 0.2);
   color: var(--text-primary);

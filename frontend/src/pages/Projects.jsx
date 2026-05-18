@@ -1,10 +1,17 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, CheckCircle2, ExternalLink } from 'lucide-react';
+import { ArrowRight, CheckCircle2, ExternalLink, PlayCircle } from 'lucide-react';
 import { projects, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from '../components/ui/dialog';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 28 },
@@ -13,7 +20,7 @@ const fadeInUp = {
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
 };
 
-const ProjectCard = ({ project, index }) => {
+const ProjectCard = ({ project, index, onViewProduct }) => {
   const Icon = project.icon;
   return (
     <motion.div
@@ -63,16 +70,27 @@ const ProjectCard = ({ project, index }) => {
           ))}
         </div>
 
-        {project.website ? (
-          <a
-            href={project.website}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-primary website-cta self-start"
-          >
-            Visit Website <ExternalLink className="w-3.5 h-3.5" />
-          </a>
-        ) : null}
+        <div className="flex flex-wrap gap-3">
+          {project.demoVideo ? (
+            <button
+              type="button"
+              onClick={() => onViewProduct(project)}
+              className="btn-primary website-cta self-start"
+            >
+              View Product <PlayCircle className="w-3.5 h-3.5" />
+            </button>
+          ) : null}
+          {project.website ? (
+            <a
+              href={project.website}
+              target="_blank"
+              rel="noreferrer"
+              className="btn-primary website-cta self-start"
+            >
+              Visit Website <ExternalLink className="w-3.5 h-3.5" />
+            </a>
+          ) : null}
+        </div>
       </div>
     </motion.div>
   );
@@ -80,6 +98,7 @@ const ProjectCard = ({ project, index }) => {
 
 export default function Projects() {
   const [filter, setFilter] = useState('all');
+  const [activeDemo, setActiveDemo] = useState(null);
   const filtered = filter === 'all' ? projects : projects.filter(p => p.category.toLowerCase().includes(filter));
 
   return (
@@ -159,11 +178,33 @@ export default function Projects() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {filtered.map((project, i) => (
-              <ProjectCard key={project.id} project={project} index={i} />
+              <ProjectCard key={project.id} project={project} index={i} onViewProduct={setActiveDemo} />
             ))}
           </div>
         </div>
       </section>
+
+      <Dialog open={Boolean(activeDemo)} onOpenChange={(open) => !open && setActiveDemo(null)}>
+        <DialogContent className="project-demo-dialog">
+          <DialogHeader>
+            <DialogTitle>{activeDemo?.title}</DialogTitle>
+            <DialogDescription>
+              Product walkthrough from Globistaan.
+            </DialogDescription>
+          </DialogHeader>
+          {activeDemo?.demoVideo && (
+            <div className="project-demo-frame">
+              <iframe
+                src={activeDemo.demoVideo}
+                title={`${activeDemo.title} product demo`}
+                className="absolute inset-0 w-full h-full border-0"
+                allow="autoplay; fullscreen; clipboard-write; encrypted-media; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* CTA - River Valley */}
       <section className="relative min-h-[45vh] flex items-center overflow-hidden">
