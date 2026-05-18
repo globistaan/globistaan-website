@@ -59,6 +59,27 @@ export default function Marketing() {
             </p>
           </motion.div>
 
+          <motion.div {...fadeInUp} className="mb-6 text-center">
+            <Badge
+              variant="outline"
+              className="mb-4 rounded-full px-4 py-1.5"
+              style={{
+                fontFamily: "'SF Mono', monospace",
+                fontSize: '0.7rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                background: 'rgba(255,255,255,0.12)',
+                borderColor: 'rgba(255,255,255,0.28)',
+                color: 'white'
+              }}
+            >
+              Watch in Hindi
+            </Badge>
+            <h2 style={{ color: '#ffffff', fontSize: 'clamp(1.55rem, 3.2vw, 2.35rem)', fontWeight: 700, lineHeight: 1.12, marginBottom: '0.75rem' }}>
+              Hindi Overview
+            </h2>
+          </motion.div>
+
           <motion.div
             initial={{ opacity: 0, y: 28, scale: 0.98 }}
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
