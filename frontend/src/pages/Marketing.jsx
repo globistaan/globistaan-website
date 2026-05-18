@@ -73,10 +73,10 @@ export default function Marketing() {
                 color: 'white'
               }}
             >
-              Watch in Hindi
+              हिंदी में देखें
             </Badge>
             <h2 style={{ color: '#ffffff', fontSize: 'clamp(1.55rem, 3.2vw, 2.35rem)', fontWeight: 700, lineHeight: 1.12, marginBottom: '0.75rem' }}>
-              Hindi Overview
+              हिंदी परिचय
             </h2>
           </motion.div>
 
