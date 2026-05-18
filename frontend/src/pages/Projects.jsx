@@ -68,8 +68,7 @@ const ProjectCard = ({ project, index }) => {
             href={project.website}
             target="_blank"
             rel="noreferrer"
-            className="btn-primary text-xs self-start"
-            style={{ padding: '0.7rem 1.4rem', textDecoration: 'none' }}
+            className="btn-primary website-cta self-start"
           >
             Visit Website <ExternalLink className="w-3.5 h-3.5" />
           </a>

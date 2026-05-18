@@ -172,9 +172,9 @@ const ClientCard = ({ client, index }) => {
                 href={client.website}
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-1 text-xs no-underline people-visit-link"
+                className="btn-primary website-cta self-start"
               >
-                Visit site <ArrowUpRight className="w-3.5 h-3.5" />
+                Visit Website <ArrowUpRight className="w-3.5 h-3.5" />
               </a>
             )}
           </div>

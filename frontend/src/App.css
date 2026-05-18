@@ -232,6 +232,25 @@ body {
   transform: scale(0.98);
 }
 
+.website-cta {
+  padding: 0.82rem 1.45rem;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: #ffffff;
+  background: #111111;
+  border: 1px solid rgba(255,255,255,0.5);
+  box-shadow:
+    0 12px 26px rgba(0,0,0,0.18),
+    inset 0 1px 0 rgba(255,255,255,0.16);
+}
+
+.website-cta:hover {
+  background: #2b2b2b;
+  box-shadow:
+    0 16px 34px rgba(0,0,0,0.22),
+    inset 0 1px 0 rgba(255,255,255,0.16);
+}
+
 .btn-secondary {
   background: rgba(255, 255, 255, 0.2);
   color: var(--text-primary);
