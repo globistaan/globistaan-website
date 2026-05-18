@@ -77,7 +77,7 @@ const ProjectCard = ({ project, index, onViewProduct }) => {
               onClick={() => onViewProduct(project)}
               className="btn-primary website-cta self-start"
             >
-              View Product <PlayCircle className="w-3.5 h-3.5" />
+              View Product Video <PlayCircle className="w-3.5 h-3.5" />
             </button>
           ) : null}
           {project.website ? (

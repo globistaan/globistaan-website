@@ -1,10 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { ArrowRight, ArrowUpRight, Crown, Code2, Palette, User } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, Crown, Code2, Palette, User, PlayCircle } from 'lucide-react';
 import { directors, developers, logoDesigners, clients, images } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogDescription
+} from '../components/ui/dialog';
 
 const fadeInUp = {
   initial: { opacity: 0, y: 24 },
@@ -123,7 +130,7 @@ const LogoDesignerCard = ({ designer, index }) => {
   );
 };
 
-const ClientCard = ({ client, index }) => {
+const ClientCard = ({ client, index, onViewProduct }) => {
   const accents = ['accent-pink', 'accent-orange', 'accent-green', 'accent-blue'];
   return (
     <motion.div
@@ -167,16 +174,27 @@ const ClientCard = ({ client, index }) => {
                 </Badge>
               </div>
             </div>
-            {client.website && (
-              <a
-                href={client.website}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-primary website-cta self-start"
-              >
-                Visit Website <ArrowUpRight className="w-3.5 h-3.5" />
-              </a>
-            )}
+            <div className="flex flex-wrap gap-3">
+              {client.demoVideo && (
+                <button
+                  type="button"
+                  onClick={() => onViewProduct(client)}
+                  className="btn-primary website-cta self-start"
+                >
+                  View Product Video <PlayCircle className="w-3.5 h-3.5" />
+                </button>
+              )}
+              {client.website && (
+                <a
+                  href={client.website}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-primary website-cta self-start"
+                >
+                  Visit Website <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+              )}
+            </div>
           </div>
 
           <p className="people-card-copy">
@@ -201,6 +219,8 @@ const ClientCard = ({ client, index }) => {
 };
 
 export default function People() {
+  const [activeDemo, setActiveDemo] = useState(null);
+
   return (
     <main>
       {/* Hero - Robot + Forest Blend */}
@@ -334,11 +354,33 @@ export default function People() {
           </motion.div>
           <div className="flex flex-col gap-7">
             {clients.map((client, i) => (
-              <ClientCard key={i} client={client} index={i} />
+              <ClientCard key={i} client={client} index={i} onViewProduct={setActiveDemo} />
             ))}
           </div>
         </div>
       </section>
+
+      <Dialog open={Boolean(activeDemo)} onOpenChange={(open) => !open && setActiveDemo(null)}>
+        <DialogContent className="project-demo-dialog">
+          <DialogHeader>
+            <DialogTitle>{activeDemo?.name}</DialogTitle>
+            <DialogDescription>
+              Product walkthrough from Globistaan.
+            </DialogDescription>
+          </DialogHeader>
+          {activeDemo?.demoVideo && (
+            <div className="project-demo-frame">
+              <iframe
+                src={activeDemo.demoVideo}
+                title={`${activeDemo.name} product demo`}
+                className="absolute inset-0 w-full h-full border-0"
+                allow="autoplay; fullscreen; clipboard-write; encrypted-media; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
 
       {/* Directors Section - Blue Hills */}
       <section className="relative py-24 overflow-hidden">
