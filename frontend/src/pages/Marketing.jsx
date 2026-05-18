@@ -7,6 +7,7 @@ import { Badge } from '../components/ui/badge';
 import { images } from '../data/mock';
 
 const arcadeVideoUrl = 'https://demo.arcade.software/video/80m4zsJCGTY3Ahh6Pshz?embed&autoplay=true&muted=true&mute=true&playsinline=true';
+const englishArcadeVideoUrl = 'https://demo.arcade.software/video/yirMaAWGRtXzB8Sb7rzA?embed&autoplay=true&muted=true&mute=true&playsinline=true';
 const marketingPageUrl = 'https://www.globistaan.com/marketing';
 const marketingContact = '+91 8291486041';
 const marketingEmail = 'ceo@globistaan.com';
@@ -75,6 +76,51 @@ export default function Marketing() {
             <iframe
               src={arcadeVideoUrl}
               title="Globistaan marketing video"
+              className="absolute inset-0 w-full h-full border-0"
+              allow="autoplay; fullscreen; clipboard-write; encrypted-media; picture-in-picture"
+              allowFullScreen
+              loading="eager"
+            />
+          </motion.div>
+
+          <motion.div {...fadeInUp} className="mt-14 mb-6 text-center">
+            <Badge
+              variant="outline"
+              className="mb-4 rounded-full px-4 py-1.5"
+              style={{
+                fontFamily: "'SF Mono', monospace",
+                fontSize: '0.7rem',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+                background: 'rgba(255,255,255,0.12)',
+                borderColor: 'rgba(255,255,255,0.28)',
+                color: 'white'
+              }}
+            >
+              Watch in English
+            </Badge>
+            <h2 style={{ color: '#ffffff', fontSize: 'clamp(1.55rem, 3.2vw, 2.35rem)', fontWeight: 700, lineHeight: 1.12, marginBottom: '0.75rem' }}>
+              English Overview
+            </h2>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 28, scale: 0.98 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+            className="relative overflow-hidden"
+            style={{
+              borderRadius: '1.25rem',
+              border: '1px solid rgba(255,255,255,0.18)',
+              background: 'rgba(255,255,255,0.06)',
+              boxShadow: '0 24px 80px rgba(0,0,0,0.45)',
+              aspectRatio: '16 / 9'
+            }}
+          >
+            <iframe
+              src={englishArcadeVideoUrl}
+              title="Globistaan marketing video in English"
               className="absolute inset-0 w-full h-full border-0"
               allow="autoplay; fullscreen; clipboard-write; encrypted-media; picture-in-picture"
               allowFullScreen
