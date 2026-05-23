@@ -117,9 +117,9 @@
         <!-- Knowledgebot Widget - Secure Bubble Embed -->
         <script>
         (function() {
-          var widgetToken = 'eyJleHAiOjE4MTEwNzc5NTQsImlhdCI6MTc3OTU0MTk1NCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.92e3dea769ed85b33bc75bee4f1f33c53e114b22ae76354a99275b413275030b';
+          var widgetToken = 'eyJleHAiOjE4MTEwNzkxMDUsImlhdCI6MTc3OTU0MzEwNSwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.553cc4540e310fb944d95ed2948c265963589e0b76bf672386769a28eafa921c';
           var apiGatewayUrl = 'https://dailogueapi.globistaan.com';
-          var iframeUrl = 'https://dailogue.globistaan.com/chat-window?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNzc5NTQsImlhdCI6MTc3OTU0MTk1NCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.92e3dea769ed85b33bc75bee4f1f33c53e114b22ae76354a99275b413275030b';
+          var iframeUrl = 'https://dailogue.globistaan.com/chat-window?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNzkxMDUsImlhdCI6MTc3OTU0MzEwNSwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.553cc4540e310fb944d95ed2948c265963589e0b76bf672386769a28eafa921c';
           var bubbleId = 'knowledgebot-widget-bubble';
           var iframeId = 'knowledgebot-widget-frame';
           var align = 'right';
@@ -447,6 +447,11 @@
           function closeChat() {
             if (iframe) {
               iframe.style.display = 'none';
+              iframe.src = 'about:blank';
+              if (iframe.parentNode) {
+                iframe.parentNode.removeChild(iframe);
+              }
+              iframe = null;
             }
             if (bubble) {
               bubble.style.display = 'flex';
