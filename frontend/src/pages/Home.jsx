@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2 } from 'lucide-react';
@@ -11,6 +11,62 @@ const fadeInUp = {
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: '-60px' },
   transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] }
+};
+
+const knowledgebotWidgetUrl = 'https://dailogue.globistaan.com/widget?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNDM1NzcsImlhdCI6MTc3OTUwNzU3Nywic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.17b54c8ec81e427e0e082ceab3b0ecd08a58088e425424df992017301e6bb0ff';
+
+const KnowledgebotBubble = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const iframeId = 'knowledgebot-widget-frame';
+
+  return (
+    <>
+      <iframe
+        id={iframeId}
+        src={knowledgebotWidgetUrl}
+        title="Knowledgebot Chat Widget"
+        allow="microphone"
+        referrerPolicy="origin"
+        style={{
+          position: 'fixed',
+          right: '24px',
+          bottom: '88px',
+          width: 'min(420px, calc(100vw - 32px))',
+          height: 'min(680px, calc(100vh - 120px))',
+          border: 0,
+          borderRadius: '18px',
+          boxShadow: '0 18px 45px rgba(15, 23, 42, 0.28)',
+          background: '#ffffff',
+          overflow: 'hidden',
+          zIndex: 2147483646,
+          display: isOpen ? 'block' : 'none'
+        }}
+      />
+      <button
+        id="knowledgebot-widget-toggle"
+        type="button"
+        aria-expanded={isOpen ? 'true' : 'false'}
+        aria-controls={iframeId}
+        onClick={() => setIsOpen((open) => !open)}
+        style={{
+          position: 'fixed',
+          right: '24px',
+          bottom: '24px',
+          border: '1px solid rgba(15, 23, 42, 0.12)',
+          borderRadius: '999px',
+          padding: '14px 18px',
+          font: '700 14px/1.2 -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif',
+          color: '#111827',
+          background: '#ffffff',
+          boxShadow: '0 16px 32px rgba(15, 23, 42, 0.24)',
+          cursor: 'pointer',
+          zIndex: 2147483647
+        }}
+      >
+        Globee
+      </button>
+    </>
+  );
 };
 
 const HeroSection = () => (
@@ -323,6 +379,7 @@ export default function Home() {
       <HeroSection />
       <ServicesSection />
       <ProjectsPreview />
+      <KnowledgebotBubble />
     </main>
   );
 }
