@@ -117,19 +117,30 @@
         <!-- Knowledgebot Widget - Secure Bubble Embed -->
         <script>
         (function() {
-          var bubbleUrl = 'https://dailogue.globistaan.com/user?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNjgxMTgsImlhdCI6MTc3OTUzMjExOCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.728d5f69adcfc0a8c5be310863b7598577075f6dcdebc73f47526ba75b64eb98&embedSurface=transparent';
-          var iframeUrl = 'https://dailogue.globistaan.com/chat-window?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNjgxMTgsImlhdCI6MTc3OTUzMjExOCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.728d5f69adcfc0a8c5be310863b7598577075f6dcdebc73f47526ba75b64eb98';
-          var bubbleFrameId = 'knowledgebot-widget-bubble-frame';
+          var widgetToken = 'eyJleHAiOjE4MTEwNzc5NTQsImlhdCI6MTc3OTU0MTk1NCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.92e3dea769ed85b33bc75bee4f1f33c53e114b22ae76354a99275b413275030b';
+          var apiGatewayUrl = 'https://dailogueapi.globistaan.com';
+          var iframeUrl = 'https://dailogue.globistaan.com/chat-window?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNzc5NTQsImlhdCI6MTc3OTU0MTk1NCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.92e3dea769ed85b33bc75bee4f1f33c53e114b22ae76354a99275b413275030b';
+          var bubbleId = 'knowledgebot-widget-bubble';
           var iframeId = 'knowledgebot-widget-frame';
           var align = 'right';
-          var bubbleSize = 88;
+          var bubbleColor = '#493bff';
+          var bubbleIconUrl = null;
+          var displayChatbot = true;
+          var initialMessage = "Welcome to Globistaan";
+          var autoShowDuration = 4;
+          var chatIconZoom = 1.0;
+          var theme = "light";
+          var bubbleSize = 64;
           var desktopWindowWidth = 420;
           var desktopWindowHeight = 680;
-          var bubbleFrame = document.getElementById(bubbleFrameId);
+          var bubble = document.getElementById(bubbleId);
           var iframe = document.getElementById(iframeId);
+          var toastId = 'knowledgebot-widget-toast';
+          var toast = document.getElementById(toastId);
           var isOpen = false;
+          var toastTimer = null;
 
-          if (bubbleFrame) {
+          if (bubble) {
             return;
           }
 
@@ -145,27 +156,232 @@
             }
           }
 
-          function ensureBubbleFrame() {
-            if (bubbleFrame) return bubbleFrame;
+          function getShadow() {
+            return '0 10px 30px rgba(15, 23, 42, 0.18), 0 4px 14px rgba(0, 0, 0, 0.12)';
+          }
 
-            bubbleFrame = document.createElement('iframe');
-            bubbleFrame.id = bubbleFrameId;
-            bubbleFrame.src = bubbleUrl;
-            bubbleFrame.title = 'Knowledgebot Chat Bubble';
-            bubbleFrame.allow = 'microphone';
-            bubbleFrame.referrerPolicy = 'origin';
-            bubbleFrame.style.width = bubbleSize + 'px';
-            bubbleFrame.style.height = bubbleSize + 'px';
-            bubbleFrame.style.border = '0';
-            bubbleFrame.style.background = 'transparent';
-            bubbleFrame.style.overflow = 'hidden';
-            bubbleFrame.style.zIndex = '2147483646';
-            bubbleFrame.style.display = 'block';
-            bubbleFrame.style.pointerEvents = 'auto';
-            bubbleFrame.style.borderRadius = '9999px';
-            applyBubblePosition(bubbleFrame);
-            document.body.appendChild(bubbleFrame);
-            return bubbleFrame;
+          function getHoverShadow() {
+            return '0 14px 34px rgba(15, 23, 42, 0.24), 0 8px 18px rgba(0, 0, 0, 0.18)';
+          }
+
+          function getToastBackground() {
+            return theme === 'dark' ? '#111827' : '#ffffff';
+          }
+
+          function getToastColor() {
+            return theme === 'dark' ? '#ffffff' : '#111827';
+          }
+
+          function ensureBubble() {
+            if (!displayChatbot) return null;
+            if (bubble) return bubble;
+
+            bubble = document.createElement('button');
+            bubble.id = bubbleId;
+            bubble.type = 'button';
+            bubble.setAttribute('aria-label', 'Open chat');
+            bubble.style.width = bubbleSize + 'px';
+            bubble.style.height = bubbleSize + 'px';
+            bubble.style.border = '0';
+            bubble.style.padding = '0';
+            bubble.style.margin = '0';
+            bubble.style.cursor = 'pointer';
+            bubble.style.borderRadius = '9999px';
+            bubble.style.overflow = 'hidden';
+            bubble.style.display = 'flex';
+            bubble.style.alignItems = 'center';
+            bubble.style.justifyContent = 'center';
+            bubble.style.zIndex = '2147483646';
+            bubble.style.pointerEvents = 'auto';
+            bubble.style.transition = 'transform 0.2s ease, box-shadow 0.2s ease';
+            bubble.style.background = bubbleIconUrl
+              ? 'transparent'
+              : bubbleColor;
+            bubble.style.color = '#ffffff';
+            bubble.style.boxShadow = getShadow();
+            bubble.style.webkitTapHighlightColor = 'transparent';
+            applyBubblePosition(bubble);
+
+            if (bubbleIconUrl) {
+              var img = document.createElement('img');
+              img.src = bubbleIconUrl;
+              img.alt = 'Chat';
+              img.style.width = '100%';
+              img.style.height = '100%';
+              img.style.objectFit = 'cover';
+              img.style.borderRadius = '9999px';
+              img.style.transform = 'scale(' + chatIconZoom + ')';
+              bubble.appendChild(img);
+            } else {
+              bubble.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 10h8M8 14h5m7-2a9 9 0 1 1-3.08-6.79L21 3l-1.21 4.84A8.96 8.96 0 0 1 20 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            }
+
+            bubble.addEventListener('mouseenter', function() {
+              bubble.style.transform = 'scale(1.1)';
+              bubble.style.boxShadow = getHoverShadow();
+            });
+
+            bubble.addEventListener('mouseleave', function() {
+              bubble.style.transform = 'scale(1)';
+              bubble.style.boxShadow = getShadow();
+            });
+
+            bubble.addEventListener('click', function() {
+              hideToast();
+              openChat();
+            });
+
+            document.body.appendChild(bubble);
+            return bubble;
+          }
+
+          function ensureToast() {
+            if (!displayChatbot || !initialMessage || !initialMessage.trim()) return null;
+            if (toast) return toast;
+
+            toast = document.createElement('div');
+            toast.id = toastId;
+            toast.style.position = 'fixed';
+            toast.style.maxWidth = '300px';
+            toast.style.padding = '12px 16px';
+            toast.style.borderRadius = '12px';
+            toast.style.background = getToastBackground();
+            toast.style.color = getToastColor();
+            toast.style.boxShadow = '0 10px 30px rgba(15, 23, 42, 0.16)';
+            toast.style.zIndex = '2147483645';
+            toast.style.fontFamily = 'Arial, sans-serif';
+            toast.style.fontSize = '14px';
+            toast.style.lineHeight = '1.4';
+            toast.style.cursor = 'pointer';
+            toast.style.display = 'none';
+            toast.style.opacity = '0';
+            toast.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+            toast.style.transform = 'translateY(8px)';
+
+            var message = document.createElement('p');
+            message.style.margin = '0';
+            message.textContent = initialMessage;
+            toast.appendChild(message);
+
+            var close = document.createElement('button');
+            close.type = 'button';
+            close.setAttribute('aria-label', 'Dismiss message');
+            close.innerHTML = '&times;';
+            close.style.position = 'absolute';
+            close.style.top = '-8px';
+            close.style.right = '-8px';
+            close.style.width = '20px';
+            close.style.height = '20px';
+            close.style.border = '0';
+            close.style.borderRadius = '9999px';
+            close.style.cursor = 'pointer';
+            close.style.background = theme === 'dark' ? '#374151' : '#e5e7eb';
+            close.style.color = theme === 'dark' ? '#e5e7eb' : '#475569';
+            close.style.boxShadow = '0 1px 3px rgba(0,0,0,0.2)';
+            close.style.padding = '0';
+            close.style.lineHeight = '20px';
+            close.addEventListener('click', function(event) {
+              event.stopPropagation();
+              hideToast();
+            });
+            toast.appendChild(close);
+
+            toast.addEventListener('click', function() {
+              hideToast();
+              openChat();
+            });
+
+            document.body.appendChild(toast);
+            return toast;
+          }
+
+          function applyToastPosition() {
+            if (!toast || !bubble) return;
+            var bubbleRect = bubble.getBoundingClientRect();
+            toast.style.bottom = (window.innerHeight - bubbleRect.top + 14) + 'px';
+            if (align === 'left') {
+              toast.style.left = bubbleRect.left + 'px';
+              toast.style.right = 'auto';
+            } else {
+              toast.style.right = (window.innerWidth - bubbleRect.right) + 'px';
+              toast.style.left = 'auto';
+            }
+          }
+
+          function showToast() {
+            if (!displayChatbot || isOpen) return;
+            var ensuredToast = ensureToast();
+            var ensuredBubble = ensureBubble();
+            if (!ensuredToast || !ensuredBubble) return;
+            applyToastPosition();
+            ensuredToast.style.display = 'block';
+            requestAnimationFrame(function() {
+              ensuredToast.style.opacity = '1';
+              ensuredToast.style.transform = 'translateY(0)';
+            });
+          }
+
+          function hideToast() {
+            if (!toast) return;
+            toast.style.opacity = '0';
+            toast.style.transform = 'translateY(8px)';
+            clearTimeout(toastTimer);
+            setTimeout(function() {
+              if (toast) {
+                toast.style.display = 'none';
+              }
+            }, 200);
+          }
+
+          function applyRuntimeConfig(config) {
+            if (!config || typeof config !== 'object') return;
+            if (typeof config.align_bubble === 'string' && config.align_bubble) {
+              align = config.align_bubble;
+            }
+            if (typeof config.chat_bubble_color === 'string' && config.chat_bubble_color) {
+              bubbleColor = config.chat_bubble_color;
+            }
+            if (typeof config.chat_icon_url === 'string' && config.chat_icon_url) {
+              bubbleIconUrl = config.chat_icon_url;
+            } else if (config.chat_icon_url === null) {
+              bubbleIconUrl = null;
+            }
+            if (typeof config.display_chatbot === 'boolean') {
+              displayChatbot = config.display_chatbot;
+            }
+            if (typeof config.initial_message === 'string') {
+              initialMessage = config.initial_message;
+            }
+            if (typeof config.auto_show_duration === 'number') {
+              autoShowDuration = config.auto_show_duration;
+            }
+            if (typeof config.chat_icon_zoom === 'number') {
+              chatIconZoom = config.chat_icon_zoom;
+            }
+            if (typeof config.theme === 'string' && config.theme) {
+              theme = config.theme;
+            }
+          }
+
+          async function fetchRuntimeConfig() {
+            try {
+              var response = await fetch(apiGatewayUrl + '/api/v1/gateway/configuration/widgetConfig', {
+                method: 'GET',
+                credentials: 'include',
+                headers: {
+                  'X-Widget-Access-Token': widgetToken,
+                  'X-Widget-Parent-Origin': window.location.origin
+                }
+              });
+              if (!response.ok) {
+                throw new Error('Widget config fetch failed with status ' + response.status);
+              }
+              var payload = await response.json();
+              var config = payload && payload.data ? payload.data : payload;
+              applyRuntimeConfig(config);
+            } catch (error) {
+              console.warn('Knowledgebot embed: failed to fetch live widget config, using generated fallback.', error);
+            }
           }
 
           function ensureIframe() {
@@ -221,9 +437,10 @@
             ensureIframe();
             applyIframeLayout();
             iframe.style.display = 'block';
-            if (bubbleFrame) {
-              bubbleFrame.style.display = 'none';
+            if (bubble) {
+              bubble.style.display = 'none';
             }
+            hideToast();
             isOpen = true;
           }
 
@@ -231,19 +448,14 @@
             if (iframe) {
               iframe.style.display = 'none';
             }
-            if (bubbleFrame) {
-              bubbleFrame.style.display = 'block';
+            if (bubble) {
+              bubble.style.display = 'flex';
             }
             isOpen = false;
           }
 
           window.addEventListener('message', function(event) {
             if (!event.data || event.data.source !== 'knowledgebot-widget') {
-              return;
-            }
-
-            if (bubbleFrame && event.source === bubbleFrame.contentWindow && event.data.type === 'OPEN_CHAT_WINDOW') {
-              openChat();
               return;
             }
 
@@ -257,13 +469,31 @@
           });
 
           window.addEventListener('resize', function() {
-            applyBubblePosition(ensureBubbleFrame());
+            var ensuredBubble = ensureBubble();
+            if (ensuredBubble) {
+              applyBubblePosition(ensuredBubble);
+            }
+            if (toast && toast.style.display !== 'none') {
+              applyToastPosition();
+            }
             if (isOpen) {
               applyIframeLayout();
             }
           });
 
-          ensureBubbleFrame();
+          fetchRuntimeConfig().finally(function() {
+            var ensuredBubble = ensureBubble();
+            if (ensuredBubble) {
+              applyBubblePosition(ensuredBubble);
+              if (bubbleIconUrl && ensuredBubble.firstChild && ensuredBubble.firstChild.tagName === 'IMG') {
+                ensuredBubble.firstChild.style.transform = 'scale(' + chatIconZoom + ')';
+              }
+              clearTimeout(toastTimer);
+              if (autoShowDuration > 0 && initialMessage && initialMessage.trim()) {
+                toastTimer = setTimeout(showToast, autoShowDuration * 1000);
+              }
+            }
+          });
         })();
         </script>
     </body>
