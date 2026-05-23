@@ -114,5 +114,58 @@
                 },
             });
         </script>
+        <!-- Knowledgebot Widget - Secure Bubble Embed -->
+        <script>
+        (function() {
+          var iframeUrl = 'https://dailogue.globistaan.com/user?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNTQ2NTQsImlhdCI6MTc3OTUxODY1NCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.a59fbc513a726f20faba8e3e0987f8baf07a1a02529cbc347ed7346d2b39cd59&embedSurface=transparent';
+          var iframeId = 'knowledgebot-widget-frame';
+
+          if (document.getElementById(iframeId)) {
+            return;
+          }
+
+          var iframe = document.createElement('iframe');
+          iframe.id = iframeId;
+          iframe.src = iframeUrl;
+          iframe.title = 'Knowledgebot Chat Widget';
+          iframe.allow = 'microphone';
+          iframe.referrerPolicy = 'origin';
+          iframe.style.position = 'fixed';
+          iframe.style.background = 'transparent';
+          iframe.style.border = '0';
+          iframe.style.overflow = 'hidden';
+          iframe.style.zIndex = '2147483646';
+          iframe.style.pointerEvents = 'auto';
+
+          function applyLayout() {
+            var mobile = window.innerWidth <= 640;
+            if (mobile) {
+              iframe.style.left = '0';
+              iframe.style.right = '0';
+              iframe.style.bottom = '0';
+              iframe.style.top = '0';
+              iframe.style.width = '100vw';
+              iframe.style.height = '100vh';
+            } else {
+              iframe.style.top = 'auto';
+              iframe.style.left = 'auto';
+              iframe.style.width = 'min(440px, calc(100vw - 24px))';
+              iframe.style.height = 'min(760px, calc(100vh - 24px))';
+              iframe.style.bottom = '12px';
+              if ('right' === 'left') {
+                iframe.style.left = '12px';
+                iframe.style.right = 'auto';
+              } else {
+                iframe.style.right = '12px';
+                iframe.style.left = 'auto';
+              }
+            }
+          }
+
+          applyLayout();
+          window.addEventListener('resize', applyLayout);
+          document.body.appendChild(iframe);
+        })();
+        </script>
     </body>
 </html>
