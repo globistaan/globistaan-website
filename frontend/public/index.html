@@ -117,27 +117,81 @@
         <!-- Knowledgebot Widget - Secure Bubble Embed -->
         <script>
         (function() {
-          var iframeUrl = 'https://dailogue.globistaan.com/user?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNTU0NTUsImlhdCI6MTc3OTUxOTQ1NSwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.37b1b5087daa805823db455c505fd0fe509127c81da28247f36f00d3e9d50d6d&embedSurface=transparent';
+          var bubbleUrl = 'https://dailogue.globistaan.com/user?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNjgxMTgsImlhdCI6MTc3OTUzMjExOCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.728d5f69adcfc0a8c5be310863b7598577075f6dcdebc73f47526ba75b64eb98&embedSurface=transparent';
+          var iframeUrl = 'https://dailogue.globistaan.com/chat-window?widgetMode=true&widgetToken=eyJleHAiOjE4MTEwNjgxMTgsImlhdCI6MTc3OTUzMjExOCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.728d5f69adcfc0a8c5be310863b7598577075f6dcdebc73f47526ba75b64eb98';
+          var bubbleFrameId = 'knowledgebot-widget-bubble-frame';
           var iframeId = 'knowledgebot-widget-frame';
+          var align = 'right';
+          var bubbleSize = 88;
+          var desktopWindowWidth = 420;
+          var desktopWindowHeight = 680;
+          var bubbleFrame = document.getElementById(bubbleFrameId);
+          var iframe = document.getElementById(iframeId);
+          var isOpen = false;
 
-          if (document.getElementById(iframeId)) {
+          if (bubbleFrame) {
             return;
           }
 
-          var iframe = document.createElement('iframe');
-          iframe.id = iframeId;
-          iframe.src = iframeUrl;
-          iframe.title = 'Knowledgebot Chat Widget';
-          iframe.allow = 'microphone';
-          iframe.referrerPolicy = 'origin';
-          iframe.style.position = 'fixed';
-          iframe.style.background = 'transparent';
-          iframe.style.border = '0';
-          iframe.style.overflow = 'hidden';
-          iframe.style.zIndex = '2147483646';
-          iframe.style.pointerEvents = 'auto';
+          function applyBubblePosition(el) {
+            el.style.position = 'fixed';
+            el.style.bottom = '12px';
+            if (align === 'left') {
+              el.style.left = '12px';
+              el.style.right = 'auto';
+            } else {
+              el.style.right = '12px';
+              el.style.left = 'auto';
+            }
+          }
 
-          function applyLayout() {
+          function ensureBubbleFrame() {
+            if (bubbleFrame) return bubbleFrame;
+
+            bubbleFrame = document.createElement('iframe');
+            bubbleFrame.id = bubbleFrameId;
+            bubbleFrame.src = bubbleUrl;
+            bubbleFrame.title = 'Knowledgebot Chat Bubble';
+            bubbleFrame.allow = 'microphone';
+            bubbleFrame.referrerPolicy = 'origin';
+            bubbleFrame.style.width = bubbleSize + 'px';
+            bubbleFrame.style.height = bubbleSize + 'px';
+            bubbleFrame.style.border = '0';
+            bubbleFrame.style.background = 'transparent';
+            bubbleFrame.style.overflow = 'hidden';
+            bubbleFrame.style.zIndex = '2147483646';
+            bubbleFrame.style.display = 'block';
+            bubbleFrame.style.pointerEvents = 'auto';
+            bubbleFrame.style.borderRadius = '9999px';
+            applyBubblePosition(bubbleFrame);
+            document.body.appendChild(bubbleFrame);
+            return bubbleFrame;
+          }
+
+          function ensureIframe() {
+            if (iframe) return iframe;
+
+            iframe = document.createElement('iframe');
+            iframe.id = iframeId;
+            iframe.src = iframeUrl;
+            iframe.title = 'Knowledgebot Chat Widget';
+            iframe.allow = 'microphone';
+            iframe.referrerPolicy = 'origin';
+            iframe.style.position = 'fixed';
+            iframe.style.background = 'transparent';
+            iframe.style.border = '0';
+            iframe.style.overflow = 'hidden';
+            iframe.style.zIndex = '2147483647';
+            iframe.style.pointerEvents = 'auto';
+            iframe.style.display = 'none';
+            iframe.style.boxShadow = '0 18px 45px rgba(15, 23, 42, 0.28)';
+            iframe.style.borderRadius = '16px';
+            document.body.appendChild(iframe);
+            return iframe;
+          }
+
+          function applyIframeLayout() {
+            if (!iframe) return;
             var mobile = window.innerWidth <= 640;
             if (mobile) {
               iframe.style.left = '0';
@@ -146,13 +200,14 @@
               iframe.style.top = '0';
               iframe.style.width = '100vw';
               iframe.style.height = '100vh';
+              iframe.style.borderRadius = '0';
             } else {
               iframe.style.top = 'auto';
-              iframe.style.left = 'auto';
-              iframe.style.width = 'min(440px, calc(100vw - 24px))';
-              iframe.style.height = 'min(760px, calc(100vh - 24px))';
+              iframe.style.width = 'min(' + desktopWindowWidth + 'px, calc(100vw - 24px))';
+              iframe.style.height = 'min(' + desktopWindowHeight + 'px, calc(100vh - 24px))';
               iframe.style.bottom = '12px';
-              if ('right' === 'left') {
+              iframe.style.borderRadius = '16px';
+              if (align === 'left') {
                 iframe.style.left = '12px';
                 iframe.style.right = 'auto';
               } else {
@@ -162,9 +217,53 @@
             }
           }
 
-          applyLayout();
-          window.addEventListener('resize', applyLayout);
-          document.body.appendChild(iframe);
+          function openChat() {
+            ensureIframe();
+            applyIframeLayout();
+            iframe.style.display = 'block';
+            if (bubbleFrame) {
+              bubbleFrame.style.display = 'none';
+            }
+            isOpen = true;
+          }
+
+          function closeChat() {
+            if (iframe) {
+              iframe.style.display = 'none';
+            }
+            if (bubbleFrame) {
+              bubbleFrame.style.display = 'block';
+            }
+            isOpen = false;
+          }
+
+          window.addEventListener('message', function(event) {
+            if (!event.data || event.data.source !== 'knowledgebot-widget') {
+              return;
+            }
+
+            if (bubbleFrame && event.source === bubbleFrame.contentWindow && event.data.type === 'OPEN_CHAT_WINDOW') {
+              openChat();
+              return;
+            }
+
+            if (!iframe || event.source !== iframe.contentWindow) {
+              return;
+            }
+
+            if (event.data.type === 'CLOSE_CHAT_BUBBLE') {
+              closeChat();
+            }
+          });
+
+          window.addEventListener('resize', function() {
+            applyBubblePosition(ensureBubbleFrame());
+            if (isOpen) {
+              applyIframeLayout();
+            }
+          });
+
+          ensureBubbleFrame();
         })();
         </script>
     </body>
