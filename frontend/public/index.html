@@ -117,16 +117,16 @@
         <!-- Knowledgebot Widget - Secure Bubble Embed -->
         <script>
         (function() {
-          var widgetToken = 'eyJleHAiOjE4MTExNzIzMzYsImlhdCI6MTc3OTYzNjMzNiwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZDZmMTYtZjZiYS03NzU4LWFlYjUtNTZlODZmOWYxODQ4IiwidGVuYW50X3NsdWciOiJzY2FuaWEtc2x1ZyIsInYiOjJ9.9e7698bf3a9b634ea8a7d306e127a0aabc975cb974f166731356ba3a2bfc862c';
+          var widgetToken = 'eyJleHAiOjE4MTEyMjAzMjAsImlhdCI6MTc3OTY4NDMyMCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.ac760f4e5d2c50e621f4a5b3c315f7333cffbafad6cd2c1e03640bd861ea68e7';
           var apiGatewayUrl = 'https://dailogueapi.globistaan.com';
-          var iframeUrl = 'https://dailogue.globistaan.com/chat-window?widgetMode=true&widgetToken=eyJleHAiOjE4MTExNzIzMzYsImlhdCI6MTc3OTYzNjMzNiwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZDZmMTYtZjZiYS03NzU4LWFlYjUtNTZlODZmOWYxODQ4IiwidGVuYW50X3NsdWciOiJzY2FuaWEtc2x1ZyIsInYiOjJ9.9e7698bf3a9b634ea8a7d306e127a0aabc975cb974f166731356ba3a2bfc862c&embedSurface=transparent';
+          var iframeUrl = 'https://dailogue.globistaan.com/chat-window?widgetMode=true&widgetToken=eyJleHAiOjE4MTEyMjAzMjAsImlhdCI6MTc3OTY4NDMyMCwic2NvcGUiOiJwdWJsaWNfd2lkZ2V0X2VtYmVkIiwidGVuYW50X2lkIjoiMDE5ZGE2YzktN2VmMi03OWFhLWExZTAtZDcwN2Q2ZGFhOGQxIiwidGVuYW50X3NsdWciOiJnbG9iaXN0YWFuIiwidiI6Mn0.ac760f4e5d2c50e621f4a5b3c315f7333cffbafad6cd2c1e03640bd861ea68e7';
           var bubbleId = 'knowledgebot-widget-bubble';
           var iframeId = 'knowledgebot-widget-frame';
           var align = 'right';
-          var bubbleColor = '#493bff';
+          var bubbleColor = '#3B81F6';
           var bubbleIconUrl = null;
-          var displayChatbot = true;
-          var initialMessage = "Explore Wiki";
+          var displayChatbot = false;
+          var initialMessage = "Welcome to Globistaan";
           var autoShowDuration = 4;
           var chatIconZoom = 1.0;
           var theme = "light";
@@ -139,8 +139,6 @@
           var toast = document.getElementById(toastId);
           var isOpen = false;
           var toastTimer = null;
-          var previousBodyOverflow = '';
-          var previousHtmlOverflow = '';
 
           if (bubble) {
             return;
@@ -174,36 +172,6 @@
             return theme === 'dark' ? '#ffffff' : '#111827';
           }
 
-          function renderBubbleContent(open) {
-            if (!bubble) return;
-            bubble.innerHTML = '';
-            bubble.setAttribute('aria-label', open ? 'Close chat' : 'Open chat');
-            bubble.style.borderRadius = open || !bubbleIconUrl ? '9999px' : '0';
-            bubble.style.background = open ? '#000000' : (bubbleIconUrl ? 'transparent' : bubbleColor);
-            bubble.style.boxShadow = open ? getShadow() : (bubbleIconUrl ? 'none' : getShadow());
-
-            if (open) {
-              bubble.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 9 6 6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-              return;
-            }
-
-            if (bubbleIconUrl) {
-              var img = document.createElement('img');
-              img.src = bubbleIconUrl;
-              img.alt = 'Chat';
-              img.style.width = '100%';
-              img.style.height = '100%';
-              img.style.objectFit = 'contain';
-              img.style.borderRadius = '0';
-              img.style.background = 'transparent';
-              img.style.display = 'block';
-              img.style.transform = 'scale(' + chatIconZoom + ')';
-              bubble.appendChild(img);
-            } else {
-              bubble.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 10h8M8 14h5m7-2a9 9 0 1 1-3.08-6.79L21 3l-1.21 4.84A8.96 8.96 0 0 1 20 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
-            }
-          }
-
           function ensureBubble() {
             if (!displayChatbot) return null;
             if (bubble) return bubble;
@@ -218,8 +186,8 @@
             bubble.style.padding = '0';
             bubble.style.margin = '0';
             bubble.style.cursor = 'pointer';
-            bubble.style.borderRadius = bubbleIconUrl ? '0' : '9999px';
-            bubble.style.overflow = 'visible';
+            bubble.style.borderRadius = '9999px';
+            bubble.style.overflow = 'hidden';
             bubble.style.display = 'flex';
             bubble.style.alignItems = 'center';
             bubble.style.justifyContent = 'center';
@@ -230,29 +198,37 @@
               ? 'transparent'
               : bubbleColor;
             bubble.style.color = '#ffffff';
-            bubble.style.boxShadow = bubbleIconUrl ? 'none' : getShadow();
+            bubble.style.boxShadow = getShadow();
             bubble.style.webkitTapHighlightColor = 'transparent';
             applyBubblePosition(bubble);
 
-            renderBubbleContent(false);
+            if (bubbleIconUrl) {
+              var img = document.createElement('img');
+              img.src = bubbleIconUrl;
+              img.alt = 'Chat';
+              img.style.width = '100%';
+              img.style.height = '100%';
+              img.style.objectFit = 'cover';
+              img.style.borderRadius = '9999px';
+              img.style.transform = 'scale(' + chatIconZoom + ')';
+              bubble.appendChild(img);
+            } else {
+              bubble.innerHTML = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 10h8M8 14h5m7-2a9 9 0 1 1-3.08-6.79L21 3l-1.21 4.84A8.96 8.96 0 0 1 20 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+            }
 
             bubble.addEventListener('mouseenter', function() {
               bubble.style.transform = 'scale(1.1)';
-              bubble.style.boxShadow = isOpen || !bubbleIconUrl ? getHoverShadow() : 'none';
+              bubble.style.boxShadow = getHoverShadow();
             });
 
             bubble.addEventListener('mouseleave', function() {
               bubble.style.transform = 'scale(1)';
-              bubble.style.boxShadow = isOpen || !bubbleIconUrl ? getShadow() : 'none';
+              bubble.style.boxShadow = getShadow();
             });
 
             bubble.addEventListener('click', function() {
               hideToast();
-              if (isOpen) {
-                closeChat();
-              } else {
-                openChat();
-              }
+              openChat();
             });
 
             document.body.appendChild(bubble);
@@ -421,7 +397,7 @@
             iframe.style.background = 'transparent';
             iframe.style.border = '0';
             iframe.style.overflow = 'hidden';
-            iframe.style.zIndex = '2147483645';
+            iframe.style.zIndex = '2147483647';
             iframe.style.pointerEvents = 'auto';
             iframe.style.display = 'none';
             iframe.style.boxShadow = '0 18px 45px rgba(15, 23, 42, 0.28)';
@@ -434,15 +410,12 @@
             if (!iframe) return;
             var mobile = window.innerWidth <= 640;
             if (mobile) {
-              var viewport = window.visualViewport;
-              var visibleHeight = viewport && viewport.height ? viewport.height : window.innerHeight;
-              var visibleTop = viewport && typeof viewport.offsetTop === 'number' ? viewport.offsetTop : 0;
               iframe.style.left = '0';
               iframe.style.right = '0';
-              iframe.style.bottom = 'auto';
-              iframe.style.top = visibleTop + 'px';
+              iframe.style.bottom = '0';
+              iframe.style.top = '0';
               iframe.style.width = '100vw';
-              iframe.style.height = Math.max(320, Math.floor(visibleHeight)) + 'px';
+              iframe.style.height = '100vh';
               iframe.style.borderRadius = '0';
             } else {
               iframe.style.top = 'auto';
@@ -462,15 +435,10 @@
 
           function openChat() {
             ensureIframe();
-            previousBodyOverflow = document.body.style.overflow || '';
-            previousHtmlOverflow = document.documentElement.style.overflow || '';
-            document.body.style.overflow = 'hidden';
-            document.documentElement.style.overflow = 'hidden';
             applyIframeLayout();
             iframe.style.display = 'block';
             if (bubble) {
-              bubble.style.display = 'flex';
-              renderBubbleContent(true);
+              bubble.style.display = 'none';
             }
             hideToast();
             isOpen = true;
@@ -487,10 +455,7 @@
             }
             if (bubble) {
               bubble.style.display = 'flex';
-              renderBubbleContent(false);
             }
-            document.body.style.overflow = previousBodyOverflow;
-            document.documentElement.style.overflow = previousHtmlOverflow;
             isOpen = false;
           }
 
@@ -521,24 +486,10 @@
             }
           });
 
-          if (window.visualViewport) {
-            window.visualViewport.addEventListener('resize', function() {
-              if (isOpen) {
-                applyIframeLayout();
-              }
-            });
-            window.visualViewport.addEventListener('scroll', function() {
-              if (isOpen) {
-                applyIframeLayout();
-              }
-            });
-          }
-
           fetchRuntimeConfig().finally(function() {
             var ensuredBubble = ensureBubble();
             if (ensuredBubble) {
               applyBubblePosition(ensuredBubble);
-              renderBubbleContent(isOpen);
               if (bubbleIconUrl && ensuredBubble.firstChild && ensuredBubble.firstChild.tagName === 'IMG') {
                 ensuredBubble.firstChild.style.transform = 'scale(' + chatIconZoom + ')';
               }
