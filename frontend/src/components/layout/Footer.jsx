@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight, MapPin, Mail, Phone } from 'lucide-react';
+import { ArrowUpRight, MapPin, Mail, Phone, AtSign } from 'lucide-react';
 import { companyInfo, navLinks } from '../../data/mock';
 
 export const Footer = () => {
@@ -54,6 +54,17 @@ export const Footer = () => {
                   {companyInfo.phone}
                 </span>
               </div>
+              <div className="flex items-center gap-2">
+                <AtSign className="w-3.5 h-3.5" style={{ color: 'rgba(255,255,255,0.4)' }} />
+                <span className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'SF Mono', monospace" }}>
+                  {companyInfo.xHandle}
+                </span>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="text-xs" style={{ color: 'rgba(255,255,255,0.5)', fontFamily: "'SF Mono', monospace" }}>
+                  {companyInfo.incorporationDateShort}
+                </span>
+              </div>
             </div>
           </div>
 
@@ -99,7 +110,13 @@ export const Footer = () => {
               Legal & Compliance
             </h4>
             <nav className="flex flex-col gap-2.5">
-              {['Private Limited (MCA)', 'GST Registered', 'MSME Certified', 'DGFT Registered', 'DPIIT Startup'].map((s) => (
+              {[
+                'Private Limited (MCA) CIN - U62099HP2023PTC010408',
+                'GST Registered GSTIN - 02AAKCG7487J1Z6',
+                'DGFT Registered IEC - AAKCG7487J',
+                'MSME Registered MSME - UDYAM-HP-04-0023734',
+                'DPIIT Startup - CERTIFICATE NO: DIPP155874'
+              ].map((s) => (
                 <span key={s} className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
                   {s}
                 </span>

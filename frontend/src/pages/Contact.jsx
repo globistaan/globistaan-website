@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { MapPin, Mail, Phone, Send, Clock, Globe, ExternalLink } from 'lucide-react';
+import { MapPin, Mail, Phone, Send, Clock, Globe, ExternalLink, AtSign } from 'lucide-react';
 import { companyInfo } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
@@ -155,6 +155,7 @@ export default function Contact() {
                   { icon: Mail, label: 'Email', value: companyInfo.email },
                   { icon: Phone, label: 'Phone', value: companyInfo.phone },
                   { icon: Globe, label: 'Website', value: companyInfo.website },
+                  { icon: AtSign, label: 'X', value: companyInfo.xHandle },
                   { icon: Clock, label: 'Business Hours', value: 'Mon - Fri, 9:00 AM - 6:00 PM IST' }
                 ].map((item, i) => {
                   const Icon = item.icon;

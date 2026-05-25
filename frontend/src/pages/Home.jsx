@@ -102,6 +102,22 @@ const HeroSection = () => (
         {companyInfo.subtitle}
       </motion.p>
 
+      <motion.p
+        initial={{ opacity: 0, y: 12 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.42 }}
+        className="mb-8 mx-auto"
+        style={{
+          fontSize: '0.9rem',
+          lineHeight: 1.6,
+          color: 'rgba(255,255,255,0.88)',
+          maxWidth: '620px',
+          fontFamily: "'SF Mono', monospace"
+        }}
+      >
+        Date of Incorporation: {companyInfo.incorporationDate}
+      </motion.p>
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
