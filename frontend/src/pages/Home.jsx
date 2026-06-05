@@ -15,16 +15,7 @@ const fadeInUp = {
 
 const HeroSection = () => (
   <section className="relative min-h-screen flex items-center overflow-hidden">
-    {/* HD Background - Beautiful Nature Landscape */}
-    <div className="absolute inset-0 z-0">
-      <img 
-        src={images.natureLandscape} 
-        alt="Beautiful Nature Landscape" 
-        className="w-full h-full object-cover"
-        style={{ objectPosition: 'center 55%' }}
-      />
-    </div>
-    {/* Cinematic overlay — preserves earthy greens and blues */}
+    {/* Light gradient for text readability */}
     <div className="absolute inset-0 z-1" style={{ 
       background: 'linear-gradient(180deg, rgba(5,15,10,0.25) 0%, rgba(5,15,10,0.4) 50%, rgba(5,15,10,0.65) 100%)'
     }} />

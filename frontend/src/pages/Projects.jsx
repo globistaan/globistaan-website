@@ -164,14 +164,14 @@ export default function Projects() {
 
         <div className="relative z-10 max-w-[1100px] mx-auto px-5 md:px-9">
           <motion.div {...fadeInUp} className="flex flex-wrap items-center justify-center gap-3 mb-14">
-            {['all', 'ai', 'saas'].map((f) => (
+            {['all', 'ai', 'saas', 'client'].map((f) => (
               <button
                 key={f}
                 onClick={() => setFilter(f)}
                 className={`btn-tag ${filter === f ? 'active' : ''}`}
                 style={{ padding: '0.6rem 1.25rem' }}
               >
-                {f === 'all' ? 'All Projects' : f === 'ai' ? 'AI as a Service' : 'SaaS Platforms'}
+                {f === 'all' ? 'All Projects' : f === 'ai' ? 'AI as a Service' : f === 'saas' ? 'SaaS Platforms' : 'Client Work'}
               </button>
             ))}
           </motion.div>

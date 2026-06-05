@@ -1,4 +1,4 @@
-import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
+import { Bot, FileText, Languages, ShoppingCart, Cloud, Code2, Cpu, Sparkles, Users, TrendingUp, Shield, Globe, Zap, Layers, Database, Server, Brain, Workflow, Target, Award, Building2, BookOpen, HeartPulse, Mic } from 'lucide-react';
 
 // ============================================
 // HIMACHAL PRADESH NATURE IMAGES (Page Backgrounds)
@@ -216,6 +216,18 @@ export const projects = [
     icon: HeartPulse,
     category: "SaaS Platform",
     partnership: "Web design and SEO by Dr Nisharg Patel's design team; web development and hosting by Globistaan"
+  },
+  {
+    id: "sri-krishna-art",
+    title: "Sri Krishna Art Website",
+    description: "A refined artist portfolio and online-class platform for Greeshma Bhat, a Bengaluru-based artist and drawing teacher. The site presents original artworks, commission enquiries, online class enrolment, social proof, and an immersive wall-preview experience.",
+    features: ["Artist portfolio", "AR wall preview", "Class enrolment", "Commission enquiries", "SEO schema"],
+    status: "Live",
+    accentClass: "accent-green",
+    icon: Sparkles,
+    category: "Client Work",
+    partnership: "Designed, developed, and maintained by Globistaan for Sri Krishna Art.",
+    website: "https://srikrishnaartt.com/"
   }
 ];
 
@@ -300,6 +312,18 @@ export const clients = [
     image: "/images/clients/balaji.png",
     testimonial: "An e-commerce storefront for Balaji Print Media, focused on premium quality products and a simple online shopping experience.",
     highlights: ["Online storefront", "Product catalog", "Print media commerce"],
+    avatar: null
+  },
+  {
+    name: "Sri Krishna Art",
+    industry: "Art Education & Commissions",
+    contact: "Greeshma Bhat",
+    location: "Bengaluru, India",
+    relationship: "SaaS Client",
+    website: "https://srikrishnaartt.com/",
+    image: "https://srikrishnaartt.com/images/logo.jpg",
+    testimonial: "Globistaan built and maintains our artist portfolio, class enrolment, commission enquiry, and gallery experience for students, parents, and art collectors.",
+    highlights: ["Artist portfolio", "Online classes", "Commissions"],
     avatar: null
   }
 ];
