@@ -96,7 +96,7 @@ export const Footer = () => {
               Services
             </h4>
             <nav className="flex flex-col gap-2.5">
-              {['AI-Enabled Apps', 'SaaS Platforms', 'Cloud Infrastructure', 'Data Engineering', 'Business Automation', 'Consulting'].map((s) => (
+              {['AI-Enabled Apps', 'SaaS Platforms', 'Data Engineering', 'Business Automation', 'Consulting'].map((s) => (
                 <span key={s} className="text-sm" style={{ color: 'rgba(255,255,255,0.6)' }}>
                   {s}
                 </span>
@@ -104,10 +104,10 @@ export const Footer = () => {
             </nav>
           </div>
 
-          {/* Legal */}
+          {/* Company Registrations */}
           <div>
             <h4 className="text-xs font-medium uppercase tracking-widest mb-5" style={{ color: 'rgba(255,255,255,0.4)', fontFamily: "'SF Mono', monospace" }}>
-              Legal & Compliance
+              Company Registrations
             </h4>
             <nav className="flex flex-col gap-2.5">
               {[

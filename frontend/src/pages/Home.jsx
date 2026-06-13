@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2 } from 'lucide-react';
+import { ArrowRight, ArrowUpRight, ChevronRight, ChevronDown, CheckCircle2, Layers3, Rocket, ShieldCheck } from 'lucide-react';
 import { companyInfo, projects, services } from '../data/mock';
 import { ParticlesBg } from '../components/layout/ParticlesBg';
 import { Badge } from '../components/ui/badge';
@@ -217,6 +217,121 @@ const ServicesSection = () => (
   </section>
 );
 
+const WhyUsSection = () => {
+  const reasons = [
+    {
+      icon: Layers3,
+      title: 'Built Beyond the First Launch',
+      text: 'Anyone can spin up software now. We design systems for the harder part: keeping them dependable as real customers, workflows, and priorities keep changing.'
+    },
+    {
+      icon: Rocket,
+      title: 'A Platform That Keeps Morphing',
+      text: 'Think of Globistaan as a managed platform that grows with your business, so your software can adapt as quickly as your next opportunity.'
+    },
+    {
+      icon: ShieldCheck,
+      title: 'Lean, Managed Scale',
+      text: 'We help you stay ahead of the curve without carrying heavy technical overhead, keeping execution focused, flexible, and competitively priced.'
+    }
+  ];
+
+  return (
+    <section className="relative py-24 overflow-hidden">
+      <div className="absolute inset-0 z-0" style={{
+        background: 'linear-gradient(135deg, #071311 0%, #10241f 42%, #1f2433 100%)'
+      }} />
+      <div className="absolute inset-0 z-1" style={{
+        background: 'radial-gradient(circle at 18% 20%, rgba(184, 209, 186, 0.18) 0%, transparent 34%), radial-gradient(circle at 82% 64%, rgba(96, 165, 250, 0.16) 0%, transparent 38%)'
+      }} />
+      <div className="absolute inset-0 z-1 neural-grid" style={{ opacity: 0.7 }} />
+
+      <div className="relative z-10 max-w-[1180px] mx-auto px-5 md:px-9">
+        <motion.div {...fadeInUp} className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-14 items-start">
+          <div>
+            <Badge variant="outline" className="mb-4 rounded-full px-4 py-1.5" style={{
+              fontFamily: "'SF Mono', monospace",
+              fontSize: '0.7rem',
+              textTransform: 'uppercase',
+              letterSpacing: '0.05em',
+              background: 'rgba(184, 209, 186, 0.12)',
+              borderColor: 'rgba(184, 209, 186, 0.32)',
+              color: '#d7ead8'
+            }}>
+              Why Us
+            </Badge>
+            <h2 style={{
+              fontSize: 'clamp(1.8rem, 4.5vw, 3.25rem)',
+              fontWeight: 650,
+              letterSpacing: '-0.02em',
+              color: '#ffffff',
+              lineHeight: 1.08,
+              maxWidth: '620px'
+            }}>
+              Built for the era where software is easy to start, but hard to sustain.
+            </h2>
+          </div>
+
+          <div>
+            <p style={{
+              fontSize: 'clamp(1.02rem, 1.7vw, 1.2rem)',
+              lineHeight: 1.75,
+              color: 'rgba(255,255,255,0.82)',
+              marginBottom: '1.25rem'
+            }}>
+              We're living in a wild new era. With AI and agentic tech, anyone can spin up software. But here's the truth: building something is easy, while maintaining and scaling it as your business changes is where things usually break down.
+            </p>
+            <p style={{
+              fontSize: 'clamp(1.02rem, 1.7vw, 1.2rem)',
+              lineHeight: 1.75,
+              color: 'rgba(255,255,255,0.82)'
+            }}>
+              We built our company to solve exactly that. Globistaan works like a managed platform that morphs and grows as your business accelerates, giving you the power to stay ahead of the curve while keeping overhead incredibly lean and competitively priced.
+            </p>
+          </div>
+        </motion.div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-12">
+          {reasons.map((reason, i) => {
+            const Icon = reason.icon;
+            const accents = [
+              { bg: 'rgba(184, 209, 186, 0.12)', border: 'rgba(184, 209, 186, 0.28)', icon: '#b8d1ba' },
+              { bg: 'rgba(96, 165, 250, 0.12)', border: 'rgba(96, 165, 250, 0.28)', icon: '#60a5fa' },
+              { bg: 'rgba(249, 115, 22, 0.1)', border: 'rgba(249, 115, 22, 0.26)', icon: '#fb923c' }
+            ];
+            const accent = accents[i % accents.length];
+
+            return (
+              <motion.div
+                key={reason.title}
+                initial={{ opacity: 0, y: 22 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: i * 0.08 }}
+                className="rounded-2xl"
+                style={{
+                  padding: '1.6rem',
+                  background: 'rgba(255, 255, 255, 0.055)',
+                  border: `1px solid ${accent.border}`,
+                  backdropFilter: 'blur(12px)',
+                  boxShadow: '0 16px 40px rgba(0, 0, 0, 0.26)',
+                  minHeight: '225px'
+                }}
+              >
+                <div className="w-11 h-11 rounded-xl flex items-center justify-center mb-5" style={{ background: accent.bg }}>
+                  <Icon className="w-5 h-5" style={{ color: accent.icon }} />
+                </div>
+                <h3 style={{ fontSize: '1.05rem', fontWeight: 600, marginBottom: '0.7rem', color: '#ffffff' }}>{reason.title}</h3>
+                <p style={{ fontSize: '0.92rem', lineHeight: 1.62, color: 'rgba(255,255,255,0.7)' }}>{reason.text}</p>
+              </motion.div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const ProjectsPreview = () => (
   <section className="relative py-24 overflow-hidden">
     {/* Futuristic Circuit Board Background with Gradient */}
@@ -338,6 +453,7 @@ export default function Home() {
     <main>
       <HeroSection />
       <ServicesSection />
+      <WhyUsSection />
       <ProjectsPreview />
     </main>
   );
