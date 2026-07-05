@@ -28,22 +28,7 @@
         -->
         <title>Globistaan</title>
         <!-- Knowledgebot Widget - Secure Bubble Embed -->
-        <script>
-            (function () {
-                var host = window.location.hostname;
-                var isDev =
-                    host === "localhost" ||
-                    host === "127.0.0.1" ||
-                    host === "::1" ||
-                    host.indexOf("dev.") === 0;
-                var script = document.createElement("script");
-                script.async = true;
-                script.src = isDev
-                    ? "https://dev.dailogueapi.globistaan.com/api/v1/gateway/widget/embed/019f32af-416f-7617-ba62-dae5d4b2b974.js"
-                    : "https://dailogueapi.globistaan.com/api/v1/gateway/widget/embed/globistaan.js";
-                document.head.appendChild(script);
-            })();
-        </script>
+        <script async src="https://dev.dailogueapi.globistaan.com/api/v1/gateway/widget/embed/019f32af-416f-7617-ba62-dae5d4b2b974.js"></script>
         <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="2b49d721-cdc7-49bd-bac7-e0a50847717a" type="text/javascript"></script>
         <script>window.addEventListener("error",function(e){if(e.error instanceof DOMException&&e.error.name==="DataCloneError"&&e.message&&e.message.includes("PerformanceServerTiming")){e.stopImmediatePropagation();e.preventDefault()}},true);</script>
     </head>
